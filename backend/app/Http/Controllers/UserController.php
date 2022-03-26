@@ -10,22 +10,17 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
-    public function index()
-    {
+    public function index(){
         return view('user.index')->with('users', User::all());
     }
 
-
-    public function create()
-    {
+    public function create(){
         return view('user.create');
     }
 
-    public function show()
-    {
+    public function show(){
         return response()->json(Auth()->user());
     }
-
 
     function store(Request $request){
         $request->validate([
@@ -58,6 +53,31 @@ class UserController extends Controller
         return redirect(Route('user.index'));
     }
 
+    public function update(Request $request, User $user){
+        if($request->image) {
+            $image = $request->file('image')->store('/public/product');
+            $image = str_replace('public/', 'storage/', $image);
+        }else {
+            $image  = "storage/imageDefault.jpg";
+        }
+
+        $user->update([
+            "isAdmin" => $request->isAdmin,
+            "image" => $image
+        ]);
+        return redirect(Route('user.index'));
+    }
+
+    public function edit(User $user){
+        return view('user.edit')->with('user', $user);
+    }
+
+    public function destroy(User $user){
+        $user->delete();
+        return redirect(Route('user.index'));
+    }
+
+    /*------APIs------*/
 
     function storeApi(Request $request){
         $request->validate([
@@ -94,28 +114,6 @@ class UserController extends Controller
         ]);
     }
 
-    public function edit(User $user)
-    {
-        return view('user.edit')->with('user', $user);
-    }
-
-
-    public function update(Request $request, User $user){
-        if($request->image) {
-            $image = $request->file('image')->store('/public/product');
-            $image = str_replace('public/', 'storage/', $image);
-        }else {
-            $image  = "storage/imageDefault.jpg";
-        }
-
-        $user->update([
-            "isAdmin" => $request->isAdmin,
-            "image" => $image
-        ]);
-        return redirect(Route('user.index'));
-    }
-
-
     function updateApi (User $user, Request $request){
         if($request->image) {
             $image = $request->file('image')->store('/public/product');
@@ -131,18 +129,10 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-    public function destroy(User $user)
-    {
-        $user->delete();
-        return redirect(Route('user.index'));
-    }
-
-    public function destroyApi(User $user)
-    {
+    public function destroyApi(User $user){
         $user->delete();
         return response()->json($user);
     }
-
 
     function login(Request $request){
 
