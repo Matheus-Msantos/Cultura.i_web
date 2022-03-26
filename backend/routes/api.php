@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\ProducerController;
 
 
 
@@ -57,3 +58,9 @@ Route::post('/address', [AddressController::class, 'storeApi']);
 Route::get('/address/{address}', [AddressController::class, 'show']);
 Route::put('/address/{address}', [AddressController::class, 'updateApi']);
 Route::delete('/address/{address}', [AddressController::class, 'destroyApi']);
+
+/*-- Route Producer --*/
+Route::get('/producer', [ProducerController::class, 'indexApi']);
+Route::post('/producer', [ProducerController::class, 'storeApi']);
+Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
+Route::put('/producer/{producer}', [ProducerController::class, 'updateApi']);
