@@ -22,10 +22,6 @@ class ProductController extends Controller {
         return view( 'product.create' )->with( [ 'categories' => Category::all(), 'addresses' => Address::all() ] );
     }
 
-    public function show( Product $product ) {
-        return response()->json( Product::with( 'category', 'address' )->where( 'id', $product->id )->get() );
-    }
-
     public function edit( Product $product ) {
         return view( 'product.edit' )->with( [ 'product' => $product, 'categories' => Category::all(), 'addresses' => Address::all() ] );
     }
@@ -65,7 +61,7 @@ class ProductController extends Controller {
     /*------APIs------*/
 
     public function indexApi() {
-        return response()->json( Product::with( 'category', 'address' )->get() );
+        return response()->json( Product::with( 'category', 'address', 'producer' )->get() );
     }
 
     public function store( Request $request ) {
@@ -90,6 +86,10 @@ class ProductController extends Controller {
         session()->flash( 'success', 'Evento cadastrado com sucesso!' );
         return redirect( Route( 'product.index' ) );
 
+    }
+
+    public function show( Product $product ) {
+        return response()->json( Product::with( 'category', 'address', 'producer' )->where( 'id', $product->id )->get() );
     }
 
     public function storeApi( Request $request ) {
