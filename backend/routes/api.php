@@ -72,3 +72,9 @@ Route::get('/advertiser', [AdvertiserController::class, 'indexApi']);
 Route::post('/advertiser', [AdvertiserController::class, 'storeApi']);
 Route::get('/advertiser/{advertiser}', [AdvertiserController::class, 'showApi']);
 Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);
+
+/*-- Route Advert --*/
+Route::get('/advert', [AdvertController::class, 'indexApi']);
+Route::post('/advert', [AdvertController::class, 'storeApi']);
+Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
+Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);

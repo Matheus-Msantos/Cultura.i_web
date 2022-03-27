@@ -12,6 +12,6 @@ class Advertiser extends Model {
     protected $fillable = [ 'id', 'nome', 'email', 'cnpj', 'password', 'is_advertiser' ];
 
     public function advert() {
-        return $this->belongsTo( Advert::class );
+        return $this->hasMany( Advert::class );
     }
 }
