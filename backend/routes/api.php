@@ -10,6 +10,8 @@ use App\Http\Controllers\CartsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProducerController;
+use App\Http\Controllers\AdvertiserController;
+use App\Http\Controllers\AdvertController;
 
 
 
@@ -64,3 +66,9 @@ Route::get('/producer', [ProducerController::class, 'indexApi']);
 Route::post('/producer', [ProducerController::class, 'storeApi']);
 Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
 Route::put('/producer/{producer}', [ProducerController::class, 'updateApi']);
+
+/*-- Route Advertiser --*/
+Route::get('/advertiser', [AdvertiserController::class, 'indexApi']);
+Route::post('/advertiser', [AdvertiserController::class, 'storeApi']);
+Route::get('/advertiser/{advertiser}', [AdvertiserController::class, 'showApi']);
+Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);
