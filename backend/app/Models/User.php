@@ -9,10 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Order;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
-
 
     protected $fillable = [
         'name',
@@ -32,6 +30,6 @@ class User extends Authenticatable
     ];
 
     public function Order() {
-        return $this->hasMany(Order::class);
+        return $this->hasMany( Order::class );
     }
 }
