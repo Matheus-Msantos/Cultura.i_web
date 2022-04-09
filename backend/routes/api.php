@@ -29,7 +29,6 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::get('/order/item/{orderItem}', [OrderItemController::class, 'orderItem']);
 
     Route::get('/user/show', [UserController::class, 'show']);
-    Route::get('/product', [ProductController::class, 'indexApi']);
 
     Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
     Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
@@ -43,6 +42,7 @@ Route::delete('/user/{user}', [UserController::class, 'destroyApi']);
 Route::get('/user/logout', [UserController::class, 'logout']);
 
 /*-- Route Product --*/
+Route::get('/product', [ProductController::class, 'indexApi']);
 Route::post('/product', [ProductController::class, 'storeApi']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
 Route::put('/product/{product}', [ProductController::class, 'updateApi']);
