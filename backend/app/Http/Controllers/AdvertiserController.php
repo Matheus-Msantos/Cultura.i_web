@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\Advertiser;
 use App\Models\Advert;
+use Illuminate\Support\Facades\Hash;
 
 class AdvertiserController extends Controller {
 
@@ -30,28 +30,5 @@ class AdvertiserController extends Controller {
     public function updateApi( Request $request, Advertiser $advertiser ) {
         $advertiser->update( $request->all() );
         return response()->json( $advertiser );
-    }
-
-    function login( Request $request ) {
-
-        $request->validate( [
-            'email' => 'required',
-            'password' => 'required'
-        ] );
-
-        $advertiser = Advertiser::where ( 'email', $request->email )->first();
-
-        //Dados inválidos
-        if ( !$advertiser || !Hash::check ( $request->password, $advertiser->password ) ) {
-            return response()->json( [
-                'error'=> 'Credenciais invalidas'
-            ] );
-        }
-
-        return response()->json( [
-            'advertiser'=> $advertiser,
-            'token'=> $advertiser->createToken( $request->email )-> plainTextToken
-        ] );
-
     }
 }

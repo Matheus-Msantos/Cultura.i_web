@@ -38,35 +38,8 @@ class ProducerController extends Controller {
         return response()->json( $producer );
     }
 
-    public function show() {
-        return response()->json( Auth()->producer() );
-    }
-
     public function updateApi( Request $request, Producer $producer ) {
         $producer->update( $request->all() );
         return response()->json( $producer );
-    }
-
-    function login( Request $request ) {
-
-        $request->validate( [
-            'email' => 'required',
-            'password' => 'required'
-        ] );
-
-        $producer = Producer::where ( 'email', $request->email )->first();
-
-        //Dados inválidos
-        if ( !$producer || !Hash::check ( $request->password, $producer->password ) ) {
-            return response()->json( [
-                'error'=> 'Credenciais invalidas'
-            ] );
-        }
-
-        return response()->json( [
-            'producer'=> $producer,
-            'token'=> $producer->createToken( $request->email )-> plainTextToken
-        ] );
-
     }
 }

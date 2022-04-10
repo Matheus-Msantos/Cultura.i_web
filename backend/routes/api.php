@@ -29,7 +29,6 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::get('/order/item/{orderItem}', [OrderItemController::class, 'orderItem']);
 
     Route::get('/user/show', [UserController::class, 'show']);
-    Route::get('/product', [ProductController::class, 'indexApi']);
 
     Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
     Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
@@ -43,6 +42,7 @@ Route::delete('/user/{user}', [UserController::class, 'destroyApi']);
 Route::get('/user/logout', [UserController::class, 'logout']);
 
 /*-- Route Product --*/
+Route::get('/product', [ProductController::class, 'indexApi']);
 Route::post('/product', [ProductController::class, 'storeApi']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
 Route::put('/product/{product}', [ProductController::class, 'updateApi']);
@@ -67,17 +67,17 @@ Route::delete('/address/{address}', [AddressController::class, 'destroyApi']);
 /*-- Route Producer --*/
 Route::get('/producer', [ProducerController::class, 'indexApi']);
 Route::post('/producer', [ProducerController::class, 'storeApi']);
+Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
 Route::put('/producer/{producer}', [ProducerController::class, 'updateApi']);
-Route::post('/producer/login', [ProducerController::class, 'login']);
 
 /*-- Route Advertiser --*/
 Route::get('/advertiser', [AdvertiserController::class, 'indexApi']);
 Route::post('/advertiser', [AdvertiserController::class, 'storeApi']);
 Route::get('/advertiser/{advertiser}', [AdvertiserController::class, 'showApi']);
 Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);
-Route::post('/advertiser/login', [AdvertiserController::class, 'login']);
 
 /*-- Route Advert --*/
 Route::get('/advert', [AdvertController::class, 'indexApi']);
 Route::post('/advert', [AdvertController::class, 'storeApi']);
+Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
 Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);
