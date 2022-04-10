@@ -13,4 +13,4 @@
 - Para gerar uma chave rode o comando `php artisan key:generate`
 - `php artisan storage:link` para criar um atalho do diretório storage
 - `php artisan serve` para iniciar o servidor
->>>>>>> a4bee071e3dafa113de78f9e2afeaba0d07e05e5
+
