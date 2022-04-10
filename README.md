@@ -1,11 +1,16 @@
-# Cultura.i_web - Sistema para Internet (5°semestre)
-Aplica empreendedorismo, concebendo as bases de uma startup e desenvolvendo um produto
-mínimo viável (MVP). Desenvolve sistema para web, utilizando conceitos e recursos de segurança,
-usabilidade, acessibilidade, armazenamento em banco de dados, componentes modulares e
-interfaces ricas, tendo como produto fnal um sistema funcional tanto do ponto de vista do usuário
-quanto do desenvolvedor.
 
-**Objetivo:**
- Os objetivos principais propostos para este Projeto Integrador são:
-Projetar, planejar, prototipar, desenvolver, testar e apresentar um sistema web, apoiado, considerando o foco de um empreendimento que possa vir a ser
-implementado como um negócio profssional.
+# Cultura.i_web
+
+## Instalando o Laravel
+
+### Requisito 
+- [Node.js](https://nodejs.org/en/) v10 ou superior deve ser instalado.
+- [Composer](https://getcomposer.org/) para executar o Laravel
+- [PHP](https://www.php.net/downloads.php) para exucutar os comando do Laravel
+
+### Rodando o projeto
+- Copia o arquivo `.env.exemple`, cole e muda para `.env`
+- Para gerar uma chave rode o comando `php artisan key:generate`
+- `php artisan storage:link` para criar um atalho do diretório storage
+- `php artisan serve` para iniciar o servidor
+
