@@ -43,8 +43,8 @@ Route::get('/user/logout', [UserController::class, 'logout']);
 
 /*-- Route Product --*/
 Route::get('/product', [ProductController::class, 'indexApi']);
-Route::post('/product', [ProductController::class, 'storeApi']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
+Route::post('/product', [ProductController::class, 'storeApi']);
 Route::put('/product/{product}', [ProductController::class, 'updateApi']);
 Route::delete('/product/{product}', [ProductController::class, 'destroyApi']);
 Route::get('/product/category/{category}', [ProductController::class, 'category']);
