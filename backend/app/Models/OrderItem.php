@@ -10,7 +10,7 @@ use App\Models\Order;
 class OrderItem extends Model {
     use HasFactory;
 
-    protected $fillable = [ 'order_id', 'product_id', 'quantity', 'value' ];
+    protected $fillable = [ 'user_id', 'product_id', 'quantity', 'value' ];
 
     public function product() {
 
@@ -18,8 +18,8 @@ class OrderItem extends Model {
 
     }
 
-    public function order() {
-        return $this->belongsTo( Order::class );
+    public function user() {
+        return $this->belongsTo( User::class );
     }
 
 }

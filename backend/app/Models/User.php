@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Advert;
 
 class User extends Authenticatable {
@@ -34,7 +34,7 @@ class User extends Authenticatable {
     ];
 
     public function Order() {
-        return $this->hasMany( Order::class );
+        return $this->hasMany( OrderItem::class );
     }
 
     public function Advert() {

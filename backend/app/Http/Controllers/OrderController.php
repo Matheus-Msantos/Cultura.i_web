@@ -8,32 +8,6 @@ use App\Models\Order;
 use App\Models\OrderItem;
 
 class OrderController extends Controller {
-    public function add( Request $request ) {
-        $cart = Cart::where( 'user_id', '=', Auth()->user()->id )->get();
-
-        $order = Order::create( [
-            'user_id' => Auth()->user()->id
-        ] );
-
-        foreach ( $cart as $item ) {
-            OrderItem::create( [
-                'order_id' => $order->id,
-                'product_id' => $item->product_id,
-                'quantity' => $item->quantity,
-                'value' => $item->products()->price * $item->quantity,
-            ] );
-            $item->delete();
-        }
-
-        $order::with( 'user' )->where( 'user_id', '=', Auth()->user()->id )->get();
-        return response()->json( $order );
-
-    }
-
-    public function indexApi() {
-        $order = Order::with( 'user', 'orderItem' )->where( 'user_id', '=', Auth()->user()->id )->get();
-        return response()->json( $order );
-    }
 
     public function index() {
         return view( 'order.index' )->with( 'orders', Order::all() );

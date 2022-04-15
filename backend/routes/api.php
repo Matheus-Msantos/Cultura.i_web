@@ -22,10 +22,10 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::get('/cart/add/{product}', [CartsController::class, 'add']);
     Route::get('/cart/remove/{product}', [CartsController::class, 'remove']);
     Route::get('/cart', [CartsController::class, 'index']);
-    Route::post('/order/add', [OrderController::class, 'add']);
-    Route::get('/order', [OrderController::class, 'indexApi']);
 
-    Route::get('/order/item', [OrderItemController::class, 'order']);
+    Route::post('/order/add', [OrderItemController::class, 'add']);
+    Route::get('/order', [OrderItemController::class, 'indexApi']);
+    Route::get('/order/all', [OrderItemController::class, 'order']);
     Route::get('/order/item/{orderItem}', [OrderItemController::class, 'orderItem']);
 
     Route::get('/user/show', [UserController::class, 'show']);
