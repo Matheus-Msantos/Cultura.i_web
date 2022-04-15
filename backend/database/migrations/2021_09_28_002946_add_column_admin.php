@@ -14,7 +14,9 @@ class AddColumnAdmin extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('isAdmin')->default(0);
+            $table->boolean('is_Admin')->default(0);
+            $table->boolean('is_Producer')->default(0);
+            $table->boolean('is_Advertiser')->default(0);
         });
     }
 
@@ -26,7 +28,9 @@ class AddColumnAdmin extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('isAdmin');
+            $table->dropColumn('is_Admin');
+            $table->dropColumn('is_Producer');
+            $table->dropColumn('is_Advertiser');
         });
     }
 }

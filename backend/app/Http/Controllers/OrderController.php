@@ -7,54 +7,45 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 
-class OrderController extends Controller
-{
-    public function add(Request $request) {
-        $cart = Cart::where('user_id','=', Auth()->user()->id)->get();
+class OrderController extends Controller {
+    public function add( Request $request ) {
+        $cart = Cart::where( 'user_id', '=', Auth()->user()->id )->get();
 
-        $order = Order::create([
-            'user_id' => Auth()->user()->id,
-            'status' => 'Processando',
-            'cc_number' => substr($request->cc_number, -4),
-        ]);
+        $order = Order::create( [
+            'user_id' => Auth()->user()->id
+        ] );
 
-
-        foreach($cart as $item){
-            OrderItem::create([
-            'order_id' => $order->id,
-            'product_id' => $item->product_id,
-            'quantity' => $item->quantity,
-            'price' => $item->products()->price * $item->quantity,
-            ]);
+        foreach ( $cart as $item ) {
+            OrderItem::create( [
+                'order_id' => $order->id,
+                'product_id' => $item->product_id,
+                'quantity' => $item->quantity,
+                'value' => $item->products()->price * $item->quantity,
+            ] );
             $item->delete();
         }
 
-        $order::with('user')->where('user_id','=', Auth()->user()->id)->get();
-        return response()->json($order);
+        $order::with( 'user' )->where( 'user_id', '=', Auth()->user()->id )->get();
+        return response()->json( $order );
 
     }
 
     public function indexApi() {
-        $order = Order::with('user', 'orderItem')->where('user_id','=', Auth()->user()->id)->get();
-        return response()->json($order);
-    }
-
-    public function orderItem() {
-
-        return response()->json(OrderItem::with('order', 'products')->get());
+        $order = Order::with( 'user', 'orderItem' )->where( 'user_id', '=', Auth()->user()->id )->get();
+        return response()->json( $order );
     }
 
     public function index() {
-        return view('order.index')->with('orders', Order::all());
+        return view( 'order.index' )->with( 'orders', Order::all() );
     }
 
-    public function edit(Order $order) {
-        return view('order.edit')->with('order', $order);
+    public function edit( Order $order ) {
+        return view( 'order.edit' )->with( 'order', $order );
     }
 
-    public function update(Request $request, Order $order){
-        $order->update($request->all());
-        session()->flash('success', 'Pedido atualizado com sucesso!');
-        return redirect(Route('order.index'));
+    public function update( Request $request, Order $order ) {
+        $order->update( $request->all() );
+        session()->flash( 'success', 'Pedido atualizado com sucesso!' );
+        return redirect( Route( 'order.index' ) );
     }
 }

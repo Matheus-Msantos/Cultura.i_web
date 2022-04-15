@@ -9,7 +9,7 @@ use App\Models\Advertiser;
 class AdvertController extends Controller {
 
     public function indexApi() {
-        return response()->json( Advert::with( 'advertiser' )->get() );
+        return response()->json( Advert::with( 'user' )->get() );
     }
 
     public function storeApi( Request $request ) {
@@ -23,13 +23,13 @@ class AdvertController extends Controller {
 
         $advert = Advert::create( [
             'image' => $image,
-            'advertiser_id' => $request->advertiser_id
+            'user_id' => Auth()->user()->id
         ] );
 
         return response()->json( $advert );
     }
 
-    public function showApi(Advert $advert) {
+    public function showApi( Advert $advert ) {
         return response()->json( $advert );
     }
 

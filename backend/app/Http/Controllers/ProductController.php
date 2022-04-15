@@ -61,10 +61,14 @@ class ProductController extends Controller {
     /*------APIs------*/
 
     public function indexApi() {
-        return response()->json( Product::with( 'category', 'address', 'producer' )->get() );
+        return response()->json( Product::with( 'category', 'address', 'user' )->get() );
     }
 
-    public function store( Request $request ) {
+    public function show( Product $product ) {
+        return response()->json( Product::with( 'category', 'address' )->where( 'id', $product->id )->get() );
+    }
+
+    public function storeApi( Request $request ) {
         if ( $request->image ) {
             $image = $request->file( 'image' )->store( '/public/product' );
             $image = str_replace( 'public/', 'storage/', $image );
@@ -72,7 +76,7 @@ class ProductController extends Controller {
             $image  = 'storage/imageDefault.jpg';
         }
 
-        Product::create( [
+        $product = Product::create( [
             'name' => $request->name,
             'description' => $request->description,
             'time' => $request->time,
@@ -81,20 +85,11 @@ class ProductController extends Controller {
             'category_id' => $request->category_id,
             'price' => $request->price,
             'address_id' => $request->address_id,
-            'image' => $image
+            'image' => $image,
+            'user_id' => Auth()->user()->id
         ] );
-        session()->flash( 'success', 'Evento cadastrado com sucesso!' );
-        return redirect( Route( 'product.index' ) );
-
-    }
-
-    public function show( Product $product ) {
-        return response()->json( Product::with( 'category', 'address', 'producer' )->where( 'id', $product->id )->get() );
-    }
-
-    public function storeApi( Request $request ) {
-        $product = Product::create( $request->all() );
         return response()->json( $product );
+
     }
 
     public function updateApi( Request $request, Product $product ) {

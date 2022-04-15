@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Advertiser;
+use App\Models\User;
 
 class Advert extends Model {
     use HasFactory;
 
-    protected $fillable = [ 'id', 'image', 'advertiser_id' ];
+    protected $fillable = [ 'id', 'image', 'user_id' ];
 
-    public function advertiser() {
-        return $this->belongsTo( Advertiser::class );
+    public function user() {
+        return $this->belongsTo( User::class );
     }
 }

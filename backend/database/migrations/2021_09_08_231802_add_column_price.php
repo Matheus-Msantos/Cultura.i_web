@@ -10,15 +10,14 @@ class AddColumnPrice extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('price');
+            $table->decimal('price', 9,2);
         });
     }
-
 
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropIfExists('price');
+            $table->dropColumn('price');
         });
     }
 }

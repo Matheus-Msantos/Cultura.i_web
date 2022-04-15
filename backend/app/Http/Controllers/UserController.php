@@ -6,155 +6,174 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+class UserController extends Controller {
 
-class UserController extends Controller
-{
-
-    public function index(){
-        return view('user.index')->with('users', User::all());
+    public function index() {
+        return view( 'user.index' )->with( 'users', User::all() );
     }
 
-    public function create(){
-        return view('user.create');
+    public function create() {
+        return view( 'user.create' );
     }
 
-    public function show(){
-        return response()->json(Auth()->user());
-    }
-
-    function store(Request $request){
-        $request->validate([
+    function store( Request $request ) {
+        $request->validate( [
             'email' => 'required|email|unique:users',
+            'cpf/cnpj' => 'required|unique:users',
             'name'=> 'required|max:255',
             'password' => 'required|min:8',
-        ]);
+        ] );
 
-        if($request->image) {
-            $image = $request->file('image')->store('/public/user');
-            $image = str_replace('public/', 'storage/', $image);
-        }else {
-            $image  = "storage/imageDefault.jpg";
+        if ( $request->image ) {
+            $image = $request->file( 'image' )->store( '/public/user' );
+            $image = str_replace( 'public/', 'storage/', $image );
+        } else {
+            $image  = 'storage/imageDefault.jpg';
         }
 
-        if($request->isAdmin) {
-            $isAdmin = $request->isAdmin;
-        }else {
-            $isAdmin = 0;
+        if ( $request->is_Admin ) {
+            $is_Admin = $request->is_Admin;
+        } else {
+            $is_Admin = 0;
         }
 
-        $user = User::create([
+        if ( $request->is_Producer ) {
+            $is_Producer = $request->is_Producer;
+        } else {
+            $is_Producer = 0;
+        }
+
+        if ( $request->is_Advertiser ) {
+            $is_Advertiser = $request->is_Advertiser;
+        } else {
+            $is_Advertiser = 0;
+        }
+
+        $user = User::create( [
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
             'image' => $image,
-            'isAdmin' => $isAdmin
-        ]);
+            'is_Admin' => $is_Admin,
+            'is_Producer' => $is_Producer,
+            'is_Advertiser' => $is_Advertiser
+        ] );
 
-        return redirect(Route('user.index'));
+        return redirect( Route( 'user.index' ) );
     }
 
-    public function update(Request $request, User $user){
-        if($request->image) {
-            $image = $request->file('image')->store('/public/product');
-            $image = str_replace('public/', 'storage/', $image);
-        }else {
-            $image  = "storage/imageDefault.jpg";
+    public function update( Request $request, User $user ) {
+        if ( $request->image ) {
+            $image = $request->file( 'image' )->store( '/public/product' );
+            $image = str_replace( 'public/', 'storage/', $image );
+        } else {
+            $image  = 'storage/imageDefault.jpg';
         }
 
-        $user->update([
-            "isAdmin" => $request->isAdmin,
-            "image" => $image
-        ]);
-        return redirect(Route('user.index'));
+        $user->update( [
+            'isAdmin' => $request->isAdmin,
+            'image' => $image
+        ] );
+        return redirect( Route( 'user.index' ) );
     }
 
-    public function edit(User $user){
-        return view('user.edit')->with('user', $user);
+    public function edit( User $user ) {
+        return view( 'user.edit' )->with( 'user', $user );
     }
 
-    public function destroy(User $user){
+    public function destroy( User $user ) {
         $user->delete();
-        return redirect(Route('user.index'));
+        return redirect( Route( 'user.index' ) );
     }
 
     /*------APIs------*/
 
-    function storeApi(Request $request){
-        $request->validate([
+    function storeApi( Request $request ) {
+        $request->validate( [
             'email' => 'required|email|unique:users',
+            'cpf_cnpj' => 'required|unique:users',
             'name'=> 'required|max:255',
             'password' => 'required|min:8',
-        ]);
+        ] );
 
-        if($request->image) {
-            $image = $request->file('image')->store('/public/user');
-            $image = str_replace('public/', 'storage/', $image);
-        }else {
-            $image  = "storage/imageDefault.jpg";
+        if ( $request->image ) {
+            $image = $request->file( 'image' )->store( '/public/user' );
+            $image = str_replace( 'public/', 'storage/', $image );
+        } else {
+            $image  = 'storage/imageDefault.jpg';
         }
 
-        if($request->isAdmin) {
-            $isAdmin = $request->isAdmin;
-        }else {
-            $isAdmin = 0;
+        if ( $request->is_Admin ) {
+            $is_Admin = $request->is_Admin;
+        } else {
+            $is_Admin = 0;
         }
 
-        $user = User::create([
+        if ( $request->is_Producer ) {
+            $is_Producer = $request->is_Producer;
+        } else {
+            $is_Producer = 0;
+        }
+
+        if ( $request->is_Advertiser ) {
+            $is_Advertiser = $request->is_Advertiser;
+        } else {
+            $is_Advertiser = 0;
+        }
+
+        $user = User::create( [
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'cpf_cnpj' => $request->cpf_cnpj,
+            'password' => Hash::make( $request->password ),
             'image' => $image,
-            'isAdmin' => $isAdmin
-        ]);
+            'is_Admin' => $is_Admin,
+            'is_Producer' => $is_Producer,
+            'is_Advertiser' => $is_Advertiser
+        ] );
 
         return response()->json( [
             'user'=> $user,
-            'token'=> $user->createToken ($request->email)-> plainTextToken
+            'token'=> $user->createToken ( $request->email )-> plainTextToken
 
-        ]);
+        ] );
     }
 
-    function updateApi (User $user, Request $request){
-        if($request->image) {
-            $image = $request->file('image')->store('/public/product');
-            $image = str_replace('public/', 'storage/', $image);
-        }else {
-            $image  = "storage/imageDefault.jpg";
-        }
-
-        $user->update([
-            "name" => $request->name
-        ]);
-
-        return response()->json($user);
+    public function show() {
+        return response()->json( Auth()->user() );
     }
 
-    public function destroyApi(User $user){
-        $user->delete();
-        return response()->json($user);
+    function updateApi ( User $user, Request $request ) {
+        $user->update( $request->all() );
+
+        return response()->json( $user );
     }
 
-    function login(Request $request){
+    public function destroyApi() {
+        $user = Auth()->user()->delete();
+        return response()->json( $user );
+    }
 
-        $request->validate([
+    function login( Request $request ) {
+
+        $request->validate( [
             'email' => 'required',
             'password' => 'required'
-        ]);
+        ] );
 
-       $user = User::where ('email', $request->email) -> first();
+        $user = User::where ( 'email', $request->email ) -> first();
 
+        //Dados inválidos
+        if ( !$user || !Hash::check ( $request->password, $user->password ) ) {
+            return response()->json( [
+                'error'=> 'Credenciais invalidas'
+            ] );
+        }
 
-       //Dados inválidos
-       if(!$user || !Hash::check ($request->password, $user->password)){
-           return response()->json([
-               'error'=> 'Credenciais invalidas'
-           ]);
-       }
-
-       return response()->json( [
+        return response()->json( [
             'user'=> $user,
-            'token'=> $user->createToken ($request->email)-> plainTextToken
-        ]);
+            'token'=> $user->createToken ( $request->email )-> plainTextToken
+        ] );
 
     }
 }

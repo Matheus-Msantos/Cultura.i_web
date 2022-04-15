@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRelationProductAndCategory extends Migration
+class AddRelationUserAndProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddRelationProductAndCategory extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->integer('category_id');
+        Schema::table('Products', function (Blueprint $table) {
+            $table->integer('user_id');
         });
     }
 
@@ -25,8 +25,8 @@ class AddRelationProductAndCategory extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('category_id');
+        Schema::table('Products', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 }
