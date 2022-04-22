@@ -9,8 +9,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
-use App\Http\Controllers\ProducerController;
-use App\Http\Controllers\AdvertiserController;
 use App\Http\Controllers\AdvertController;
 
 
@@ -33,7 +31,7 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::delete('/user', [UserController::class, 'destroyApi']);
 
     Route::post('/advert', [AdvertController::class, 'storeApi']);
-Route::post('/product', [ProductController::class, 'storeApi']);
+    Route::post('/product', [ProductController::class, 'storeApi']);
 
 
     Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);

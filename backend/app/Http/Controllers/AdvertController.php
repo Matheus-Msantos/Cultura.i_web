@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Advert;
 use App\Models\Advertiser;
+use Illuminate\Support\Facades\Storage;
 
 class AdvertController extends Controller {
 
@@ -15,10 +16,10 @@ class AdvertController extends Controller {
     public function storeApi( Request $request ) {
 
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/producer' );
+            $image = $request->file( 'image' )->store( '/public/advert' );
             $image = str_replace( 'public/', 'storage/', $image );
         } else {
-            $image = 'storage/imageDefault.png';
+            $image  = 'storage/imageDefault.jpg';
         }
 
         $advert = Advert::create( [

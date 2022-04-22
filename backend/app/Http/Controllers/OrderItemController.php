@@ -29,7 +29,7 @@ class OrderItemController extends Controller {
     }
 
     public function orderItem ( OrderItem $orderItem ) {
-        $item = $orderItem::with( 'user', 'product' )->where( 'user_id', '=', Auth()->user()->id )->get();
+        $item = $orderItem::with( 'user', 'product' )->where( 'user_id', '=', Auth()->user()->id )->first();
         return response()->json( $item );
 
     }
