@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const postProduct = () => {
-    const [postProduct, setPostProduct] = useState([requestPostProduct]);
+function PostCategory() {
 
-    const requestPostHeaders = {
-        method: 'POST',
-        headers:   { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            name: name,
-        }),
+    const body = {
+        name: 'teste react'
     }
-    
-    const requestPostProduct = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/category/', requestPostHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Enviado com sucesso: ${data}`);
+
+    const handlePost = () => {
+        BaseUrl
+            .post('/api/category', body)
+            .then((res) => {
+                console.log(res.data)
             })
             .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
+                console.log('Ops! Ocorreu um erro ao cadastrar a categoria: ' + err);
+            });
     }
+
+    return (
+        <button onClick={() => handlePost()}>Cadastrar</button>
+    );
 }
+
+export default PostCategory;

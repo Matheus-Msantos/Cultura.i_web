@@ -1,35 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext, UserArray } from "../../Auth";
+import { BaseUrl } from "../baseUrl";
 
-export const postProduct = () => {
-    const [postProduct, setPostProduct] = useState([requestPostProduct]);
 
-    const requestPostHeaders = {
-        method: 'POST',
-        headers:   { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            name: name,
-            description: description,
-            time: time,
-            date: date,
-            classification: classification,
-            category_id: category_id,
-            address_id: address_id,
-            price: price,
-            image: image,
-            producer_id: producer_id,
-        }),
+
+function PostProduct() {
+    const token = useContext(AuthContext);
+    const user = useContext(UserArray);
+
+    if (user) {
+        const body = {
+            name: 'a',
+            description: 'a',
+            time: 'a',
+            date: 'a',
+            classification: 'a',
+            category_id: 1,
+            address_id: 1,
+            price: 1,
+            user_id: user[0].id
+        }
+
+        const handlePost = () => {
+            BaseUrl
+                .post('/api/product', body)
+                .then((res) => console.log(res.data))
+                .catch((err) => {
+                    console.error('Ops! ocorreu um erro' + err);
+                })
+        }
+
+        return (
+            <>
+                <button onClick={() => handlePost()}>Cadastrar</button>
+
+            </>
+        );
     }
-    
-    const requestPostProduct = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/product/', requestPostHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Enviado com sucesso: ${data}`);
-            })
-            .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
-    }
+
+
+
 }
+
+export default PostProduct;

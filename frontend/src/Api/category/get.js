@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const getCategory = () => {
-    const [getCategory, setGetgetCategory] = useState([requestGetCategory]);
-    
-    const requestGetHeaders = {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
-    };
+function GetCategory() {
 
-    const requestGetCategory = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/category/', requestGetHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Consulta realizada: ${data}`);
+    const handleGet = () => {
+        BaseUrl
+            .get('/api/category')
+            .then((res) => {
+                console.log(res.data);
             })
             .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
+                console.log('Ops! Ocorreu um erro ao mostar a categoria: ' + err);
+            });
     }
+
+    return (
+        <button onClick={() => { handleGet() }}>Mostar todos</button>
+    );
 }
+
+export default GetCategory

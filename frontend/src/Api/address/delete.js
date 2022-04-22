@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const deleteAddress = () => {
-    const [deleteAddress, setDeleteAddress] = useState([requestDeleteAddress]);
+function DeleteAddress() {
 
-    const requestDeleteHeaders = {
-        method: 'DELETE',
-        headers:   { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            id:id,
-        }),
-    }
-    
-    const requestDeleteAddress = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/address/', requestDeleteHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Deletado com sucesso: ${data}`);
+    const handleDelete = () => {
+        BaseUrl
+            .delete('/api/address/3', '')
+            .then((res) => {
+                console.log(res.data);
             })
             .catch((err) => {
-                console.log(`Erro ao deletar: ${err}`);
+                console.log('Ops! Ocorreu um erro ao deletar o endereço: ' + err);
             })
-        }, []);
     }
+
+    return (
+        <>
+            <button onClick={() => handleDelete()}>Excluir</button>
+        </>
+    );
 }
+
+export default DeleteAddress;

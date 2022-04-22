@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const getAdvert = () => {
-    const [getAdvert, setGetAdvert] = useState([requestGetAdvert]);
-    
-    const requestGetHeaders = {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
-    };
+function GetAdvert() {
 
-    const requestGetAdvert = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/advert/', requestGetHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Consulta realizada: ${data}`);
+    const handleGet = () => {
+        BaseUrl
+            .get('/api/advert')
+            .then((res) => {
+                console.log(res.data);
             })
             .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
+                console.log('Ops! Ocorreu um erro ao mostar o anuncio: ' + err);
+            });
     }
+
+    return (
+        <button onClick={() => { handleGet() }}>Mostar todos</button>
+    );
 }
+
+export default GetAdvert

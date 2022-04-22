@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const getProduct = () => {
-    const [getProduct, setGetProduct] = useState([requestGetProduct]);
-    
-    const requestGetHeaders = {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'},
-    };
+function GetProduct() {
 
-    const requestGetProduct = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/product/', requestGetHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Consulta realizada: ${data}`);
-            })
+    const handleGet = () => {
+        BaseUrl
+            .get("/api/product")
+            .then((res) => console.log(res.data))
             .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
+                console.error("ops! ocorreu um erro" + err);
+            });
     }
+
+    return (
+        <>
+            <button onClick={() => { handleGet() }}>Mostar Todos</button>
+        </>
+    );
 }
+
+export default GetProduct

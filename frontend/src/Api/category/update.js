@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const updateProduct = () => {
-    const [updateProduct, setupdateProduct] = useState([requestUpdateProduct]);
+function UpdateAddress() {
 
-    const requestUpdateHeaders = {
-        method: 'PUT',
-        headers:   { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            name: name,
-        }),
+    const body = {
+        street: 'teste react 1'
     }
-    
-    const requestUpdateProduct = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/category/', requestUpdateHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Atualizar com sucesso: ${data}`);
+
+    const handleUpdate = () => {
+        BaseUrl
+            .put('/api/address/1', body)
+            .then((res) => {
+                console.log(res.data);
             })
             .catch((err) => {
-                console.log(`Erro ao atualizar: ${err}`);
-            })
-        }, []);
+                console.log('Ops! Ocorreu um erro ao atualizar a categoria: ' + err);
+            });
     }
+
+    return (
+        <>
+            <button onClick={() => handleUpdate()}>Atualizar</button>
+        </>
+    );
 }
+
+export default UpdateAddress;

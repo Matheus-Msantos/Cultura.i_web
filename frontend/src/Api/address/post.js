@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../baseUrl";
 
-export const postAddress = () => {
-    const [postAddress, setPostAddress] = useState([requestPostAddress]);
+function PostAddress() {
 
-    const requestPostHeaders = {
-        method: 'POST',
-        headers:   { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            street: street,
-            district: district,
-            number: number,
-            city: city,
-            state: state,
-            country: country,
-        }),
+    const body = {
+        street: 'teste react',
+        district: 'teste react',
+        number: '200',
+        city: 'teste',
+        state: 'teste',
+        country: 'teste'
     }
-    
-    const requestPostAddress = () => {
-        useEffect( () => {
-            fetch('http://127.0.0.1:8000/api/address/', requestPostHeaders)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(`Enviado com sucesso: ${data}`);
+
+    const handlePost = () => {
+        BaseUrl
+            .post('/api/address', body)
+            .then((res) => {
+                console.log(res.data)
             })
             .catch((err) => {
-                console.log(`Erro ao enviar: ${err}`);
-            })
-        }, []);
+                console.log('Ops! Ocorreu um erro ao cadastrar o enredeço: ' + err);
+            });
     }
+
+    return (
+        <button onClick={() => handlePost()}>Cadastrar</button>
+    );
 }
+
+export default PostAddress;
