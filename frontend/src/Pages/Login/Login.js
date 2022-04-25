@@ -6,18 +6,24 @@ function LoginPage() {
         <div className="div-login">
             <div className="div-img-email-pass">
                 <div className="div-img">
-                    <img className="img" src="https://via.placeholder.com/300.png/09f/fff" />
+                    <img className="img" src="https://via.placeholder.com/400.png/09f/fff" />
                 </div>
                 <div className="div-input-email-pass-info">
                     <div className="div-input-email-pass">
-                        <span className="span-email">Email</span>
-                        <input className="input-email"/>
-                        <span className="span-email">Senha</span>
-                        <input className="input-pass" />
+                        <div className="div-email">
+                            <span className="span-email">Email</span>
+                            <input className="input-email" type="email" />
+                        </div>
+                        <div className="div-pass">
+                            <span className="span-pass">Senha</span>
+                            <input className="input-pass" type="password" />
+                        </div>
                     </div>
                     <div className="div-register-button">
                         <button className="btn-register">CADASTRAR</button>
-                        <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <a className="a-link">Aqui</a></span>
+                        <div className="div-register">
+                            <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <a href="#" className="span-a-link">AQUI</a></span>
+                        </div>
                     </div>
                     <div className="div-announce-events">
                         <button className="btn-announce">QUERO ANUNCIAR</button>
