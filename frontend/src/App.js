@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import CheckoutPage from './Pages/Checkout';
-import HomePage from './Pages/Home';
-import OrderCompletedPage from './Pages/OrderCompleted';
-import ProductPage from './Pages/Product';
-import LoginPage from './Pages/Login';
-import RegisterPage from './Pages/Register';
-import ProfilePage from './Pages/Profile';
-import OrderPage from './Pages/Order';
+import CheckoutPage from './Pages/Checkout/Checkout';
+import HomePage from './Pages/Home/Home';
+import OrderCompletedPage from './Pages/OrderCompleted/OrderCompleted';
+import ProductPage from './Pages/Product/Product';
+import LoginPage from './Pages/Login/Login';
+import RegisterPage from './Pages/Register/Register';
+import ProfilePage from './Pages/Profile/Profile';
+import OrderPage from './Pages/Order/Order';
 
 import AdminProductPage from './Pages/Admin/Product/ListProduct';
 import AdminRegisterProductPage from './Pages/Admin/Product/RegisterProduct';
