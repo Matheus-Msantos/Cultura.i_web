@@ -2,7 +2,7 @@ import React from "react";
 import './Register.scss';
 import imgLogin from "../../image/img-login-user.png";
 
-function LoginPage() {
+function RegisterPage() {
     return (
         <div className="div-register">
             <div className="div-img-email-pass">
@@ -32,4 +32,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default RegisterPage;
