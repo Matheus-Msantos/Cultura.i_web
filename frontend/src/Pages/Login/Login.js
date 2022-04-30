@@ -1,13 +1,13 @@
 import React from "react";
 import './Login.scss';
-import imgLogin from "../../image/img-login-user.png";
+//import imgLogin from "../image/img-login-user.png";
 
 function LoginPage() {
     return (
         <div className="div-login">
             <div className="div-img-email-pass">
                 <div className="div-img">
-                    <img className="img" src={imgLogin} />
+                    <img className="img" src="./image/img-login-user.png" />
                 </div>
                 <form className="form-input-email-pass-info" method="POST" action="#">
                     <div className="div-input-email-pass">
