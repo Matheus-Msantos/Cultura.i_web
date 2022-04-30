@@ -1,11 +1,13 @@
 .div-login {
-    background-color: #01318B;
     width: 99vw;
     height: 98vh;
+    display: flex;
+    background-color: #01318B;
     .div-img-email-pass {
         display: flex;
         width: 924px;
         height: 503px;
+        margin-top: 206px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
@@ -14,6 +16,7 @@
             .img {
                 width: 100%;
                 height: 100%;
+                filter: grayscale(100%);
                 border-radius: 10px 0px 0px 10px;
             }
         }

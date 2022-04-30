@@ -9,7 +9,7 @@ function LoginPage() {
                 <div className="div-img">
                     <img className="img" src={imgLogin} />
                 </div>
-                <form className="form-input-email-pass-info" method="POST">
+                <form className="form-input-email-pass-info" method="POST" action="#">
                     <div className="div-input-email-pass">
                         <div className="div-email">
                             <span className="span-email">Email</span>
@@ -23,7 +23,7 @@ function LoginPage() {
                     <div className="div-register-button">
                         <button className="btn-register">CADASTRAR</button>
                         <div className="div-register">
-                            <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <a href="#" className="span-a-link">AQUI</a></span>
+                            <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <a href="/register" className="span-a-link">AQUI</a></span>
                         </div>
                     </div>
                     <div className="div-announce-events">
