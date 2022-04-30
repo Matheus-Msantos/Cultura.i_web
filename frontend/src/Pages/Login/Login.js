@@ -1,14 +1,15 @@
 import React from "react";
 import './Login.scss';
+import imgLogin from "../../image/img-login-user.png";
 
 function LoginPage() {
     return (
         <div className="div-login">
             <div className="div-img-email-pass">
                 <div className="div-img">
-                    <img className="img" src="https://via.placeholder.com/400.png/09f/fff" />
+                    <img className="img" src={imgLogin} />
                 </div>
-                <div className="div-input-email-pass-info">
+                <form className="form-input-email-pass-info" method="POST">
                     <div className="div-input-email-pass">
                         <div className="div-email">
                             <span className="span-email">Email</span>
@@ -29,7 +30,7 @@ function LoginPage() {
                         <button className="btn-announce">QUERO ANUNCIAR</button>
                         <button className="btn-events">QUERO DIVULGAR EVENTOS</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     );
