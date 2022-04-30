@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 .div-register {
     width: 99vw;
     height: 98vh;
     display: flex;
     background-color: #01318B;
+
     .div-img-email-pass {
         display: flex;
         width: 924px;
@@ -12,6 +15,7 @@
         margin-right: auto;
         border-radius: 10px;
         background-color: #D8D8D8;
+
         .div-img {
             .img {
                 width: 100%;
@@ -20,19 +24,55 @@
                 border-radius: 10px 0px 0px 10px;
             }
         }
-        .form-input-email-pass-info{
+
+        .form-input-email-pass-info {
             display: block;
             width: 100px;
             height: 100px;
-            margin-top: 100px;
-            .div-input-email-pass {
-                margin-left: 96px;  
+            margin-top: 30px;
+
+            .div-cadastro {
+                margin-left: 120px;
+
+                .h1-cadastro {
+                    font-size: 25px;
+                    width: 275px;
+                    text-align: center;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+
+            .div-input-name-email-pass {
+                margin-left: 96px;
+                margin-top: 0px;
+
+                .div-name {
+                    .span-name {
+                        color: #9B9B9B;
+                        font-size: 12px;
+                        margin-left: 10px;
+                        width: 500px;
+                    }
+
+                    .input-nome {
+                        width: 305px;
+                        height: 36px;
+                        border: #9B9B9B 1px solid;
+                        border-radius: 8px;
+                    }
+                }
+
                 .div-email {
+                    margin-top: 8px;
+
                     .span-email {
                         color: #9B9B9B;
                         font-size: 12px;
                         margin-left: 10px;
+                        width: 500px;
+                        display: flex;
                     }
+
                     .input-email {
                         width: 305px;
                         height: 36px;
@@ -40,13 +80,18 @@
                         border-radius: 8px;
                     }
                 }
+
                 .div-pass {
-                    margin-top: 49px;
+                    margin-top: 8px;
+
                     .span-pass {
                         color: #9B9B9B;
                         font-size: 12px;
                         margin-left: 10px;
+                        width: 500px;
+                        display: flex;
                     }
+
                     .input-pass {
                         width: 305px;
                         height: 36px;
@@ -56,9 +101,11 @@
                 }
             }
         }
+
         .div-register-button {
             margin-top: 35px;
             margin-left: 96px;
+
             .btn-register {
                 width: 159px;
                 height: 29px;
@@ -70,26 +117,31 @@
                 cursor: pointer;
                 margin-left: 80px;
             }
-            .div-register{
+
+            .div-register {
                 margin-top: 23px;
                 width: 290px;
                 margin-left: 70px;
                 font-size: 10px;
+
                 .span-register {
                     margin-top: 150px;
                     height: 24px;
+
                     .span-a-link {
                         text-decoration: none;
                     }
                 }
             }
         }
+
         .div-announce-events {
             margin-left: 70px;
             margin-top: 50px;
             display: flex;
             justify-content: space-between;
             width: 400px;
+
             .btn-announce {
                 width: 134px;
                 height: 26px;
@@ -100,6 +152,7 @@
                 border: none;
                 border-radius: 8px;
             }
+
             .btn-events {
                 background-color: #5D63DE;
                 color: #FFFFFF;

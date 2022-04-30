@@ -1,6 +1,6 @@
 import React from "react";
 import './Login.scss';
-import imgLogin from "../../image/img-login-user.png";
+
 import { useState } from "react";
 import { BaseUrl } from "../../Api/baseUrl";
 
@@ -34,7 +34,7 @@ function LoginPage() {
             <div className="div-img-email-pass">
 
                 <div className="div-img">
-                    <img className="img" src={imgLogin} />
+                    <img className="/images/img-login-user" src="./image/img-login-user.png" />
                 </div>
 
                 <form className="form-input-email-pass-info" onSubmit={(e) => {
