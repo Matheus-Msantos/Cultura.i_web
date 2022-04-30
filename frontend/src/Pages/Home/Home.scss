@@ -1,0 +1,9 @@
+.slider {
+    .slick-list {
+        overflow-x: hidden;
+
+        .slick-track {
+            display: flex;
+        }
+    }
+}

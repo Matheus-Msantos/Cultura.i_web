@@ -86,7 +86,7 @@ class ProductController extends Controller {
             'price' => $request->price,
             'address_id' => $request->address_id,
             'image' => $image,
-            'user_id' => $request->user_id
+            'user_id' => Auth()->user()->id
         ] );
         return response()->json( $product );
 
