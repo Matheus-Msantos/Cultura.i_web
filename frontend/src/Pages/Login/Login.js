@@ -21,7 +21,7 @@ function LoginPage() {
                         </div>
                     </div>
                     <div className="div-register-button">
-                        <button className="btn-register">CADASTRAR</button>
+                        <button className="btn-register">LOGIN</button>
                         <div className="div-register">
                             <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <a href="/register" className="span-a-link">AQUI</a></span>
                         </div>
