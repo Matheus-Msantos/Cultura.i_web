@@ -21,7 +21,22 @@ function ProfilePage() {
                     <h1 className="h1-title-personal-data">Dados Pessoais</h1>
                     <img src="#" className="img-Photograph" />
                     <button className="btn-trocar-Photograph">TROCAR FOTO</button>
+                    <div>
+                        <label>Nome Completo</label>
+                        <input type="text" />
+                    </div>
+                    <div>
+                        <label>CPF</label>
+                        <input type="number" />
+                    </div>
+                    <div className="div-birth-date">
+                        <label className="label-title-birth">Nascimento</label>
+                        <input type="number" className="input-day" />
+                        <input type="number" className="input-month" />
+                        <input type="number" className="input-year" />
+                    </div>
                 </div>
+                <hr />
                 <div className="div-account">
                     <h1 className="h1-title-account">Conta</h1>
                     <div className="div-email">
@@ -30,17 +45,17 @@ function ProfilePage() {
                     </div>
                     <div className="div-email-confirm">
                         <label className="label-email-confirm">Confirmar Email</label>
-                        <input type="email" className="input-email-confirm"/>
+                        <input type="email" className="input-email-confirm" />
                     </div>
                     <div className="div-pass">
                         <label className="label-pass">Senha</label>
-                        <input type="password" className="input-pass"/>
+                        <input type="password" className="input-pass" />
                     </div>
                     <div className="div-new-pass">
                         <label className="label-new-pass">Nova Senha</label>
-                        <input type="password" className="input-new-pass"/>
+                        <input type="password" className="input-new-pass" />
                     </div>
-                    <button className="btn-save ">Salvar</button>
+                    <button className="btn-save">Salvar</button>
                 </div>
             </div>
         </div>

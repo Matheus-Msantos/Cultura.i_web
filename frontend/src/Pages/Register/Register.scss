@@ -4,7 +4,7 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-color: #01318B;
+    background: conic-gradient(from 180deg at 50% 50%, rgba(241, 118, 4, 0.19) 0deg, #01318B 125.63deg, rgba(241, 118, 4, 0.19) 360deg);
 
     .div-img-email-pass {
         display: flex;
