@@ -1,6 +1,5 @@
 import React from "react";
 import './Login.scss';
-//import imgLogin from "../image/img-login-user.png";
 
 function LoginPage() {
     return (
