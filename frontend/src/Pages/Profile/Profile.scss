@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.div-profile-page {
+    .h1-title-my-profile {
+        font-size: 22px;
+        margin-top: 132px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        color: #000000;
+        border-bottom: rgba(3, 62, 140, 0.56) solid;
+        //border-color: rgba(3, 62, 140, 0.56);
+        width: 152px;
+        margin-left: 45%;
+        margin-right: 45%;
+    }
+
+    .div-profile-requests {
+        display: flex;
+
+        .div-profile {
+            margin-left: 27px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+            .span-profile {
+                .link-profile {
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #000000;
+                }
+            }
+        }
+
+        .div-requests {
+            margin-left: 11px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+            .span-requests {
+                .link-requests {
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+    .div-personal-data-account{
+        display: flex;
+    }
+}

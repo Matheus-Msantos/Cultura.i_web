@@ -4,10 +4,8 @@ import "./Profile.scss";
 
 function ProfilePage() {
     return (
-        <div>
-            <div className="div-my-profile">
-                <h1 className="h1-my-profile">Meu Perfil</h1>
-            </div>
+        <div className="div-profile-page">
+            <h1 className="h1-title-my-profile">Meu Perfil</h1>
             <div className="div-profile-requests">
                 <div className="div-profile">
                     <span className="span-profile"><Link to={"/profile"} className="link-profile">Perfil</Link></span>
