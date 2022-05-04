@@ -4,10 +4,8 @@ import "./Profile.scss";
 
 function ProfilePage() {
     return (
-        <div>
-            <div className="div-my-profile">
-                <h1 className="h1-my-profile">Meu Perfil</h1>
-            </div>
+        <div className="div-profile-page">
+            <h1 className="h1-title-my-profile">Meu Perfil</h1>
             <div className="div-profile-requests">
                 <div className="div-profile">
                     <span className="span-profile"><Link to={"/profile"} className="link-profile">Perfil</Link></span>
@@ -19,24 +17,43 @@ function ProfilePage() {
             <div className="div-personal-data-account">
                 <div className="div-personal-data">
                     <h1 className="h1-title-personal-data">Dados Pessoais</h1>
-                    <img src="#" className="img-Photograph" />
-                    <button className="btn-trocar-Photograph">TROCAR FOTO</button>
-                    <div>
-                        <label>Nome Completo</label>
-                        <input type="text" />
+                    <div className="div-img-button">
+                        <div className="div-img">
+                            <img src="./image/user-profile.png" className="img-Photograph" />
+                        </div>
+                        <div className="div-button">
+                            <button className="btn-trocar-Photograph">TROCAR FOTO</button>
+                        </div>
                     </div>
-                    <div>
-                        <label>CPF</label>
-                        <input type="number" />
+                    <div className="div-name-input">
+                        <div className="div-label-name">
+                            <label className="label-name">Nome Completo</label>
+                        </div>
+                        <div className="div-input-name">
+                            <input type="text" className="input-name" />
+                        </div>
                     </div>
-                    <div className="div-birth-date">
-                        <label className="label-title-birth">Nascimento</label>
-                        <input type="number" className="input-day" />
-                        <input type="number" className="input-month" />
-                        <input type="number" className="input-year" />
+                    <div className="div-cpf-input">
+                        <div className="div-label-cpf">
+                            <label className="label-cpf">CPF</label>
+                        </div>
+                        <div className="div-input-cpf">
+                            <input type="number" className="input-cpf" />
+                        </div>
+                    </div>
+                    <div className="div-birth-input">
+                        <div className="div-label-birth">
+                            <label className="label-title-birth">Nascimento</label>
+                        </div>
+                        <div className="div-input-date-birth">
+                            <input type="number" className="input-day" />
+                            <input type="number" className="input-month" />
+                            <input type="number" className="input-year" />
+                        </div>
                     </div>
                 </div>
                 <hr />
+
                 <div className="div-account">
                     <h1 className="h1-title-account">Conta</h1>
                     <div className="div-email">

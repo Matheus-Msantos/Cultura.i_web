@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.div-profile-page {
+    .h1-title-my-profile {
+        font-size: 22px;
+        margin-top: 132px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        color: #000000;
+        border-bottom: rgba(3, 62, 140, 0.56) solid;
+        width: 152px;
+        margin-left: 45%;
+        margin-right: 45%;
+    }
+
+    .div-profile-requests {
+        display: flex;
+
+        .div-profile {
+            margin-left: 27px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+            .span-profile {
+                display: flex;
+
+                .link-profile {
+                    margin-left: 63px;
+                    margin-top: 20px;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #000000;
+                    font-weight: bold;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+        }
+
+        .div-requests {
+            margin-left: 11px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+
+            .span-requests {
+                display: flex;
+
+                .link-requests {
+                    margin-left: 58px;
+                    margin-top: 20px;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #000000;
+                    font-weight: bold;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+        }
+    }
+
+    .div-personal-data-account {
+        display: flex;
+        background: #F5F5F6;
+
+        .div-personal-data {
+            .h1-title-personal-data {
+                text-align: center;
+                margin-top: 64px;
+            }
+
+            .div-img-button {
+
+                .div-img {
+                    text-align: center;
+                    margin-top: 58.45px;
+
+                    .img-Photograph {
+                        background-color: #858585;
+                        border-radius: 100%
+                    }
+                }
+
+                .div-button {
+                    text-align: center;
+                    margin-top: 10.63px;
+
+                    .btn-trocar-Photograph {
+                        background-color: #F17604;
+                        border-style: none;
+                        border-radius: 10px;
+                        color: #FFFDFD;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .div-name-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-name {
+                    .label-name {
+                        font-size: 18px;
+                        width: 400px;
+                    }
+                }
+
+                .div-input-name {
+                    .input-name {
+                        width: 408.72px;
+                        border: 1px solid #C4C4C4;
+                        border-radius: 8px;
+                    }
+                }
+            }
+
+            .div-cpf-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-cpf {
+                    .label-cpf {
+                        font-size: 18px;
+                        width: 400px;
+                    }
+                }
+
+                .div-input-cpf {
+                    .input-cpf {
+                        width: 408.72px;
+                        border: 1px solid #C4C4C4;
+                        border-radius: 8px;
+                    }
+                }
+
+                .div-birth-input {
+                    margin-top: 45.68px;
+                    margin-left: 117px;
+
+                    .div-label-birth {
+                        .label-title-birth {
+                            font-size: 18px;
+                            width: 400px;
+                        }
+                    }
+
+                    .div-input-date-birth {
+                        .input-day{
+                        }
+                        .input-month{}
+                        .input-year{}
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: 0px;
+        }
+    }
+}
