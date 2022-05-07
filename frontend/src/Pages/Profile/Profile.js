@@ -56,23 +56,33 @@ function ProfilePage() {
 
                 <div className="div-account">
                     <h1 className="h1-title-account">Conta</h1>
-                    <div className="div-email">
+                    <div className="div-lable-email">
                         <label className="label-email">Email</label>
+                    </div>
+                    <div className="div-input-email">
                         <input type="email" className="input-email" />
                     </div>
-                    <div className="div-email-confirm">
+                    <div className="div-label-email-confirm">
                         <label className="label-email-confirm">Confirmar Email</label>
+                    </div>
+                    <div className="div-input-email-confirm">
                         <input type="email" className="input-email-confirm" />
                     </div>
-                    <div className="div-pass">
+                    <div className="div-label-pass">
                         <label className="label-pass">Senha</label>
+                    </div>
+                    <div className="div-input-pass">
                         <input type="password" className="input-pass" />
                     </div>
-                    <div className="div-new-pass">
+                    <div className="div-label-new-pass">
                         <label className="label-new-pass">Nova Senha</label>
+                    </div>
+                    <div className="div-input-new-pass">
                         <input type="password" className="input-new-pass" />
                     </div>
+
                     <button className="btn-save">Salvar</button>
+
                 </div>
             </div>
         </div>

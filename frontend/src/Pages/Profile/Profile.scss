@@ -15,6 +15,7 @@
 
     .div-profile-requests {
         display: flex;
+        margin-left: 27px;
 
         .div-profile {
             margin-left: 27px;
@@ -64,11 +65,14 @@
         }
     }
 
+    //dados
     .div-personal-data-account {
         display: flex;
         background: #F5F5F6;
 
         .div-personal-data {
+            margin-bottom: 75px;
+
             .h1-title-personal-data {
                 text-align: center;
                 margin-top: 64px;
@@ -108,6 +112,8 @@
                     .label-name {
                         font-size: 18px;
                         width: 400px;
+                        font-weight: bold;
+                        font-family: 'Poppins';
                     }
                 }
 
@@ -116,6 +122,7 @@
                         width: 408.72px;
                         border: 1px solid #C4C4C4;
                         border-radius: 8px;
+                        height: 25px;
                     }
                 }
             }
@@ -128,6 +135,8 @@
                     .label-cpf {
                         font-size: 18px;
                         width: 400px;
+                        font-weight: bold;
+                        font-family: 'Poppins';
                     }
                 }
 
@@ -136,25 +145,48 @@
                         width: 408.72px;
                         border: 1px solid #C4C4C4;
                         border-radius: 8px;
+                        height: 25px;
+                    }
+                }
+            }
+
+            .div-birth-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-birth {
+                    .label-title-birth {
+                        font-size: 18px;
+                        width: 400px;
+                        font-weight: bold;
+                        font-family: 'Poppins';
                     }
                 }
 
-                .div-birth-input {
-                    margin-top: 45.68px;
-                    margin-left: 117px;
+                .div-input-date-birth {
+                    display: flex;
 
-                    .div-label-birth {
-                        .label-title-birth {
-                            font-size: 18px;
-                            width: 400px;
-                        }
+                    .input-day {
+                        height: 25px;
+                        width: 128.27px;
+                        border: 1px solid #C4C4C4;
+                        border-radius: 8px;
                     }
 
-                    .div-input-date-birth {
-                        .input-day{
-                        }
-                        .input-month{}
-                        .input-year{}
+                    .input-month {
+                        height: 25px;
+                        width: 128.27px;
+                        margin-left: 23.9px;
+                        border: 1px solid #C4C4C4;
+                        border-radius: 8px;
+                    }
+
+                    .input-year {
+                        height: 25px;
+                        width: 128.27px;
+                        margin-left: 23.9px;
+                        border: 1px solid #C4C4C4;
+                        border-radius: 8px;
                     }
                 }
             }
@@ -162,6 +194,117 @@
 
         hr {
             margin: 0px;
+        }
+
+        .div-account {
+
+            .h1-title-account {
+                text-align: center;
+                margin-top: 64px;
+            }
+
+            .div-lable-email {
+                margin-top: 86px;
+                margin-left: 93px;
+                font-weight: bold;
+                font-family: 'Poppins';
+
+                .label-email {
+                    font-size: 18px;
+                }
+            }
+
+            .div-input-email {
+                margin-left: 93px;
+
+                .input-email {
+                    width: 408.72px;
+                    height: 25px;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-email-confirm {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-email-confirm {
+                    width: 408.72px;
+                    height: 25px;
+                    font-weight: bold;
+                    font-family: 'Poppins';
+                }
+            }
+
+            .div-input-email-confirm {
+                margin-left: 93px;
+
+                .input-email-confirm {
+                    width: 408.72px;
+                    height: 25px;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-pass {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-pass {
+                    width: 408.72px;
+                    height: 25px;
+                    font-weight: bold;
+                    font-family: 'Poppins';
+                }
+            }
+
+            .div-input-pass {
+                margin-left: 93px;
+
+                .input-pass {
+                    width: 408.72px;
+                    height: 25px;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-new-pass {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-new-pass {
+                    width: 408.72px;
+                    height: 25px;
+                    font-weight: bold;
+                    font-family: 'Poppins';
+                }
+            }
+
+            .div-input-new-pass {
+                margin-left: 93px;
+
+                .input-new-pass {
+                    width: 408.72px;
+                    height: 25px;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 8px;
+                }
+            }
+
+            .btn-save {
+                background-color: #F17604;
+                border-style: none;
+                border-radius: 10px;
+                color: #FFFDFD;
+                cursor: pointer;
+                width: 115px;
+                height: 29.26px;
+                margin-top: 39px;
+                margin-left: 395px;
+            }
         }
     }
 }
