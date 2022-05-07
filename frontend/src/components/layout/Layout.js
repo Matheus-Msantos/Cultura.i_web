@@ -1,16 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import LoginBox from "../LoginBox";
-import { UserArray } from "../../Auth";
+import { UserContext } from "../../Auth";
 
 import "./Layout.scss";
 
+
 function Layout({ children }) {
 
-    /* Constante global dos dados do usuário */
-    const userAuth = useContext(UserArray);
+    /* Contexto do Usuário */
+    const { currentUser } = useContext(UserContext);
+
+    const userAuth = ''
     /* Constante */
-    const [box, setBox] = useState(false)
+    const [box, setBox] = useState(false);
 
     /* Função para abrir ou fechar o popup do usuário */
     const handleOpenBox = () => {
@@ -37,9 +40,9 @@ function Layout({ children }) {
 
                         <div className="layout-header-login-user_container">
 
-                            {!!userAuth ? /* Fazendo verificação se o usuário estiver logado, mostar o nome se não mostrar o botão de login  */
+                            {!!currentUser ? /* Fazendo verificação se o usuário estiver logado, mostar o nome se não mostrar o botão de login  */
                                 <button className="layout-header-login-user_text" onClick={handleOpenBox}>
-                                    <i className="fa-solid fa-circle-user"></i>Olá, {userAuth[0].user.name}
+                                    <i className="fa-solid fa-circle-user"></i>Olá, {currentUser.user.name}
                                 </button>
                                 :
                                 <Link to="/login" className="layout-header-login-user_button">Entrar <i className="fa-solid fa-right-to-bracket"></i></Link>

@@ -1,32 +1,50 @@
-import React from "react";
-import './Login.scss';
-
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BaseUrl } from "../../Api/baseUrl";
+import { UserContext } from '../../Auth';
+import { useNavigate } from "react-router-dom";
+
+import './Login.scss';
 
 function LoginPage() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
+    /* State do Auth */
+    const { setCurrentUser } = useContext(UserContext);
+
+    /* Objeto passado para API */
     const body = {
         email: email,
         password: password
     }
 
+    /* Função para chamda da API de login */
     const handleLogin = () => {
         BaseUrl
             .post('/api/login', body)
             .then((res) => {
-                console.log(res.data);
-
+                /* Adicionar o usuário no localStorage */
                 const user = [res.data]
-                localStorage.setItem('Token', res.data.token);
-                localStorage.setItem('User', JSON.stringify(user))
+                localStorage.setItem('User', JSON.stringify(user));
+
+                /* Pega o usuário e do localStorage e manda para o contexto de Auth */
+                setCurrentUser(JSON.parse(localStorage.getItem('User'))[0]);
             })
             .catch((err) => {
                 console.log('Ops! Ocorreu um erro ao entrar na conta');
             })
+    }
+
+    /* Função de sumbit do form */
+    const handleSubmit = (e) => {
+        /* Desabilita a função de envio padrão do form */
+        e.preventDefault();
+        /* Chama a API */
+        handleLogin();
+        /* Redireciona usário para home */
+        navigate('/');
     }
 
     return (
@@ -37,10 +55,7 @@ function LoginPage() {
                     <img className="/images/img-login-user" src="./image/img-login-user.png" />
                 </div>
 
-                <form className="form-input-email-pass-info" onSubmit={(e) => {
-                    e.preventDefault();
-                    handleLogin();
-                }} >
+                <form className="form-input-email-pass-info" onSubmit={(e) => handleSubmit(e)} >
                     <div className="div-input-email-pass">
                         <div className="div-email">
                             <span className="span-email">Email</span>
