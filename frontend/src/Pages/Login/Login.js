@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './Login.scss';
 
 function LoginPage() {
@@ -22,7 +23,7 @@ function LoginPage() {
                     <div className="div-register-button">
                         <button className="btn-register">LOGIN</button>
                         <div className="div-register-link">
-                            <span className="span-register-link">NÃO TEM CONTA: CADASTRE-SE <a href="/register" className="span-a-link">AQUI</a></span>
+                            <span className="span-register-link">NÃO TEM CONTA: CADASTRE-SE <Link to="/register" className="span-a-link">AQUI</Link></span>
                         </div>
                     </div>
                     <div className="div-announce-events">
