@@ -1,0 +1,131 @@
+.div-order-page {
+    .h1-title-my-orders {
+        font-size: 22px;
+        margin-top: 132px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        color: #000000;
+        border-bottom: rgba(3, 62, 140, 0.56) solid;
+        width: 302px;
+        margin-left: 45%;
+        margin-right: 45%;
+    }
+
+    .div-order-links {
+        display: flex;
+        margin-left: 27px;
+
+        .div-link-profile {
+            margin-left: 27px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+            .span-profile-link {
+                display: flex;
+
+                .order-link {
+                    margin-left: 63px;
+                    margin-top: 20px;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #C2C2C2;
+                    font-weight: bold;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+        }
+
+        .div-link-order {
+            margin-left: 11px;
+            width: 180px;
+            height: 61px;
+            background: #F5F5F6;
+            border-radius: 20px;
+            text-align: center;
+
+            .span-order-link {
+                display: flex;
+
+                .profile-link {
+                    margin-left: 58px;
+                    margin-top: 20px;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #000000;
+                    font-weight: bold;
+                    font-family: 'Poppins', sans-serif;
+                }
+            }
+        }
+    }
+
+    .div-data-info-request {
+        background: #F5F5F6;
+        //display: block;
+
+        .div-data-info {
+            display: flex;
+            justify-content: space-around;
+            background-color: #033E8C;
+            color: #FFFFFF;
+            margin-left: 60px;
+            margin-right: 60px;
+            font-weight: bold;
+            font-family: 'Poppins';
+            border-radius: 10px;
+        }
+
+        .div-data-request-order {
+            margin-top: 31px;
+            margin-left: 60px;
+            margin-right: 60px;
+
+            .div-order {
+                display: flex;
+                justify-content: space-around;
+
+                .order-id {
+                    margin-left: 50px;
+                }
+
+                .order-image {
+                    width: 96px;
+                    height: 71px;
+                    margin-left: 80px;
+                    background-color: #C4C4C4;
+                }
+
+                .order-data {
+                    text-align: center;
+                }
+            }
+        }
+
+        .div-btn-home {
+            display: flex;
+            justify-content: end;
+
+            .btn-home {
+                margin-top: 17px;
+                cursor: pointer;
+                width: 188px;
+                height: 53px;
+                border-style: none;
+                border-radius: 20px;
+                background-color: #033E8C;
+                margin-bottom: 21px;
+                margin-right: 66px;
+                .btn-link-home{
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    font-family: 'Poppins';
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
