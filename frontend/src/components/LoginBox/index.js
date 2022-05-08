@@ -25,7 +25,7 @@ function LoginBox({ box }) {
             <Link to="/order ">Meus pedidos</Link>
             {currentUser?.user?.is_Admin !== 0 || currentUser?.user?.is_Advertiser !== 0 || currentUser?.user?.is_Producer !== 0 ?
                 /* Verificação se possui credenciais administrativas */
-                <Link to="/order ">Área administrativa</Link>
+                <Link to="/admin ">Área administrativa</Link>
                 : ''
             }
             <button className="login-box-button_logout" onClick={handleLogout}>Sair <i className="fa-solid fa-right-from-bracket"></i></button>

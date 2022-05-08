@@ -25,6 +25,7 @@ import AdminRegisterAdvertPage from './Pages/Admin/Advert/RegisterAdvert';
 import AdminEditAdvertPage from './Pages/Admin/Advert/EditAdvert';
 import AdminUserPage from './Pages/Admin/Users/ListUser';
 import AdminEditUserPage from './Pages/Admin/Users/EditUser';
+import AdminOrderPage from './Pages/Admin/Order/ListOrder';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/admin/advert/edit/:id" element={<AdminEditAdvertPage />} />
           <Route path="/admin/user" element={<AdminUserPage />} />
           <Route path="/admin/user/edit/:id" element={<AdminEditUserPage />} />
+          <Route path="/admin/order" element={<AdminOrderPage />} />
         </Routes>
       </BrowserRouter>
     </>

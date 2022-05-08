@@ -1,12 +1,12 @@
 import React from "react";
 import MenuAdmin from "../../../components/MenuAdmin";
 
-function AdminUserPage() {
+function AdminOrderPage() {
     return (
         <div className="admin-container">
-            <MenuAdmin active_05={"is--active"} />
+            <MenuAdmin active_06={"is--active"} />
         </div>
     );
 }
 
-export default AdminUserPage;
+export default AdminOrderPage;

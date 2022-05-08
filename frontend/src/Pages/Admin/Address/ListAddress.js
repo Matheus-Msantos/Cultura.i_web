@@ -1,8 +1,11 @@
 import React from "react";
+import MenuAdmin from "../../../components/MenuAdmin";
 
 function AdminAddressPage() {
     return (
-        <h1>Admin Address</h1>
+        <div className="admin-container">
+            <MenuAdmin active_04={"is--active"} />
+        </div>
     );
 }
 

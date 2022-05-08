@@ -1,8 +1,13 @@
 import React from "react";
+import MenuAdmin from "../../../components/MenuAdmin";
+
+import '../Admin.scss';
 
 function AdminProductPage() {
     return (
-        <h1>Admin Product</h1>
+        <div className="admin-container">
+            <MenuAdmin active_01={"is--active"} />
+        </div>
     );
 }
 

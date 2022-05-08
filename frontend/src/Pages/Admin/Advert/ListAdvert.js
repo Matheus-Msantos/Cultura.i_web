@@ -1,8 +1,11 @@
 import React from "react";
+import MenuAdmin from "../../../components/MenuAdmin";
 
 function AdminAdvertPage() {
     return (
-        <h1>Admin Advert</h1>
+        <div className="admin-container">
+            <MenuAdmin active_02={"is--active"} />
+        </div>
     );
 }
 
