@@ -4,6 +4,7 @@ import LoginBox from "../LoginBox";
 import { UserContext } from "../../Auth";
 
 import "./Layout.scss";
+import Minicart from "../Minicart";
 
 
 function Layout({ children }) {
@@ -14,6 +15,7 @@ function Layout({ children }) {
     const userAuth = ''
     /* Constante */
     const [box, setBox] = useState(false);
+    const [minicart, setMinicart] = useState(false);
 
     /* Função para abrir ou fechar o popup do usuário */
     const handleOpenBox = () => {
@@ -21,6 +23,14 @@ function Layout({ children }) {
             setBox(true);
         else
             setBox(false);
+    }
+
+    /* Função para abrir ou fechar o popup do usuário */
+    const handleOpenMinicart = () => {
+        if (minicart === false)
+            setMinicart(true);
+        else
+            setMinicart(false);
     }
 
     return (
@@ -50,9 +60,12 @@ function Layout({ children }) {
                             <LoginBox box={box} />
                         </div>
 
-                        <button className="layout-header-login_carrinho">Carrinho</button>
+                        <button className="layout-header-login_carrinho" onClick={handleOpenMinicart}>Carrinho</button>
                     </div>
                 </div>
+
+                <div className={`minicart-overlay ${minicart && 'is--active'}`} onClick={handleOpenMinicart}></div>
+                <Minicart active={minicart} />
             </header>
 
             <section>
