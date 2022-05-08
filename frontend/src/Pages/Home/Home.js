@@ -1,13 +1,112 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import { BaseUrl } from "../../Api/baseUrl";
+import Layout from "../../components/layout/Layout";
 
 import './Home.scss';
-import Layout from "../../components/layout/Layout";
+import FilterCategory from "../../components/FilterCategory";
 
 
 function HomePage() {
 
+    const [produtos, setProdutos] = useState([]);
+    const [produtoDestaque, setProdutoDestaque] = useState([]);
+    const [proximosEventos, setProximosEventos] = useState([]);
+    const [novidades, setNovidades] = useState([]);
+
+    useEffect(() => {
+        /* Chamada da API de todos os produtos */
+        BaseUrl
+            .get("/api/product")
+            .then((res) => setProdutos(res.data))
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+
+        /* Chamada da API do produto em destaque */
+        BaseUrl
+            .get('/api/product/category/2')
+            .then((res) => {
+                setProdutoDestaque(res.data);
+            })
+            .catch((err) => {
+                console.log('Ops! Ocorreu um erro ao mostrar o produto pela categoria: ' + err);
+            });
+
+        /* Chamada da API da categoria proximos eventos */
+        BaseUrl
+            .get('/api/product/category/3')
+            .then((res) => {
+                setProximosEventos(res.data);
+            })
+            .catch((err) => {
+                console.log('Ops! Ocorreu um erro ao mostrar o produto pela categoria: ' + err);
+            });
+
+        /* Chamada da API da categoria de novidades */
+        BaseUrl
+            .get('/api/product/category/3')
+            .then((res) => {
+                setNovidades(res.data);
+            })
+            .catch((err) => {
+                console.log('Ops! Ocorreu um erro ao mostrar o produto pela categoria: ' + err);
+            });
+    }, []);
+
+    /* Mapeando todos os produtos e adicionando na página */
+    const MapProdutos = produtos.map((produto) => {
+        const { id, image, name, date, time, address } = produto;
+        return (
+            <div className="eventos_box" key={id}>
+                <img src={image} />
+
+                <div className="eventos-box_details">
+                    <span className="eventos-box-details_name">{name}</span>
+                    <span className="eventos-box-details_date">{date} - {time}</span>
+                    <address>{address?.street}, {address?.city} - {address?.state}</address>
+                    <span className="eventos-box-details_icon">Icon</span>
+                </div>
+            </div>
+        );
+    });
+
+    /* Mapeando produtos da categoria próximos eventos */
+    const MapProximosEventos = proximosEventos.map((produto) => {
+        const { id, image, name, date, time, address } = produto;
+        return (
+            <div className="eventos_box" key={id}>
+                <img src={image} />
+
+                <div className="eventos-box_details">
+                    <span className="eventos-box-details_name">{name}</span>
+                    <span className="eventos-box-details_date">{date} - {time}</span>
+                    <address>{address?.street}, {address?.city} - {address?.state}</address>
+                    <span className="eventos-box-details_icon">Icon</span>
+                </div>
+            </div>
+        );
+    });
+
+    /* Mapeando produtos da categoria próximos eventos */
+    const MapNovidades = novidades.map((novidade) => {
+        const { id, image, name, date, time, address } = novidade;
+        return (
+            <div className="eventos_box" key={id}>
+                <img src={image} />
+
+                <div className="eventos-box_details">
+                    <span className="eventos-box-details_name">{name}</span>
+                    <span className="eventos-box-details_date">{date} - {time}</span>
+                    <address>{address?.street}, {address?.city} - {address?.state}</address>
+                    <span className="eventos-box-details_icon">Icon</span>
+                </div>
+            </div>
+        );
+    });
+
+    /* Components dos slider */
     const settings = {
         dots: true,
         infinite: true,
@@ -15,14 +114,6 @@ function HomePage() {
         autoplaySpeed: 2000,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
-    };
-
-    const settingsCategory = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
         slidesToScroll: 1
     };
 
@@ -68,67 +159,14 @@ function HomePage() {
                     </Slider>
                 </div>
 
-                <div className="home-slider-categorias_container slider">
-                    <h2>Filtrar por categoria</h2>
-                    <Slider {...settingsCategory}>
-                        <div className="home-slider-categorias_box">
-                            <a href="#">1</a>
-                        </div>
-
-                        <div className="home-slider-categorias_box">
-                            <a href="#">2</a>
-                        </div>
-
-                        <div className="home-slider-categorias_box">
-                            <a href="#">3</a>
-                        </div>
-
-                        <div className="home-slider-categorias_box">
-                            <a href="#">4</a>
-                        </div>
-
-                        <div className="home-slider-categorias_box">
-                            <a href="#">5</a>
-                        </div>
-
-                        <div className="home-slider-categorias_box">
-                            <a href="#">6</a>
-                        </div>
-                    </Slider>
-                </div>
+                <FilterCategory />
 
                 <div className="eventos_container">
                     <h2>Novidades</h2>
                     <span className="eventos_subTitle">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem </span>
 
                     <div className="eventos-box_container">
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-                                <address>Teatro Bibi Ferreira - SP</address>
-                                <span className="eventos-box-details_icon">Icon</span>
-                            </div>
-                        </div>
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-
-                                <div>
-                                    <address>Teatro Bibi Ferreira - SP</address>
-                                    <span className="eventos-box-details_icon">Icon</span>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        {MapNovidades}
                     </div>
                 </div>
 
@@ -136,33 +174,7 @@ function HomePage() {
                     <h2>Próximos eventos</h2>
 
                     <div className="eventos-box_container">
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-                                <address>Teatro Bibi Ferreira - SP</address>
-                                <span className="eventos-box-details_icon">Icon</span>
-                            </div>
-                        </div>
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-
-                                <div>
-                                    <address>Teatro Bibi Ferreira - SP</address>
-                                    <span className="eventos-box-details_icon">Icon</span>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        {MapProximosEventos}
                     </div>
 
                 </div>
@@ -171,15 +183,13 @@ function HomePage() {
                     <div className="home-eventos-destaque-details">
                         <h2>Destaque <span>do mês</span></h2>
                         <p>
-                            Mês das crianças com espetáculo de mágica no Teatro Senac.
-                            Mês das crianças com espetáculo de mágica no Teatro Senac.
-                            Mês das crianças com espetáculo de mágica no Teatro Senac.
+                            {produtoDestaque[0]?.description}
                         </p>
                         <Link to="/">Confira</Link>
                     </div>
 
                     <div className="home-eventos-destaque_img">
-                        <img src="/logo192.png" />
+                        <img src={produtoDestaque[0]?.image} />
                     </div>
                 </div>
 
@@ -208,33 +218,7 @@ function HomePage() {
                     <h2>Eventos</h2>
 
                     <div className="eventos-box_container">
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-                                <address>Teatro Bibi Ferreira - SP</address>
-                                <span className="eventos-box-details_icon">Icon</span>
-                            </div>
-                        </div>
-
-                        <div className="eventos_box">
-                            <img src="/logo192.png" />
-
-                            <div className="eventos-box_details">
-                                <span className="eventos-box-details_name">Show de Mágica Infantil</span>
-                                <span className="eventos-box-details_date">12/12/2012 - 15:00</span>
-
-                                <div>
-                                    <address>Teatro Bibi Ferreira - SP</address>
-                                    <span className="eventos-box-details_icon">Icon</span>
-                                </div>
-                            </div>
-
-                        </div>
-
+                        {MapProdutos}
                     </div>
 
                 </div>

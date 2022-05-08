@@ -129,10 +129,12 @@ body {
             margin-top: 50px;
 
             .eventos_box {
+                width: 191px;
                 background: #fff;
                 box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
                 border-radius: 4px;
                 margin: 0 15px;
+                margin-bottom: 25px;
                 cursor: pointer;
 
                 &:hover {
