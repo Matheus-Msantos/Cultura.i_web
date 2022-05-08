@@ -2,6 +2,9 @@ body {
     margin: 0;
 }
 .div-login {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -11,131 +14,139 @@ body {
         #01318b 125.63deg,
         rgba(241, 118, 4, 0.19) 360deg
     );
+}
+.div-img-email-pass {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 924px;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: #d8d8d8;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 
-    .div-img-email-pass {
-        display: flex;
-        width: 924px;
-        height: 503px;
-        margin-top: 206px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 10px;
-        background-color: #d8d8d8;
-
-        .div-img {
-            .img {
-                width: 100%;
-                height: 100%;
-                filter: grayscale(100%);
-                border-radius: 10px 0px 0px 10px;
-            }
-        }
-
-        .form-input-email-pass-info {
+    .div-img {
+        width: 50%;
+        .img {
             display: block;
-            width: 100px;
-            height: 100px;
-            margin-top: 100px;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(1);
+            border-radius: 10px 0px 0px 10px;
+        }
+    }
 
-            .div-input-email-pass {
-                margin-left: 96px;
+    .form-input-email-pass-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
 
-                .div-email {
-                    .span-email {
-                        color: #9b9b9b;
-                        font-size: 12px;
-                        margin-left: 10px;
-                    }
-
-                    .input-email {
-                        width: 305px;
-                        height: 36px;
-                        border: #9b9b9b 1px solid;
-                        border-radius: 8px;
-                    }
+        .div-input-email-pass {
+            .div-email {
+                .span-email {
+                    display: block;
+                    color: #9b9b9b;
+                    font-size: 12px;
+                    margin-left: 10px;
                 }
 
-                .div-pass {
-                    margin-top: 49px;
+                .input-email {
+                    width: 305px;
+                    height: 36px;
+                    border: #9b9b9b 1px solid;
+                    border-radius: 8px;
+                    outline: none;
+                    padding-left: 16px;
+                }
+            }
 
-                    .span-pass {
-                        color: #9b9b9b;
-                        font-size: 12px;
-                        margin-left: 10px;
-                    }
+            .div-pass {
+                margin-top: 49px;
 
-                    .input-pass {
-                        width: 305px;
-                        height: 36px;
-                        border: #9b9b9b 1px solid;
-                        border-radius: 8px;
-                    }
+                .span-pass {
+                    display: block;
+                    color: #9b9b9b;
+                    font-size: 12px;
+                    margin-left: 10px;
+                }
+
+                .input-pass {
+                    width: 305px;
+                    height: 36px;
+                    border: #9b9b9b 1px solid;
+                    border-radius: 8px;
+                    outline: none;
+                    padding-left: 16px;
                 }
             }
         }
+    }
 
-        .div-register-button {
-            margin-top: 35px;
-            margin-left: 96px;
+    .div-register-button {
+        margin-top: 35px;
 
-            .btn-register {
-                width: 159px;
-                height: 29px;
-                border-radius: 30px;
-                border: none;
-                background-color: #f17604;
-                color: #ffffff;
-                font-size: 12px;
-                cursor: pointer;
-                margin-left: 80px;
-            }
-
-            .div-register-link {
-                margin-top: 23px;
-                width: 290px;
-                margin-left: 70px;
-                font-size: 10px;
-
-                .span-register-link {
-                    margin-top: 150px;
-                    height: 24px;
-
-                    .span-a-link {
-                        text-decoration: none;
-                    }
-                }
-            }
+        .btn-register {
+            width: 159px;
+            height: 29px;
+            border-radius: 30px;
+            border: none;
+            background-color: #f17604;
+            color: #ffffff;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 80px;
         }
 
-        .div-announce-events {
+        .div-register-link {
+            margin-top: 23px;
+            width: 290px;
             margin-left: 70px;
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-between;
-            width: 400px;
+            font-size: 10px;
 
-            .btn-announce {
-                width: 134px;
-                height: 26px;
-                background-color: #5d63de;
-                color: #ffffff;
-                cursor: pointer;
-                font-size: 12px;
-                border: none;
-                border-radius: 8px;
-            }
+            .span-register-link {
+                margin-top: 150px;
+                height: 24px;
 
-            .btn-events {
-                background-color: #5d63de;
-                color: #ffffff;
-                width: 190px;
-                height: 26px;
-                cursor: pointer;
-                font-size: 12px;
-                border: none;
-                border-radius: 8px;
-                margin-right: 10px;
+                .span-a-link {
+                    text-decoration: none;
+                }
             }
+        }
+    }
+
+    .div-announce-events {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 29px;
+
+        .btn-announce {
+            width: 134px;
+            height: 26px;
+            background-color: #5d63de;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-events {
+            background-color: #5d63de;
+            color: #ffffff;
+            width: 190px;
+            height: 26px;
+            cursor: pointer;
+            font-size: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-right: 10px;
         }
     }
 }

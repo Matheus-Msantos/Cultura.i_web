@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { BaseUrl } from "../../Api/baseUrl";
 import { UserContext } from '../../Auth';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import './Login.scss';
 
@@ -49,11 +49,11 @@ function LoginPage() {
     }
 
     return (
-        <div className="div-login">
+        <>
+            <div className="div-login">  </div>
             <div className="div-img-email-pass">
-
                 <div className="div-img">
-                    <img className="/images/img-login-user" src="./image/img-login-user.png" />
+                    <img className="img" src="./image/img-login-user.png" />
                 </div>
 
                 <form className="form-input-email-pass-info" onSubmit={(e) => handleSubmit(e)} >
@@ -68,11 +68,9 @@ function LoginPage() {
                         </div>
                     </div>
                     <div className="div-register-button">
-
-
-                        <button className="btn-register">LOGIN</button>
-                        <div className="div-register">
-                            <span className="span-register">NÃO TEM CONTA: CADASTRE-SE <Link to="/register" className="span-a-link">AQUI</Link></span>
+                        <button className="btn-register" type="submit">LOGIN</button>
+                        <div className="div-register-link">
+                            <span className="span-register-link">NÃO TEM CONTA: CADASTRE-SE <Link to="/register" className="span-a-link">AQUI</Link></span>
                         </div>
                     </div>
                     <div className="div-announce-events">
@@ -81,7 +79,8 @@ function LoginPage() {
                     </div>
                 </form>
             </div>
-        </div>
+
+        </>
     );
 }
 
