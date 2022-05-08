@@ -6,12 +6,12 @@ function ProfilePage() {
     return (
         <div className="div-profile-page">
             <h1 className="h1-title-my-profile">Meu Perfil</h1>
-            <div className="div-profile-requests">
+            <div className="div-profile-order">
                 <div className="div-profile">
-                    <span className="span-profile"><Link to={"/profile"} className="link-profile">Perfil</Link></span>
+                    <span className="span-profile"><Link to="/profile" className="link-profile">Perfil</Link></span>
                 </div>
-                <div className="div-requests">
-                    <span className="span-requests"><Link to={"/product/:id"} className="link-requests">Pedidos</Link></span>
+                <div className="div-order">
+                    <span className="span-order"><Link to="/order" className="link-order">Pedidos</Link></span>
                 </div>
             </div>
             <div className="div-personal-data-account">
