@@ -13,7 +13,7 @@
         margin-right: 45%;
     }
 
-    .div-profile-requests {
+    .div-profile-order {
         display: flex;
         margin-left: 27px;
 
@@ -40,7 +40,7 @@
             }
         }
 
-        .div-requests {
+        .div-order {
             margin-left: 11px;
             width: 180px;
             height: 61px;
@@ -49,15 +49,15 @@
             text-align: center;
 
 
-            .span-requests {
+            .span-order {
                 display: flex;
 
-                .link-requests {
+                .link-order {
                     margin-left: 58px;
                     margin-top: 20px;
                     text-decoration: none;
                     font-size: 18px;
-                    color: #000000;
+                    color: #C2C2C2;
                     font-weight: bold;
                     font-family: 'Poppins', sans-serif;
                 }
@@ -69,9 +69,11 @@
     .div-personal-data-account {
         display: flex;
         background: #F5F5F6;
+        justify-content: center;
 
         .div-personal-data {
             margin-bottom: 75px;
+            margin-right: 24px;
 
             .h1-title-personal-data {
                 text-align: center;
