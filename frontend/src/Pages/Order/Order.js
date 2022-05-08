@@ -44,11 +44,11 @@ function OrderPage() {
             </div>
             <div className="div-data-info-request">
                 <div className="div-data-info">
-                    <span className="span-number-order"><p className="number-order">Nº do Pedido</p></span>
-                    <span><p>Imagem</p></span>
-                    <span><p>Data</p></span>
-                    <span><p>Status</p></span>
-                    <span><p>Preço</p></span>
+                    <span><p className="header-data">Nº do Pedido</p></span>
+                    <span><p className="header-data">Imagem</p></span>
+                    <span><p className="header-data">Data</p></span>
+                    <span><p className="header-data">Status</p></span>
+                    <span><p className="header-data">Preço</p></span>
                 </div>
                 <div className="div-data-request-order">
                     {dataOrder.map((order, index) => (
