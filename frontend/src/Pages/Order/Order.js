@@ -25,7 +25,7 @@ function OrderPage() {
                 <div className="div-data-request-order">
                     <div className="div-order">
                         <p className="order-id">0001</p>
-                        <p className="order-image"><image src="#"/></p>
+                        <image src="#" className="order-image"/>
                         <p className="order-data">01/01/2022</p>
                         <p className="order-status">Em análise</p>
                         <p className="order-price">R$ 30,99</p>

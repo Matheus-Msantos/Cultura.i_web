@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-.div-checkout-page{
-    .title-my-cart{
+.div-checkout-page {
+    .title-my-cart {
         width: 302px;
         height: 23px;
         font-size: 22px;
@@ -12,38 +12,146 @@
         padding-bottom: 25px;
         border-bottom: rgba(3, 62, 140, 0.56) solid 3px;
     }
-    .div-order-checkout{
+
+    .div-order-checkout {
         margin-top: 49px;
         margin-left: 62px;
         margin-right: 256px;
-        .div-info-data-checkout{
+
+        .div-info-data-checkout {
             display: flex;
             border-radius: 10px;
             background-color: #033E8C;
-            .div-product{
+
+            .div-product {
                 margin-left: 39px;
-                .span-product{
+
+                .span-product {
                     color: white;
                     font-weight: bold;
                 }
             }
+
+            .div-price-quant {
+                width: 100%;
+                display: flex;
+                font-weight: bold;
+                margin-right: 15px;
+                justify-content: flex-end;
+
+                .span-price-unit {
+                    color: #FFFFFF;
+                    margin-right: 28px;
+                }
+
+                .span-quantid {
+                    color: #FFFFFF;
+                    margin-right: 53px;
+                }
+
+                .span-price {
+                    color: #FFFFFF;
+                }
+            }
         }
-        .div-price-quant{
-            width: 100%;
+
+        .info-data {
             display: flex;
+            width: 100%;
+            margin-top: 22px;
+
+            .img-data {
+                width: 136px;
+                height: 98px;
+                margin-left: 25px;
+                background-color: #C4C4C4;
+
+            }
+
+            .div-info-product {
+                margin-left: 84.63px;
+                font-size: 12px;
+                font-family: 'Poppins';
+                .info-data-title{
+                    color: #4D4D4D;
+                    width: 199.36px;
+                }
+                .data-hour{
+                    margin-top: 2px;
+                    color: #5A5A5B;
+                    font-weight: bold;
+                }
+                .local{
+                    margin-top: 2px;
+                    color: #999999;
+                }
+                .state{
+                    margin-top: 2px;
+                    color: #999999;
+                }
+            }
+
+            .div-quanti-prices {
+                display: flex;
+                width: 100%;
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 12px;
+                justify-content: flex-end;
+                .price-uni{
+                    margin-right: 68px;
+                    font-family: 'Poppins';
+                }
+                .quanti{
+                    margin-right: 68px;
+                    font-family: 'Poppins';
+                }
+            }
+        }
+    }
+    .div-total-button-finish{
+        margin-top: 35px;
+        margin-right: 113px;
+        width: 90%;
+        margin-left: 50px;
+        .div-sub-total{
+            display: flex;
+            justify-content: end;
+            .span-sub-total{
+                margin-right: 273px;
+                font-size: 22px;
+            }
+            .span-sub-total-price{
+                font-size: 22px;
+            }
+        }
+        .div-total{
+            display: flex;
+            justify-content: end;
+            margin-top: 29px;
             font-weight: bold;
-            margin-right: 15px;
-            justify-content: flex-end;
-            .span-price-unit{
-                color: #FFFFFF;
-                margin-right: 28px;
+            .span-total{
+                margin-right: 273px;
+                font-size: 22px;
             }
-            .span-quantid{
-                color: #FFFFFF;
-                margin-right: 53px;
+            .span-total-price{
+                font-size: 22px;
             }
-            .span-price{
-                color: #FFFFFF;
+        }
+        .div-btn-order-finish{
+            display: flex;
+            margin-top: 29px;
+            justify-content: end;
+            .btn-order-finish{
+                width: 459px;
+                height: 53px;
+                font-size: 22px;
+                border-radius: 10px;
+                font-family: 'Poppins';
+                background-color: #033E8C;
+                .bnt-link{
+                    color: #FFFFFF;
+                }
             }
         }
     }

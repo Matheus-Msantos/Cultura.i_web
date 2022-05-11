@@ -18,33 +18,33 @@ function CheckoutPage() {
                         <span><p className="span-price">Preço</p></span>
                     </div>
                 </div>
-                <div>
-                    <p><image src="#" /></p>
-                    <div>
-                        <p>Show de Mágica Infantil</p>
-                        <p>12/12/2022 - 15:00</p>
+                <div className="info-data">
+                    <image src="#" className="img-data" />
+                    <div className="div-info-product">
+                        <p className="info-data-title">Show de Mágica Infantil</p>
+                        <p className="data-hour">12/12/2022 - 15:00</p>
+                        <p className="local">Teatro Bibi</p>
+                        <p className="state">Ferreira - SP</p>
                     </div>
-                    <div>
-                        <p>Teatro Bibi</p>
-                        <p>Ferreira - SP</p>
-                    </div>
-                    <div>
-                        <p>R$ 0,00</p>
-                        <p>10</p>
-                        <p>R$ 0,00</p>
+                    <div className="div-quanti-prices">
+                        <p className="price-uni">R$ 0,00</p>
+                        <p className="quanti">10</p>
+                        <p className="price">R$ 0,00</p>
                     </div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <span><p>Subtotal</p></span>
-                    <span><p>R$ 0,00</p></span>
+            <div className="div-total-button-finish">
+                <div className="div-sub-total">
+                    <span><p className="span-sub-total">Subtotal</p></span>
+                    <span><p className="span-sub-total-price">R$ 0,00</p></span>
                 </div>
-                <div>
-                    <span><p>Total</p></span>
-                    <span><p>R$ 0,00</p></span>
+                <div className="div-total">
+                    <span><p className="span-total">Total</p></span>
+                    <span><p className="span-total-price">R$ 0,00</p></span>
                 </div>
-                <button><Link to="/order-completed" className="#">Fechar Pedido</Link></button>
+                <div className="div-btn-order-finish">
+                    <button className="btn-order-finish"><Link to="/order-completed" className="bnt-link">Fechar Pedido</Link></button>
+                </div>
             </div>
         </div>
     );
