@@ -1,36 +1,8 @@
 import React from "react";
 import "./Order.scss";
 import { Link } from "react-router-dom";
+
 function OrderPage() {
-
-    const zeroLeft = (number, size) => {
-        let left = "00000000" + number;
-        return left.substring(left.length-size);
-    }
-
-    const dataOrder = [
-        {
-            id: 1,
-            image: "",
-            data: "01/01/2022",
-            status: "Em análise",
-            price: 10.00,
-        },
-        {
-            id: 2,
-            image: "",
-            data: "01/01/2022",
-            status: "Em análise",
-            price: 20.99,
-        },
-        {
-            id: 3,
-            image: "",
-            data: "01/01/2022",
-            status: "Em análise",
-            price: 30.99,
-        },
-    ];
     return (
         <div className="div-order-page">
             <h1 className="h1-title-my-orders">Meus Pedidos</h1>
@@ -51,15 +23,13 @@ function OrderPage() {
                     <span><p className="header-data">Preço</p></span>
                 </div>
                 <div className="div-data-request-order">
-                    {dataOrder.map((order, index) => (
-                        <div className="div-order" key={index++}>
-                            <p className="order-id">{zeroLeft(order.id, 4)}</p>
-                            <p className="order-image">{order.image}</p>
-                            <p className="order-data">{order.data}</p>
-                            <p className="order-status">{order.status}</p>
-                            <p className="order-price">R$ {order.price.toFixed(2).toString().replace(".", ",")}</p>
-                        </div>
-                    ))}
+                    <div className="div-order">
+                        <p className="order-id">0001</p>
+                        <p className="order-image"><image src="#"/></p>
+                        <p className="order-data">01/01/2022</p>
+                        <p className="order-status">Em análise</p>
+                        <p className="order-price">R$ 30,99</p>
+                    </div>
                 </div>
                 <div className="div-btn-home">
                     <button className="btn-home"><Link to="/" className="btn-link-home">HOME</Link></button>
