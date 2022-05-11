@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.div-checkout-page{
+    .title-my-cart{
+        width: 302px;
+        height: 23px;
+        font-size: 22px;
+        margin-top: 44px;
+        margin-left: 62px;
+        font-family: 'Poppins';
+        border-radius: 2px;
+        padding-bottom: 25px;
+        border-bottom: rgba(3, 62, 140, 0.56) solid 3px;
+    }
+    .div-order-checkout{
+        margin-top: 49px;
+        margin-left: 62px;
+        margin-right: 256px;
+        .div-info-data-checkout{
+            display: flex;
+            border-radius: 10px;
+            background-color: #033E8C;
+            .div-product{
+                margin-left: 39px;
+                .span-product{
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+        .div-price-quant{
+            width: 100%;
+            display: flex;
+            font-weight: bold;
+            margin-right: 15px;
+            justify-content: flex-end;
+            .span-price-unit{
+                color: #FFFFFF;
+                margin-right: 28px;
+            }
+            .span-quantid{
+                color: #FFFFFF;
+                margin-right: 53px;
+            }
+            .span-price{
+                color: #FFFFFF;
+            }
+        }
+    }
+}
