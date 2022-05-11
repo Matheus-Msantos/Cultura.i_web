@@ -1,6 +1,8 @@
 import React from "react";
+import "./Checkout.scss";
 
 function CheckoutPage() {
+    
     return (
         <h1>Checkout</h1>
     );

@@ -8,7 +8,7 @@
         font-family: 'Poppins', sans-serif;
         color: #000000;
         border-bottom: rgba(3, 62, 140, 0.56) solid;
-        width: 152px;
+        width: 302px;
         margin-left: 45%;
         margin-right: 45%;
     }
@@ -20,10 +20,11 @@
         .div-profile {
             margin-left: 27px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
             .span-profile {
                 display: flex;
@@ -43,10 +44,11 @@
         .div-order {
             margin-left: 11px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
 
             .span-order {
@@ -102,6 +104,8 @@
                         border-radius: 10px;
                         color: #FFFDFD;
                         cursor: pointer;
+                        width: 100px;
+                        height: 18px;
                     }
                 }
             }
@@ -122,9 +126,9 @@
                 .div-input-name {
                     .input-name {
                         width: 408.72px;
+                        height: 45.77px;
                         border: 1px solid #C4C4C4;
                         border-radius: 8px;
-                        height: 25px;
                     }
                 }
             }
@@ -147,7 +151,7 @@
                         width: 408.72px;
                         border: 1px solid #C4C4C4;
                         border-radius: 8px;
-                        height: 25px;
+                        height: 45.77px;
                     }
                 }
             }
@@ -169,14 +173,14 @@
                     display: flex;
 
                     .input-day {
-                        height: 25px;
+                        height: 45.77px;
                         width: 128.27px;
                         border: 1px solid #C4C4C4;
                         border-radius: 8px;
                     }
 
                     .input-month {
-                        height: 25px;
+                        height: 45.77px;
                         width: 128.27px;
                         margin-left: 23.9px;
                         border: 1px solid #C4C4C4;
@@ -184,7 +188,7 @@
                     }
 
                     .input-year {
-                        height: 25px;
+                        height: 45.77px;
                         width: 128.27px;
                         margin-left: 23.9px;
                         border: 1px solid #C4C4C4;
@@ -195,7 +199,8 @@
         }
 
         hr {
-            margin: 0px;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
         .div-account {
@@ -221,7 +226,7 @@
 
                 .input-email {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     border: 1px solid #C4C4C4;
                     border-radius: 8px;
                 }
@@ -233,7 +238,7 @@
 
                 .label-email-confirm {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     font-weight: bold;
                     font-family: 'Poppins';
                 }
@@ -244,7 +249,7 @@
 
                 .input-email-confirm {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     border: 1px solid #C4C4C4;
                     border-radius: 8px;
                 }
@@ -256,7 +261,7 @@
 
                 .label-pass {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     font-weight: bold;
                     font-family: 'Poppins';
                 }
@@ -267,7 +272,7 @@
 
                 .input-pass {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     border: 1px solid #C4C4C4;
                     border-radius: 8px;
                 }
@@ -279,7 +284,7 @@
 
                 .label-new-pass {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     font-weight: bold;
                     font-family: 'Poppins';
                 }
@@ -290,7 +295,7 @@
 
                 .input-new-pass {
                     width: 408.72px;
-                    height: 25px;
+                    height: 45.77px;
                     border: 1px solid #C4C4C4;
                     border-radius: 8px;
                 }

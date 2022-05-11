@@ -81,7 +81,7 @@ function ProfilePage() {
                         <input type="password" className="input-new-pass" />
                     </div>
 
-                    <button className="btn-save">Salvar</button>
+                    <button className="btn-save">SALVAR</button>
 
                 </div>
             </div>
