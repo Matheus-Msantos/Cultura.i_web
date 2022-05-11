@@ -20,10 +20,11 @@
         .div-profile {
             margin-left: 27px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
             .span-profile {
                 display: flex;
@@ -43,10 +44,11 @@
         .div-order {
             margin-left: 11px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
 
             .span-order {
@@ -197,7 +199,8 @@
         }
 
         hr {
-            margin: 0px;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
         .div-account {

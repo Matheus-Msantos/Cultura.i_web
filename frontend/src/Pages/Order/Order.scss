@@ -18,10 +18,11 @@
         .div-link-profile {
             margin-left: 27px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
             .span-profile-link {
                 display: flex;
@@ -41,10 +42,11 @@
         .div-link-order {
             margin-left: 11px;
             width: 180px;
-            height: 61px;
+            height: 55px;
             background: #F5F5F6;
-            border-radius: 20px;
             text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
 
             .span-order-link {
                 display: flex;
@@ -74,7 +76,8 @@
             margin-right: 60px;
             font-weight: bold;
             font-family: 'Poppins';
-            border-radius: 10px;
+            //border-radius: 10px;
+            padding: 2px;
         }
 
         .header-data {
