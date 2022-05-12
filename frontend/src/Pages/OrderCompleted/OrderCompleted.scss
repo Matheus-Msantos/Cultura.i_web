@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.div-general-order-completed {
+    display: flex;
+
+    .div-img-message {
+        width: 50%;
+
+        .div-img-circle {
+            margin-top: 62px;
+            text-align: center;
+
+            .img-circle {
+                width: 71.11px;
+                height: 69.23px;
+            }
+        }
+
+        .div-title-product {
+            text-align: center;
+
+            .h1-title {
+                font-size: 22px;
+                font-family: 'Poppins';
+                margin-top: 54.77px;
+            }
+
+            .span-title-message {
+                text-align: center;
+                margin-top: 76px;
+                font-weight: bold;
+                font-family: 'Poppins';
+                font-size: 22px;
+            }
+        }
+
+        .div-message {
+            margin-top: 28px;
+            margin-left: 78px;
+            margin-right: 54px;
+            .message {
+                font-size: 18px;
+                font-family: 'Poppins';
+            }
+        }
+    }
+
+    .div-data-info-completed {
+        width: 50%;
+        background: rgba(196, 196, 196, 0.2);
+
+        .h1-title-products {
+            margin-top: 35px;
+            text-align: center;
+        }
+    }
+}
