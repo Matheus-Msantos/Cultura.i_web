@@ -38,7 +38,9 @@
                     list-style: none;
                     display: flex;
                     flex-direction: column;
+                    margin: 0;
                     margin-top: 80px;
+                    padding: 0;
 
                     li {
                         margin-bottom: 30px;
@@ -105,6 +107,234 @@
                 line-height: 34px;
                 margin-bottom: 16px;
                 cursor: pointer;
+            }
+        }
+    }
+
+    .admin-content_container {
+        width: 100%;
+        position: relative;
+        margin-left: 350px;
+        padding-right: 20px;
+
+        .admin-content-button_add {
+            position: absolute;
+            display: block;
+            width: 126px;
+            height: 45px;
+            text-align: center;
+            background: #033e8c99;
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            top: 42px;
+            right: 79px;
+            line-height: 45px;
+            border-radius: 32px;
+
+            i {
+                color: #fff;
+                margin-right: 5px;
+            }
+        }
+
+        h2 {
+            width: fit-content;
+            position: relative;
+            color: #000;
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 150px;
+            border-bottom: 4px solid #033e8c;
+        }
+
+        table {
+            margin-top: 100px;
+
+            thead {
+                tr {
+                    th {
+                        text-align: center;
+                        color: #033e8c;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            tbody {
+                border-top: 3px solid #c4c4c4c4;
+                tr {
+                    th {
+                        text-align: center;
+                    }
+
+                    td {
+                        text-align: center;
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                        }
+
+                        button {
+                            background: transparent;
+                            border: 0;
+                            cursor: pointer;
+                            i {
+                                font-size: 30px;
+                            }
+
+                            &:hover {
+                                i {
+                                    color: #f17604;
+                                }
+                            }
+                        }
+
+                        .admin-box_container {
+                            display: none;
+                            position: relative;
+
+                            &.is--active {
+                                display: block;
+                            }
+
+                            .admin-box {
+                                position: absolute;
+                                background: rgba(245, 245, 245, 0.94);
+                                width: 113px;
+                                left: -39px;
+                                padding: 25px 10px;
+                                box-shadow: 2px 3px 14px rgba(3, 62, 140, 0.31);
+
+                                .admin-box_flex {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    .admin-box_button {
+                                        display: block;
+                                        color: #000;
+                                        font-weight: 700;
+                                        font-size: 14px;
+                                        text-transform: uppercase;
+                                        margin-bottom: 10px;
+
+                                        i {
+                                            margin-right: 5px;
+                                            font-size: 16px;
+                                        }
+
+                                        &:hover {
+                                            color: #f17604;
+
+                                            i {
+                                                color: #f17604;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        form {
+            max-width: 1130px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+
+            .admin-input {
+                height: 50px;
+                border: 1px solid #c4c4c4;
+                border-radius: 17px;
+                background: #c4c4c433;
+                color: #364a73b2;
+                font-size: 16px;
+                font-weight: 700;
+                outline: none;
+                margin-bottom: 16px;
+                padding-left: 16px;
+
+                &::placeholder {
+                    color: #364a73b2;
+                    opacity: 1;
+                }
+            }
+
+            .admin-input-medium {
+                width: 36%;
+            }
+
+            .admin-input-small {
+                width: 19%;
+            }
+
+            .admin-input-big {
+                width: 100%;
+            }
+
+            textarea {
+                height: 150px !important;
+                padding-top: 16px;
+            }
+
+            .input-file {
+                display: block;
+                text-align: center;
+                border-radius: 4px;
+                line-height: 40px;
+                cursor: pointer;
+                padding-left: 0;
+            }
+
+            .admin-form-button_conatiner {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    display: block;
+                    width: 100px;
+                    height: 40px;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    line-height: 40px;
+                    border-radius: 4px;
+                    text-align: center;
+                    background: #c20303;
+                    margin-right: 25px;
+                }
+
+                button {
+                    display: block;
+                    width: 100px;
+                    height: 40px;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    line-height: 40px;
+                    border-radius: 4px;
+                    text-align: center;
+                    background: #033e8c;
+                    border: 0;
+                    margin-right: 25px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transition: 0.2s;
+                        background: #f17604;
+                    }
+                }
             }
         }
     }
