@@ -13,7 +13,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
@@ -31,7 +31,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
@@ -49,7 +49,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
@@ -67,7 +67,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
@@ -85,7 +85,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
@@ -103,7 +103,7 @@ function Minicart({ active }) {
                         <div className="minicart-produto_box">
                             <img src="/image/img-anunciante.png" />
                             <div className="minicart-produto-box_info">
-                                <button className="minicart-produto-remover"><i class="fa-solid fa-trash"></i></button>
+                                <button className="minicart-produto-remover"><i className="fa-solid fa-trash"></i></button>
                                 <span className="minicart-produto-box_nome">Show de Mágica Infantil </span>
                                 <span className="minicart-produto-box_text">12/12/2012 - 15:00</span>
                                 <span className="minicart-produto-box_text">Teatro Bibi Ferreira - SP</span>
