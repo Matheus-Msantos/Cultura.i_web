@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller {
 
     public function index() {
-        return view( 'user.index' )->with( 'users', User::all() );
+        return response()->json( User::all() );
     }
 
     public function create() {
@@ -137,6 +137,10 @@ class UserController extends Controller {
             'token'=> $user->createToken ( $request->email )-> plainTextToken
 
         ] );
+    }
+
+    public function showSingle( User $user ) {
+        return response()->json( $user );
     }
 
     public function show() {

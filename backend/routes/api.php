@@ -26,6 +26,8 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::get('/order/all', [OrderItemController::class, 'order']);
     Route::get('/order/item/{orderItem}', [OrderItemController::class, 'orderItem']);
 
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user/{user}', [UserController::class, 'showSingle']);
     Route::get('/user/show', [UserController::class, 'show']);
     Route::put('/user/{user}', [UserController::class, 'updateApi']);
     Route::delete('/user', [UserController::class, 'destroyApi']);

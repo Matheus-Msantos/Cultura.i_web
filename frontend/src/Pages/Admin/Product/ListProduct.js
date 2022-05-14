@@ -48,7 +48,7 @@ function AdminProductPage() {
                     <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
 
                     <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin id={id} />
+                        <OptionBoxAdmin url={`/admin/product/edit/${id}`} />
                     </div>
                 </td>
             </tr>
