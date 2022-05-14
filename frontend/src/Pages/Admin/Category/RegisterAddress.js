@@ -8,8 +8,7 @@ import { BaseUrl } from "../../../Api/baseUrl";
 function AdminRegisterAddressPage() {
 
     const [name, setName] = useState('');
-    /* Pegando ID do parâmetro passado pela url  */
-    let { id } = useParams();
+
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
     /* Guardando Token */
