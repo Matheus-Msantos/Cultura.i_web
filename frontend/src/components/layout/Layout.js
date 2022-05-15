@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import LoginBox from "../LoginBox";
 import { UserContext } from "../../Auth";
+import logo from '../../assets/image/img-logo.png';
 
 import "./Layout.scss";
 import Minicart from "../Minicart";
@@ -38,7 +39,7 @@ function Layout({ children }) {
             <header className="layout-header_container">
                 <div className="layout-header_flex">
                     <Link to="/">
-                        <img className='layout-header_logo' src="image/img-logo.png" />
+                        <img className='layout-header_logo' src={logo} />
                     </Link>
 
                     <div className="layout-header-search_container">
