@@ -29,6 +29,7 @@
                 .span-product {
                     color: white;
                     font-weight: bold;
+                    margin-bottom: 0px;
                 }
             }
 
@@ -42,15 +43,18 @@
                 .span-price-unit {
                     color: #FFFFFF;
                     margin-right: 28px;
+                    margin-bottom: 0px;
                 }
 
                 .span-quantid {
                     color: #FFFFFF;
                     margin-right: 53px;
+                    margin-bottom: 0px;
                 }
 
                 .span-price {
                     color: #FFFFFF;
+                    margin-bottom: 0px;
                 }
             }
         }
@@ -72,20 +76,24 @@
                 margin-left: 84.63px;
                 font-size: 12px;
                 font-family: 'Poppins';
-                .info-data-title{
+
+                .info-data-title {
                     color: #4D4D4D;
                     width: 199.36px;
                 }
-                .data-hour{
+
+                .data-hour {
                     margin-top: 2px;
                     color: #5A5A5B;
                     font-weight: bold;
                 }
-                .local{
+
+                .local {
                     margin-top: 2px;
                     color: #999999;
                 }
-                .state{
+
+                .state {
                     margin-top: 2px;
                     color: #999999;
                 }
@@ -98,59 +106,62 @@
                 font-weight: bold;
                 margin-right: 12px;
                 justify-content: flex-end;
-                .price-uni{
+
+                .price-uni {
                     margin-right: 68px;
                     font-family: 'Poppins';
                 }
-                .quanti{
+
+                .quanti {
                     margin-right: 68px;
                     font-family: 'Poppins';
                 }
             }
         }
     }
-    .div-total-button-finish{
+
+    .div-total-button-finish {
         margin-top: 35px;
-        margin-right: 113px;
         width: 90%;
-        margin-left: 50px;
-        .div-sub-total{
-            display: flex;
-            justify-content: end;
-            .span-sub-total{
-                margin-right: 273px;
-                font-size: 22px;
-            }
-            .span-sub-total-price{
-                font-size: 22px;
-            }
-        }
-        .div-total{
+        margin-right: 256px;
+
+        .div-total {
             display: flex;
             justify-content: end;
             margin-top: 29px;
             font-weight: bold;
-            .span-total{
+
+            .span-total {
                 margin-right: 273px;
-                font-size: 22px;
+                font-size: 18px;
+                text-transform: uppercase;
             }
-            .span-total-price{
+
+            .span-total-price {
                 font-size: 22px;
+                margin-right: 65px;
+                font-size: 18px;
             }
         }
-        .div-btn-order-finish{
+
+        .div-btn-order-finish {
             display: flex;
             margin-top: 29px;
             justify-content: end;
-            .btn-order-finish{
-                width: 459px;
+            margin-right: 65px;
+
+            .btn-order-finish {
+                width: 400px;
                 height: 53px;
-                font-size: 22px;
                 border-radius: 10px;
-                font-family: 'Poppins';
                 background-color: #033E8C;
-                .bnt-link{
+
+                .bnt-link {
+                    font-size: 20px;
                     color: #FFFFFF;
+                    font-family: 'Poppins';
+                    font-weight: 700;
+                    text-transform: uppercase;
                 }
             }
         }

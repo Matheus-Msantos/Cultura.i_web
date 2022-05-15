@@ -16,31 +16,36 @@ function OrderCompletedPage() {
                 </div>
             </div>
             <div className="div-data-info-completed">
-                <h1 className="h1-title-products">Seu Pedido</h1>
+                <div className="div-h1-title-products">
+                    <h1 className="h1-title-products">Seu Pedido</h1>
+                </div>
                 <div className="div-head-info">
-                    <div>
-                        <span><p>Preço Uni.</p></span>
-                        <span><p>Quantid.</p></span>
-                        <span><p>Preço</p></span>
+                    <div className="div-product-completed">
+                        <span className="span-product-completed"><p className="product-completed">Prod</p></span>
+                    </div>
+                    <div className="price-quantit-total">
+                        <span className="span-price"><p className="price-completed">Preço</p></span>
+                        <span className="span-quantid"><p className="quantid-completed">Quantid.</p></span>
+                        <span className="span-total"><p className="total-completed">Total</p></span>
                     </div>
                 </div>
-                <div>
-                    <image src="#" />
-                    <div>
-                        <p>Show de Mágica Infantil</p>
+                <div className="div-data-product-completed">
+                    <image src="#" className="img-product-completed" />
+                    <div className="div-data-info-product-completed">
+                        <p className="info-data-title-completed">Show de Mágica Infantil</p>
                         <p>12/12/2022 - 15:00</p>
                         <p>Teatro Bibi</p>
                         <p>Ferreira - SP</p>
                     </div>
-                    <div>
-                        <div>
-                            <p>R$ 0,00</p>
-                            <p>10</p>
-                            <p>R$ 0,00</p>
+                    <div className="div-prices-product-completed">
+                        <div className="div-info-price-quant-completed">
+                            <p className="price-completed">R$ 0,00</p>
+                            <p className="quant-completed">10</p>
+                            <p className="total-price">R$ 0,00</p>
                         </div>
-                        <div>
-                            <span><p>Total</p></span>
-                            <span><p>R$ 0,00</p></span>
+                        <div className="div-total-completed">
+                            <span className="span-total-completed"><p className="total-completed">Total</p></span>
+                            <span className="span-total-price"><p className="total-price">R$ 0,00</p></span>
                         </div>
                     </div>
                 </div>

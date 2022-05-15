@@ -34,10 +34,6 @@ function CheckoutPage() {
                 </div>
             </div>
             <div className="div-total-button-finish">
-                <div className="div-sub-total">
-                    <span><p className="span-sub-total">Subtotal</p></span>
-                    <span><p className="span-sub-total-price">R$ 0,00</p></span>
-                </div>
                 <div className="div-total">
                     <span><p className="span-total">Total</p></span>
                     <span><p className="span-total-price">R$ 0,00</p></span>
