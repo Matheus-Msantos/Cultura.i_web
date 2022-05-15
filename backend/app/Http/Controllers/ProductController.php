@@ -70,8 +70,7 @@ class ProductController extends Controller {
 
     public function storeApi( Request $request ) {
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/product' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image =  $request->image;
         } else {
             $image  = 'storage/imageDefault.jpg';
         }
