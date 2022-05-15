@@ -32,20 +32,22 @@ function OrderCompletedPage() {
                 <div className="div-data-product-completed">
                     <image src="#" className="img-product-completed" />
                     <div className="div-data-info-product-completed">
-                        <p className="info-data-title-completed">Show de Mágica Infantil</p>
-                        <p>12/12/2022 - 15:00</p>
-                        <p>Teatro Bibi</p>
-                        <p>Ferreira - SP</p>
+                        <p className="info-data-title">Show de Mágica Infantil</p>
+                        <p className="info-data-day-hour">12/12/2022 - 15:00</p>
+                        <p className="info-data-local">Teatro Bibi</p>
+                        <p className="info-data-state">Ferreira - SP</p>
                     </div>
                     <div className="div-prices-product-completed">
                         <div className="div-info-price-quant-completed">
                             <p className="price-completed">R$ 0,00</p>
                             <p className="quant-completed">10</p>
-                            <p className="total-price">R$ 0,00</p>
+                            <p className="total-price-completed">R$ 0,00</p>
                         </div>
-                        <div className="div-total-completed">
-                            <span className="span-total-completed"><p className="total-completed">Total</p></span>
-                            <span className="span-total-price"><p className="total-price">R$ 0,00</p></span>
+                        <div className="div-general-total-completed">
+                            <div className="div-total-completed">
+                                <span className="span-total-completed"><p className="total-completed">Total</p></span>
+                                <span className="span-total-price"><p className="total-price">R$ 0,00</p></span>
+                            </div>
                         </div>
                     </div>
                 </div>
