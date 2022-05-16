@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
@@ -6,6 +6,7 @@ import Layout from "../../components/layout/Layout";
 
 import './Home.scss';
 import FilterCategory from "../../components/FilterCategory";
+import { UserContext } from "../../Auth";
 
 
 function HomePage() {
@@ -60,15 +61,17 @@ function HomePage() {
         const { id, image, name, date, time, address } = produto;
         return (
             <div className="eventos_box" key={id}>
-                <img src={image} />
+                <Link to={`/product/${id}`}>
+                    <img src={image} />
 
-                <div className="eventos-box_details">
-                    <span className="eventos-box-details_name">{name}</span>
-                    <span className="eventos-box-details_date">{date} - {time}</span>
-                    <address>{address?.street}, {address?.city} - {address?.state}</address>
-                    <span className="eventos-box-details_icon">Icon</span>
-                </div>
-            </div>
+                    <div className="eventos-box_details">
+                        <span className="eventos-box-details_name">{name}</span>
+                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <span className="eventos-box-details_icon">Icon</span>
+                    </div>
+                </Link>
+            </div >
         );
     });
 
@@ -77,14 +80,16 @@ function HomePage() {
         const { id, image, name, date, time, address } = produto;
         return (
             <div className="eventos_box" key={id}>
-                <img src={image} />
+                <Link to={`/product/${id}`}>
+                    <img src={image} />
 
-                <div className="eventos-box_details">
-                    <span className="eventos-box-details_name">{name}</span>
-                    <span className="eventos-box-details_date">{date} - {time}</span>
-                    <address>{address?.street}, {address?.city} - {address?.state}</address>
-                    <span className="eventos-box-details_icon">Icon</span>
-                </div>
+                    <div className="eventos-box_details">
+                        <span className="eventos-box-details_name">{name}</span>
+                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <span className="eventos-box-details_icon">Icon</span>
+                    </div>
+                </Link>
             </div>
         );
     });
@@ -94,14 +99,16 @@ function HomePage() {
         const { id, image, name, date, time, address } = novidade;
         return (
             <div className="eventos_box" key={id}>
-                <img src={image} />
+                <Link to={`/product/${id}`}>
+                    <img src={image} />
 
-                <div className="eventos-box_details">
-                    <span className="eventos-box-details_name">{name}</span>
-                    <span className="eventos-box-details_date">{date} - {time}</span>
-                    <address>{address?.street}, {address?.city} - {address?.state}</address>
-                    <span className="eventos-box-details_icon">Icon</span>
-                </div>
+                    <div className="eventos-box_details">
+                        <span className="eventos-box-details_name">{name}</span>
+                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <span className="eventos-box-details_icon">Icon</span>
+                    </div>
+                </Link>
             </div>
         );
     });

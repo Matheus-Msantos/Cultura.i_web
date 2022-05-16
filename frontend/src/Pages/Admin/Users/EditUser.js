@@ -51,8 +51,6 @@ function AdminEditUserPage() {
         handleUpdate();
     }
 
-    console.log(id)
-
     return (
         <div className="admin-container">
             <MenuAdmin active_01={"is--active"} />

@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 import { UserContext } from "../../../Auth";
-import { useState } from "react";
 
 function AdminRegisterProductPage() {
 
@@ -17,7 +16,7 @@ function AdminRegisterProductPage() {
     const [description, setDescription] = useState('');
     const [categoryAll, setCategoryAll] = useState([]);
     const [addressAll, setAddressAll] = useState([]);
-    //TODO const image;
+    const imageAPI = useRef()
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -25,24 +24,44 @@ function AdminRegisterProductPage() {
     const token = currentUser?.token;
     /* Passando Token no header para API */
     BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
-    /* Body da API */
-    const body = {
-        name: name,
-        description: description,
-        time: time,
-        date: date,
-        classification: classification,
-        category_id: category,
-        address_id: address,
-        price: price,
-        user_id: currentUser?.user?.id
-        //TODO image
+    /* Conexão com API de image */
+    async function uploadImage(image) {
+        const formData = new FormData();
+        formData.append('file', image);
+        formData.append('upload_preset', 'cultura.i');
+        formData.append('clound_name', 'matheusmelo01');
+
+        const response = await fetch('http://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
+            method: 'POST',
+            accept: 'application/json',
+            body: formData
+        });
+        const bodyJson = await response.json();
+        return bodyJson.url;
     }
+
     /* Conexão com API */
-    const handlePost = () => {
+    const handlePost = async () => {
+        let url = await uploadImage(imageAPI.current.files[0]);
+        console.log(url)
+        /* Body da API */
+        const body = {
+            name: name,
+            description: description,
+            time: time,
+            date: date,
+            classification: classification,
+            category_id: category,
+            address_id: address,
+            price: price,
+            user_id: currentUser?.user?.id,
+            image: url
+        }
         BaseUrl
             .post('/api/product', body)
-            .then((res) => console.log(res.data))
+            .then((res) => {
+                console.log(res.data);
+            })
             .catch((err) => {
                 console.error('Ops! ocorreu um erro' + err);
             })
@@ -119,7 +138,7 @@ function AdminRegisterProductPage() {
 
                     <textarea className="admin-input admin-input-big " placeholder="Descrição do evento" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
 
-                    <input type="file" className="admin-input admin-input-medium input-file" />
+                    <input type="file" className="admin-input admin-input-medium input-file" ref={imageAPI} />
 
                     <div className="admin-form-button_conatiner">
                         <Link to="/admin">Cancelar</Link>

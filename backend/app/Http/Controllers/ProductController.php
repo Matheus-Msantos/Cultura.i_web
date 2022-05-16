@@ -65,13 +65,12 @@ class ProductController extends Controller {
     }
 
     public function show( Product $product ) {
-        return response()->json( Product::with( 'category', 'address' )->where( 'id', $product->id )->get() );
+        return response()->json( Product::with( 'category', 'address', 'user' )->where( 'id', $product->id )->get() );
     }
 
     public function storeApi( Request $request ) {
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/product' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image =  $request->image;
         } else {
             $image  = 'storage/imageDefault.jpg';
         }

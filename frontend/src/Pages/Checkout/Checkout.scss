@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
 .div-checkout-page {
     .title-my-cart {
@@ -7,7 +7,7 @@
         font-size: 22px;
         margin-top: 44px;
         margin-left: 62px;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         border-radius: 2px;
         padding-bottom: 25px;
         border-bottom: rgba(3, 62, 140, 0.56) solid 3px;
@@ -21,7 +21,7 @@
         .div-info-data-checkout {
             display: flex;
             border-radius: 10px;
-            background-color: #033E8C;
+            background-color: #033e8c;
 
             .div-product {
                 margin-left: 39px;
@@ -41,19 +41,19 @@
                 justify-content: flex-end;
 
                 .span-price-unit {
-                    color: #FFFFFF;
+                    color: #ffffff;
                     margin-right: 28px;
                     margin-bottom: 0px;
                 }
 
                 .span-quantid {
-                    color: #FFFFFF;
+                    color: #ffffff;
                     margin-right: 53px;
                     margin-bottom: 0px;
                 }
 
                 .span-price {
-                    color: #FFFFFF;
+                    color: #ffffff;
                     margin-bottom: 0px;
                 }
             }
@@ -68,23 +68,22 @@
                 width: 136px;
                 height: 98px;
                 margin-left: 25px;
-                background-color: #C4C4C4;
-
+                background-color: #c4c4c4;
             }
 
             .div-info-product {
                 margin-left: 84.63px;
                 font-size: 12px;
-                font-family: 'Poppins';
+                font-family: "Poppins";
 
                 .info-data-title {
-                    color: #4D4D4D;
+                    color: #4d4d4d;
                     width: 199.36px;
                 }
 
                 .data-hour {
                     margin-top: 2px;
-                    color: #5A5A5B;
+                    color: #5a5a5b;
                     font-weight: bold;
                 }
 
@@ -109,12 +108,12 @@
 
                 .price-uni {
                     margin-right: 68px;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                 }
 
                 .quanti {
                     margin-right: 68px;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                 }
             }
         }
@@ -145,24 +144,35 @@
         }
 
         .div-btn-order-finish {
+            width: 400px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 29px;
-            justify-content: end;
-            margin-right: 65px;
+            justify-content: center;
+            margin-left: auto;
 
             .btn-order-finish {
                 width: 400px;
                 height: 53px;
                 border-radius: 10px;
-                background-color: #033E8C;
+                background-color: #033e8c;
 
                 .bnt-link {
                     font-size: 20px;
-                    color: #FFFFFF;
-                    font-family: 'Poppins';
+                    color: #ffffff;
+                    font-family: "Poppins";
                     font-weight: 700;
                     text-transform: uppercase;
                 }
+            }
+
+            .bnt-link_back {
+                display: block;
+                color: #f27507;
+                font-weight: 700;
+                text-decoration: underline !important;
+                margin-top: 10px;
             }
         }
     }

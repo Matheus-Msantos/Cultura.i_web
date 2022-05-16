@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
 import { useEffect } from "react";
+import { BaseUrl } from "./Api/baseUrl";
 
 /* Criar o contexto */
 export const UserContext = createContext();
@@ -21,9 +22,10 @@ export function AuthContext({ children }) {
     }, [])
 
     const [currentUser, setCurrentUser] = useState();
+    const [itemCount, setItemCount] = useState();
 
     return (
-        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <UserContext.Provider value={{ currentUser, setCurrentUser, itemCount, setItemCount }}>
             {children}
         </UserContext.Provider>
     );

@@ -16,8 +16,7 @@ class AdvertController extends Controller {
     public function storeApi( Request $request ) {
 
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/advert' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image = $request->image;
         } else {
             $image  = 'storage/imageDefault.jpg';
         }

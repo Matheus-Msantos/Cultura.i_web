@@ -97,8 +97,7 @@ class UserController extends Controller {
         ] );
 
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/user' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image = $request->image;
         } else {
             $image  = 'storage/imageDefault.jpg';
         }
@@ -149,7 +148,6 @@ class UserController extends Controller {
 
     function updateApi ( User $user, Request $request ) {
         $user->update( $request->all() );
-
         return response()->json( $user );
     }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { UserContext } from '../../../Auth';
@@ -16,6 +16,8 @@ function AdminEditProductPage() {
     const [description, setDescription] = useState('');
     const [categoryAll, setCategoryAll] = useState([]);
     const [addressAll, setAddressAll] = useState([]);
+    const [image, setImage] = useState();
+    const imageAPI = useRef()
 
     /* Pegando ID do parâmetro passado pela url  */
     let { id } = useParams();
@@ -25,6 +27,22 @@ function AdminEditProductPage() {
     const token = currentUser?.token;
     /* Passando Token no header para API */
     BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
+
+    /* Conexão com API de imagem */
+    async function uploadImage(image) {
+        const formData = new FormData();
+        formData.append('file', image);
+        formData.append('upload_preset', 'cultura.i');
+        formData.append('clound_name', 'matheusmelo01');
+
+        const response = await fetch('http://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
+            method: 'POST',
+            accept: 'application/json',
+            body: formData
+        });
+        const bodyJson = await response.json();
+        return bodyJson.url;
+    }
 
     useEffect(() => {
         /* Chamada da API do produto */
@@ -58,30 +76,36 @@ function AdminEditProductPage() {
                 console.error("ops! ocorreu um erro" + err);
             });
     }, [])
-    /* Body da API */
-    const body = {
-        name: name,
-        description: description,
-        time: time,
-        date: date,
-        classification: classification,
-        category_id: category,
-        address_id: address,
-        price: price,
-        user_id: currentUser?.user?.id
-        //TODO image
-    }
-    /* Conexão com API */
-    const handleUpdate = () => {
+
+    const handleUpdate = async () => {
+        let url = await uploadImage(imageAPI.current.files[0]);
+        console.log(url)
+        /* Body da API */
+        const body = {
+            name: name,
+            description: description,
+            time: time,
+            date: date,
+            classification: classification,
+            category_id: category,
+            address_id: address,
+            price: price,
+            user_id: currentUser?.user?.id,
+            image: url ? url : image
+        }
+        /* Conexão com API */
         BaseUrl
             .put(`/api/product/${id}`, body)
-            .then((res) => console.log(res.data))
+            .then((res) => {
+                console.log(res.data)
+            })
             .catch((err) => console.log('Ops! Ocorreu um erro ao atualizar um produto: ' + err))
     }
     /* Envio de dados para API */
     const onSubmit = (e) => {
         e.preventDefault();
         handleUpdate();
+
     }
     /* Mapeando todas as categorias*/
     const categoryMap = categoryAll.map((category) => {
@@ -99,9 +123,6 @@ function AdminEditProductPage() {
             </>
         );
     });
-
-
-    console.log(id)
 
     return (
         <div className="admin-container">
@@ -135,7 +156,7 @@ function AdminEditProductPage() {
 
                     <textarea className="admin-input admin-input-big " placeholder="Descrição do evento" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
 
-                    <input type="file" className="admin-input admin-input-medium input-file" />
+                    <input type="file" className="admin-input admin-input-medium input-file" ref={imageAPI} />
 
                     <div className="admin-form-button_conatiner">
                         <Link to="/admin">Cancelar</Link>
