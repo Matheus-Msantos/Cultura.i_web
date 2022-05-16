@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
@@ -6,6 +6,7 @@ import Layout from "../../components/layout/Layout";
 
 import './Home.scss';
 import FilterCategory from "../../components/FilterCategory";
+import { UserContext } from "../../Auth";
 
 
 function HomePage() {

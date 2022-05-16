@@ -7,16 +7,16 @@ import logo from '../../assets/image/img-logo.png';
 import "./Layout.scss";
 import Minicart from "../Minicart";
 
-
 function Layout({ children }) {
+
+    const [box, setBox] = useState(false);
+    const [minicart, setMinicart] = useState(false);
+
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
-
-    const userAuth = ''
-    /* Constante */
-    const [box, setBox] = useState(false);
-    const [minicart, setMinicart] = useState(false);
+    const { itemCount } = useContext(UserContext);
+    const ItemNumber = itemCount
 
     /* Função para abrir ou fechar o popup do usuário */
     const handleOpenBox = () => {
@@ -61,7 +61,7 @@ function Layout({ children }) {
                             <LoginBox box={box} />
                         </div>
 
-                        <button className="layout-header-login_carrinho" onClick={handleOpenMinicart}>Carrinho</button>
+                        <button className="layout-header-login_carrinho" onClick={handleOpenMinicart}> {ItemNumber && <span>{ItemNumber}</span>}  Carrinho</button>
                     </div>
                 </div>
 

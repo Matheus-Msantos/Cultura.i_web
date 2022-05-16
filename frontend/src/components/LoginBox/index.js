@@ -6,8 +6,6 @@ function LoginBox({ box }) {
 
     /* Contexto do usuário */
     const { currentUser } = useContext(UserContext);
-    console.log(currentUser);
-
 
     /* Função de sair da conta */
     const handleLogout = () => {

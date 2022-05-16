@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../../Auth";
 import Layout from "../../components/layout/Layout";
 import { BaseUrl } from "../../Api/baseUrl";
@@ -9,17 +9,31 @@ import './Product.scss';
 function ProductPage() {
 
     const [produto, setProduto] = useState([]);
+    const navigate = useNavigate()
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
+    /* Guardando Token */
+    const token = currentUser?.token;
+    /* Passando Token no header para API */
+    BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
     /* Pegando ID do parâmetro passado pela url  */
     let { id } = useParams();
 
+    /* Chamada da API para add 1 item no carrinho */
+    const handleCartAdd = () => {
+        BaseUrl
+            .get(`/api/cart/add/${id}`)
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log('Ops! Ocorreu um erro ao adicionar o produto no carrinho: ' + err))
+        navigate('/checkout');
+    }
+
     useEffect(() => {
+        /* Chamada da API de produto */
         BaseUrl
             .get(`/api/product/${id}`)
             .then((res) => {
-                console.log(res.data);
                 const { name, price, description, date, time, user, classification, address, category, image } = res.data[0];
                 const produtoObj = {
                     name: name,
@@ -40,7 +54,6 @@ function ProductPage() {
                 console.log('Ops! Ocorreu um erro mostrar 1 produto: ' + err);
             });
     }, [])
-    console.log(produto);
 
     return (
         <Layout>
@@ -84,7 +97,7 @@ function ProductPage() {
 
                 {
                     currentUser ?
-                        <button className="product-body-button">Comprar</button>
+                        <button className="product-body-button" onClick={(() => handleCartAdd())}>Comprar</button>
                         :
                         <button className="product-body-button disebled" disabled>Fazer o login para realizar a compra</button>
                 }

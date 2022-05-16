@@ -65,7 +65,7 @@ class ProductController extends Controller {
     }
 
     public function show( Product $product ) {
-        return response()->json( Product::with( 'category', 'address' )->where( 'id', $product->id )->get() );
+        return response()->json( Product::with( 'category', 'address', 'user' )->where( 'id', $product->id )->get() );
     }
 
     public function storeApi( Request $request ) {

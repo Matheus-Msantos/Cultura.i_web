@@ -144,6 +144,7 @@
             }
 
             .layout-header-login_carrinho {
+                position: relative;
                 display: block;
                 height: 30px;
                 background: url("../../../public/icons/icon-cart-header.svg") no-repeat;
@@ -153,6 +154,20 @@
                 border: 0;
                 margin: auto;
                 cursor: pointer;
+
+                span {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                    font-size: 12px;
+                    color: #fff;
+                    font-weight: 700;
+                    background: #f17604;
+                    border-radius: 50%;
+                    right: 12px;
+                    top: -7px;
+                }
             }
         }
     }
@@ -219,6 +234,7 @@
                 height: 100%;
                 overflow-y: auto;
                 overflow-x: hidden;
+                padding-bottom: 100px;
 
                 &::-webkit-scrollbar {
                     width: 8px;
@@ -251,38 +267,45 @@
                         flex-direction: column;
                         margin-left: 10px;
 
-                        .minicart-produto-remover {
-                            position: absolute;
-                            font-size: 16px;
-                            top: -3px;
-                            right: -29px;
-                            border: 0;
-                            background: transparent;
-                            cursor: pointer;
-                            i {
-                                &:hover {
-                                    color: #01318b;
-                                }
-                            }
-                        }
-
                         .minicart-produto-box_nome {
                             color: #4d4d4d;
                             font-size: 14px;
                             font-weight: 700;
-                            margin-bottom: 5;
+                            margin-bottom: 8px;
                         }
 
                         .minicart-produto-box_text {
                             color: #4d4d4d;
                             font-size: 14px;
                             font-weight: 400;
+
+                            &.price {
+                                font-weight: 600;
+                            }
                         }
-                        select {
-                            width: 25%;
-                            margin-left: auto;
-                            margin-top: 16px;
-                            outline: none;
+
+                        .minicart-quantity {
+                            display: flex;
+                            width: fit-content;
+                            border: 2px solid #c4c4c4;
+                            border-radius: 4px;
+                            margin-top: 10px;
+
+                            button {
+                                width: 25px;
+                                border: 0;
+                                background: transparent;
+
+                                &:hover {
+                                    background: #c4c4c4;
+                                }
+                            }
+
+                            span {
+                                display: block;
+                                margin: 0 5px;
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
