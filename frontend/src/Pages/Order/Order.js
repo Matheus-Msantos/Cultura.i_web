@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Auth";
 import { BaseUrl } from "../../Api/baseUrl";
 import Layout from '../../components/layout/Layout'
+import Moment from 'moment'
 
 function OrderPage() {
 
@@ -29,12 +30,13 @@ function OrderPage() {
 
     const MapPedidos = pedidos.map((pedido) => {
         const { id, product, value, quantity, created_at } = pedido
+        const date = Moment(created_at).format("DD/MM/YYYY");
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
                 <td>  <img src={product.image} /></td>
                 <td>{product.name}</td>
-                <td>{created_at}</td>
+                <td>{date}</td>
                 <td>{quantity}</td>
                 <td>R$ {value}</td>
             </tr>

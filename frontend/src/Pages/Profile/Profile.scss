@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
 .div-profile-page {
     .h1-title-my-profile {
-        font-size: 22px;
-        margin-top: 132px;
+        font-size: 25px;
+        text-transform: uppercase;
         text-align: center;
-        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-family: "Poppins";
         color: #000000;
         border-bottom: rgba(3, 62, 140, 0.56) solid;
         width: 302px;
-        margin-left: 45%;
-        margin-right: 45%;
+        margin: 0 auto;
+        margin-top: 132px;
+        padding-bottom: 5px;
     }
 
     .div-profile-order {
@@ -21,22 +23,28 @@
             margin-left: 27px;
             width: 180px;
             height: 55px;
-            background: #F5F5F6;
+            background: #f5f5f6;
             text-align: center;
             border-radius: 20px 20px 0px 0px;
             margin-top: 10px;
 
             .span-profile {
                 display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
 
                 .link-profile {
-                    margin-left: 63px;
-                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                     text-decoration: none;
                     font-size: 18px;
-                    color: #000000;
+                    color: #fff;
                     font-weight: bold;
-                    font-family: 'Poppins', sans-serif;
+                    line-height: 55px;
+                    background: #01318b;
+                    border-radius: 20px 20px 0px 0px;
                 }
             }
         }
@@ -45,23 +53,31 @@
             margin-left: 11px;
             width: 180px;
             height: 55px;
-            background: #F5F5F6;
+            background: #f5f5f6;
             text-align: center;
             border-radius: 20px 20px 0px 0px;
             margin-top: 10px;
-
 
             .span-order {
                 display: flex;
 
                 .link-order {
-                    margin-left: 58px;
-                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                     text-decoration: none;
                     font-size: 18px;
-                    color: #C2C2C2;
+                    color: #c2c2c2;
                     font-weight: bold;
-                    font-family: 'Poppins', sans-serif;
+                    line-height: 55px;
+                    border-radius: 20px 20px 0px 0px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transition: 0.2s;
+                        color: #fff;
+                        background: rgba(241, 118, 4, 0.7);
+                    }
                 }
             }
         }
@@ -70,7 +86,7 @@
     //dados
     .div-personal-data-account {
         display: flex;
-        background: #F5F5F6;
+        background: #f5f5f6;
         justify-content: center;
 
         .div-personal-data {
@@ -78,19 +94,19 @@
             margin-right: 24px;
 
             .h1-title-personal-data {
+                font-size: 30px;
                 text-align: center;
                 margin-top: 64px;
             }
 
             .div-img-button {
-
                 .div-img {
                     text-align: center;
                     margin-top: 58.45px;
 
                     .img-Photograph {
                         background-color: #858585;
-                        border-radius: 100%
+                        border-radius: 100%;
                     }
                 }
 
@@ -99,10 +115,10 @@
                     margin-top: 10.63px;
 
                     .btn-trocar-Photograph {
-                        background-color: #F17604;
+                        background-color: #f17604;
                         border-style: none;
                         border-radius: 10px;
-                        color: #FFFDFD;
+                        color: #fffdfd;
                         cursor: pointer;
                         width: 140px;
                         height: 18px;
@@ -119,7 +135,7 @@
                         font-size: 18px;
                         width: 400px;
                         font-weight: bold;
-                        font-family: 'Poppins';
+                        font-family: "Poppins";
                     }
                 }
 
@@ -127,7 +143,7 @@
                     .input-name {
                         width: 408.72px;
                         height: 45.77px;
-                        border: 1px solid #C4C4C4;
+                        border: 1px solid #c4c4c4;
                         border-radius: 8px;
                     }
                 }
@@ -142,16 +158,7 @@
                         font-size: 18px;
                         width: 400px;
                         font-weight: bold;
-                        font-family: 'Poppins';
-                    }
-                }
-
-                .div-input-cpf {
-                    .input-cpf {
-                        width: 408.72px;
-                        border: 1px solid #C4C4C4;
-                        border-radius: 8px;
-                        height: 45.77px;
+                        font-family: "Poppins";
                     }
                 }
             }
@@ -165,46 +172,37 @@
                         font-size: 18px;
                         width: 400px;
                         font-weight: bold;
-                        font-family: 'Poppins';
-                    }
-                }
-
-                .div-input-date-birth {
-                    display: flex;
-
-                    .input-day {
-                        height: 45.77px;
-                        width: 128.27px;
-                        border: 1px solid #C4C4C4;
-                        border-radius: 8px;
-                    }
-
-                    .input-month {
-                        height: 45.77px;
-                        width: 128.27px;
-                        margin-left: 23.9px;
-                        border: 1px solid #C4C4C4;
-                        border-radius: 8px;
-                    }
-
-                    .input-year {
-                        height: 45.77px;
-                        width: 128.27px;
-                        margin-left: 23.9px;
-                        border: 1px solid #C4C4C4;
-                        border-radius: 8px;
+                        font-family: "Poppins";
                     }
                 }
             }
-        }
 
-        hr {
-            margin-left: 10%;
-            margin-right: 10%;
-        }
+            .profile-button-edit {
+                display: block;
+                width: 173px;
+                height: 30px;
+                font-size: 14px;
+                text-align: center;
+                color: #fff;
+                background: #01318b;
+                font-weight: 700;
+                text-transform: uppercase;
+                border: 0;
+                border-radius: 32px;
+                cursor: pointer;
+                line-height: 30px;
+                margin-bottom: 10px;
+                margin-left: auto;
+                transition: 0.2s;
 
+                &:hover {
+                    transition: 0.2s;
+                    background: #f17604;
+                }
+            }
+        }
         .div-account {
-            margin-bottom: 98.74px ;
+            margin-bottom: 98.74px;
 
             .h1-title-account {
                 text-align: center;
@@ -215,7 +213,7 @@
                 margin-top: 86px;
                 margin-left: 93px;
                 font-weight: bold;
-                font-family: 'Poppins';
+                font-family: "Poppins";
 
                 .label-email {
                     font-size: 18px;
@@ -228,7 +226,7 @@
                 .input-email {
                     width: 408.72px;
                     height: 45.77px;
-                    border: 1px solid #C4C4C4;
+                    border: 1px solid #c4c4c4;
                     border-radius: 8px;
                 }
             }
@@ -241,7 +239,7 @@
                     width: 408.72px;
                     height: 45.77px;
                     font-weight: bold;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                 }
             }
 
@@ -251,7 +249,7 @@
                 .input-email-confirm {
                     width: 408.72px;
                     height: 45.77px;
-                    border: 1px solid #C4C4C4;
+                    border: 1px solid #c4c4c4;
                     border-radius: 8px;
                 }
             }
@@ -264,7 +262,7 @@
                     width: 408.72px;
                     height: 45.77px;
                     font-weight: bold;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                 }
             }
 
@@ -274,7 +272,7 @@
                 .input-pass {
                     width: 408.72px;
                     height: 45.77px;
-                    border: 1px solid #C4C4C4;
+                    border: 1px solid #c4c4c4;
                     border-radius: 8px;
                 }
             }
@@ -287,7 +285,7 @@
                     width: 408.72px;
                     height: 45.77px;
                     font-weight: bold;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                 }
             }
 
@@ -297,21 +295,66 @@
                 .input-new-pass {
                     width: 408.72px;
                     height: 45.77px;
-                    border: 1px solid #C4C4C4;
+                    border: 1px solid #c4c4c4;
                     border-radius: 8px;
                 }
             }
 
             .btn-save {
-                background-color: #F17604;
+                background-color: #f17604;
                 border-style: none;
                 border-radius: 10px;
-                color: #FFFDFD;
+                color: #fffdfd;
                 cursor: pointer;
                 width: 115px;
                 height: 29.26px;
                 margin-top: 39px;
                 margin-left: 395px;
+            }
+        }
+    }
+
+    .div-personal-data-account form {
+        display: flex;
+        flex-direction: column;
+
+        .div-lable-email {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .div-input-email input {
+            width: 100%;
+            height: 36px;
+            border: #9b9b9b 1px solid;
+            border-radius: 8px;
+            outline: none;
+            padding-left: 16px;
+            outline: none;
+            margin-bottom: 16px;
+        }
+
+        .btn-save {
+            display: block;
+            width: 173px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background: #f17604;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 32px;
+            cursor: pointer;
+            line-height: 30px;
+            margin-top: 16px;
+            margin-left: auto;
+            transition: 0.2s;
+
+            &:hover {
+                transition: 0.2s;
+                background: #01318b;
             }
         }
     }

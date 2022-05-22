@@ -13,7 +13,7 @@
 }
 
 .home-slider-categorias_container {
-    max-width: 668px;
+    max-width: 734px;
     margin: 0 auto;
     margin-top: 70px;
 
@@ -50,6 +50,11 @@
 
         .slick-next {
             right: 11px !important;
+        }
+
+        .slick-list {
+            width: 90%;
+            margin: 0 auto;
         }
     }
 }

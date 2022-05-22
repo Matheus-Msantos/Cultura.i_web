@@ -1,14 +1,16 @@
 .div-order-page {
     .h1-title-my-orders {
-        font-size: 22px;
-        margin-top: 132px;
+        font-size: 25px;
+        text-transform: uppercase;
         text-align: center;
-        font-family: 'Poppins';
+        font-weight: 700;
+        font-family: "Poppins";
         color: #000000;
         border-bottom: rgba(3, 62, 140, 0.56) solid;
         width: 302px;
-        margin-left: 45%;
-        margin-right: 45%;
+        margin: 0 auto;
+        margin-top: 132px;
+        padding-bottom: 5px;
     }
 
     .div-order-links {
@@ -19,7 +21,7 @@
             margin-left: 27px;
             width: 180px;
             height: 55px;
-            background: #F5F5F6;
+            background: #f5f5f6;
             text-align: center;
             border-radius: 20px 20px 0px 0px;
             margin-top: 10px;
@@ -28,13 +30,22 @@
                 display: flex;
 
                 .order-link {
-                    margin-left: 63px;
-                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                     text-decoration: none;
                     font-size: 18px;
-                    color: #C2C2C2;
+                    color: #c2c2c2;
                     font-weight: bold;
-                    font-family: 'Poppins', sans-serif;
+                    line-height: 55px;
+                    border-radius: 20px 20px 0px 0px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transition: 0.2s;
+                        color: #fff;
+                        background: rgba(241, 118, 4, 0.7);
+                    }
                 }
             }
         }
@@ -43,7 +54,7 @@
             margin-left: 11px;
             width: 180px;
             height: 55px;
-            background: #F5F5F6;
+            background: #f5f5f6;
             text-align: center;
             border-radius: 20px 20px 0px 0px;
             margin-top: 10px;
@@ -52,87 +63,57 @@
                 display: flex;
 
                 .profile-link {
-                    margin-left: 58px;
-                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                     text-decoration: none;
                     font-size: 18px;
-                    color: #000000;
+                    color: #fff;
                     font-weight: bold;
-                    font-family: 'Poppins', sans-serif;
+                    line-height: 55px;
+                    background: #01318b;
+                    border-radius: 20px 20px 0px 0px;
                 }
             }
         }
     }
 
     .div-data-info-request {
-        background: #F5F5F6;
+        background: #f5f5f6;
         padding-top: 75px;
 
-        .div-data-info {
-            display: flex;
-            justify-content: space-around;
-            background-color: #033E8C;
-            margin-left: 60px;
-            margin-right: 60px;
-            font-weight: bold;
-            font-family: 'Poppins';
-            //border-radius: 10px;
-            padding: 2px;
-        }
-
-        .header-data {
-            color: white;
-        }
-
-
-        .div-data-request-order {
-            margin-top: 31px;
-            margin-left: 60px;
-            margin-right: 60px;
-
-            .div-order {
-                display: flex;
-                justify-content: space-around;
-                margin-top: 25px;
-
-                .order-id {
-                    margin-left: 50px;
-                }
-
-                .order-image {
-                    width: 96px;
-                    height: 71px;
-                    margin-left: 50px;
-                    background-color: #C4C4C4;
-                }
-
-                .order-data {
-                    text-align: center;
+        table {
+            thead {
+                background: #033e8c;
+                border-radius: 4px;
+                tr {
+                    border-bottom: 0;
+                    th {
+                        font-size: 14px;
+                        color: #fff;
+                        font-weight: 700;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
                 }
             }
-        }
 
-        .div-btn-home {
-            display: flex;
-            justify-content: end;
+            tbody {
+                tr {
+                    th {
+                        text-align: center;
+                    }
+                    td {
+                        text-align: center;
 
-            .btn-home {
-                margin-top: 17px;
-                cursor: pointer;
-                width: 188px;
-                height: 53px;
-                border-style: none;
-                border-radius: 20px;
-                background-color: #033E8C;
-                margin-bottom: 21px;
-                margin-right: 66px;
-
-                .btn-link-home {
-                    text-decoration: none;
-                    color: #FFFFFF;
-                    font-size: 20px;
-                    font-family: 'Poppins';
-                    font-weight: bold;
+                        img {
+                            display: block;
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 4px;
+                            margin: 0 auto;
+                        }
+                    }
                 }
             }
         }

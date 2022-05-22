@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
 import { UserContext } from "../../Auth";
 import Layout from '../../components/layout/Layout'
@@ -7,6 +7,8 @@ import Layout from '../../components/layout/Layout'
 import "./Profile.scss";
 
 function ProfileEditPage() {
+
+    const navigate = useNavigate()
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -52,6 +54,7 @@ function ProfileEditPage() {
                 /* Adicionar o usuário no localStorage */
                 const user = [res.data]
                 localStorage.setItem('User', JSON.stringify(user));
+                navigate('/profile')
             })
             .catch((err) => {
                 console.log('Ops! Ocorreu um erro ao atualizar o usuário: ' + err);
@@ -62,6 +65,9 @@ function ProfileEditPage() {
         e.preventDefault();
         handleEdit();
     }
+
+
+    useEffect(() => { }, [currentUser])
 
     return (
         <Layout>
@@ -75,9 +81,9 @@ function ProfileEditPage() {
                         <span className="span-order"><Link to="/order" className="link-order">Pedidos</Link></span>
                     </div>
                 </div>
-                <div className="div-account">
-                    <form onSubmit={(e) => handleSubmit(e)}>
-                        <h1 className="h1-title-account">Conta</h1>
+                <div className="div-personal-data-account">
+                    <form onSubmit={(e) => handleSubmit(e)} className="div-personal-data">
+                        <h1 className="h1-title-personal-data">Editar meu perfil</h1>
                         <div className="div-lable-email">
                             <label className="label-email">Nome</label>
                         </div>
@@ -90,16 +96,16 @@ function ProfileEditPage() {
                         <div className="div-input-email">
                             <input type="email" className="input-email" value={email} disabled />
                         </div>
-                        <div className="div-label-new-pass">
+                        <div className="div-lable-email">
                             <label className="label-new-pass">CPF/CNPJ</label>
                         </div>
-                        <div className="div-input-new-pass">
+                        <div className="div-input-email">
                             <input type="text" className="input-new-pass" value={cpf} disabled />
                         </div>
-                        <div className="div-label-new-pass">
-                            <label className="label-new-pass">Nova Senha</label>
+                        <div className="div-lable-email">
+                            <label className="label-new-pass">Imagem</label>
                         </div>
-                        <div className="div-input-new-pass">
+                        <div>
                             <input type="file" ref={imageAPI} />
                         </div>
 
