@@ -72,7 +72,7 @@ class ProductController extends Controller {
         if ( $request->image ) {
             $image =  $request->image;
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259950/yljvylgxh9grjh141gv8.png';
         }
 
         $product = Product::create( [

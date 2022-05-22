@@ -31,7 +31,7 @@ class UserController extends Controller {
             $image = $request->file( 'image' )->store( '/public/user' );
             $image = str_replace( 'public/', 'storage/', $image );
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         if ( $request->is_Admin ) {
@@ -70,7 +70,7 @@ class UserController extends Controller {
             $image = $request->file( 'image' )->store( '/public/product' );
             $image = str_replace( 'public/', 'storage/', $image );
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         $user->update( [
@@ -102,7 +102,7 @@ class UserController extends Controller {
         if ( $request->image ) {
             $image = $request->image;
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         if ( $request->is_Admin ) {
