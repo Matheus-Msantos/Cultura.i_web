@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { BaseUrl } from "../../Api/baseUrl";
 
@@ -20,7 +21,7 @@ function FilterCategory() {
     const MapCategorias = categorias.map((categoria) => {
         return (
             <div className="home-slider-categorias_box" key={categoria.id}>
-                <a href="#">{categoria.name}</a>
+                <Link to={`/category/${categoria.id}`}>{categoria.name}</Link>
             </div>
         );
     })

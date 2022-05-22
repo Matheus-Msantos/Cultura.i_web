@@ -4,12 +4,20 @@ import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 
 import OptionBoxAdmin from "../../../components/OptionBoxAdmin/index";
+import { UserContext } from "../../../Auth";
+import { useContext } from "react";
 
 
 function AdminAddressPage() {
 
     const [address, setAddress] = useState([]);
     const [box, setBox] = useState(false);
+    /* Contexto do Usuário */
+    const { currentUser } = useContext(UserContext);
+    /* Guardando Token */
+    const token = currentUser?.token;
+    /* Passando Token no header para API */
+    BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
 
     useEffect(() => {
         /* Chamada da API de todos os endereços */
@@ -41,10 +49,14 @@ function AdminAddressPage() {
                 <td>{country}</td>
                 <td>
                     <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
+                    {currentUser?.user.is_Admin ?
+                        <div className={`admin-box_container ${box && 'is--active'}`}>
+                            <OptionBoxAdmin url={`/admin/address/edit/${id}`} />
+                        </div>
+                        :
+                        ''
+                    }
 
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/address/edit/${id}`} />
-                    </div>
                 </td>
             </tr>
         );

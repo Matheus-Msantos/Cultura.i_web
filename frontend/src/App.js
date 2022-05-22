@@ -26,6 +26,10 @@ import AdminEditAdvertPage from './Pages/Admin/Advert/EditAdvert';
 import AdminUserPage from './Pages/Admin/Users/ListUser';
 import AdminEditUserPage from './Pages/Admin/Users/EditUser';
 import AdminOrderPage from './Pages/Admin/Order/ListOrder';
+import ProfileEditPage from './Pages/Profile/ProfileEdit';
+import CategoryPage from './Pages/Category/Category';
+import RegisterProducerPage from './Pages/Register/RegisterProducer';
+import RegisterAdvertPage from './Pages/Register/RegisterAdvert';
 
 function App() {
 
@@ -39,8 +43,12 @@ function App() {
           <Route path="/order-completed" element={<OrderCompletedPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register/producer" element={<RegisterProducerPage />} />
+          <Route path="/register/advert" element={<RegisterAdvertPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/edit" element={<ProfileEditPage />} />
           <Route path="/order" element={<OrderPage />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
 
           <Route path="/admin" element={<AdminProductPage />} />
           <Route path="/admin/product/register" element={<AdminRegisterProductPage />} />

@@ -74,8 +74,8 @@ function LoginPage() {
                         </div>
                     </div>
                     <div className="div-announce-events">
-                        <button className="btn-announce">QUERO ANUNCIAR</button>
-                        <button className="btn-events">QUERO DIVULGAR EVENTOS</button>
+                        <Link to="/register/advert" className="btn-announce">QUERO ANUNCIAR</Link>
+                        <Link to="/register/producer" className="btn-events">QUERO DIVULGAR EVENTOS</Link>
                     </div>
                 </form>
             </div>

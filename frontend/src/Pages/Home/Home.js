@@ -15,6 +15,7 @@ function HomePage() {
     const [produtoDestaque, setProdutoDestaque] = useState([]);
     const [proximosEventos, setProximosEventos] = useState([]);
     const [novidades, setNovidades] = useState([]);
+    const [anuncios, setAnuncios] = useState([]);
 
     useEffect(() => {
         /* Chamada da API de todos os produtos */
@@ -50,6 +51,15 @@ function HomePage() {
             .get('/api/product/category/3')
             .then((res) => {
                 setNovidades(res.data);
+            })
+            .catch((err) => {
+                console.log('Ops! Ocorreu um erro ao mostrar o produto pela categoria: ' + err);
+            });
+        /* Chamada da API dos anuncios */
+        BaseUrl
+            .get('/api/advert')
+            .then((res) => {
+                setAnuncios(res.data);
             })
             .catch((err) => {
                 console.log('Ops! Ocorreu um erro ao mostrar o produto pela categoria: ' + err);
@@ -94,6 +104,15 @@ function HomePage() {
         );
     });
 
+    /* Mapeando produtos da categoria próximos eventos */
+    const MapAnuncio = anuncios.map((anuncio) => {
+        const { id, image } = anuncio;
+        return (
+            <div className="home-slider-anuncios-box" key={id}>
+                <img src={image} />
+            </div>
+        );
+    });
     /* Mapeando produtos da categoria próximos eventos */
     const MapNovidades = novidades.map((novidade) => {
         const { id, image, name, date, time, address } = novidade;
@@ -140,29 +159,7 @@ function HomePage() {
             <Layout>
                 <div className="home-slider-anuncios_container slider">
                     <Slider {...settings}>
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
-
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
-
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
-
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
-
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
-
-                        <div className="home-slider-anuncios-box">
-                            <img src="/image/img-slider.png" />
-                        </div>
+                        {MapAnuncio}
                     </Slider>
                 </div>
 

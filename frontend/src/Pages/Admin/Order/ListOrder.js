@@ -41,6 +41,24 @@ function AdminOrderPage() {
         );
     });
 
+    /* Filtrando os pedidos por id do produtor logado */
+    const filterPedidos = pedidos.filter((pedidos) => pedidos?.product.user_id === currentUser?.user.id);
+
+    /* Mapeando todos os produtos e adicionando na página */
+    const MapPedidosProducer = filterPedidos.map((pedido) => {
+        const { id, user, quantity, value, product, created_at } = pedido;
+        return (
+            <tr key={id}>
+                <th scope="row">{id}</th>
+                <td>{user?.name}</td>
+                <td>{quantity}</td>
+                <td>R$ {value}</td>
+                <td>{product.name}</td>
+                <td>{created_at}</td>
+            </tr>
+        );
+    });
+
     return (
         <div className="admin-container">
             <MenuAdmin active_06={"is--active"} />
@@ -61,7 +79,7 @@ function AdminOrderPage() {
                         </tr>
                     </thead>
                     <tbody >
-                        {MapPedidos}
+                        {currentUser?.user.is_Admin ? MapPedidos : MapPedidosProducer}
                     </tbody>
                 </table>
             </div>

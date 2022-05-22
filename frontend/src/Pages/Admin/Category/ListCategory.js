@@ -3,11 +3,19 @@ import MenuAdmin from "../../../components/MenuAdmin";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../../Api/baseUrl";
 import OptionBoxAdmin from "../../../components/OptionBoxAdmin";
+import { UserContext } from "../../../Auth";
+import { useContext } from "react";
 
 function AdminCategoryPage() {
 
     const [categorias, setCategorias] = useState([]);
     const [box, setBox] = useState(false);
+    /* Contexto do Usuário */
+    const { currentUser } = useContext(UserContext);
+    /* Guardando Token */
+    const token = currentUser?.token;
+    /* Passando Token no header para API */
+    BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
 
     useEffect(() => {
         /* Chamada da API de todas as categorias */
@@ -29,9 +37,13 @@ function AdminCategoryPage() {
                 <td>
                     <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
 
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/category/edit/${id}`} />
-                    </div>
+                    {currentUser?.user.is_Admin ?
+                        <div className={`admin-box_container ${box && 'is--active'}`}>
+                            <OptionBoxAdmin url={`/admin/category/edit/${id}`} />
+                        </div>
+                        : ''
+                    }
+
                 </td>
             </tr>
         );

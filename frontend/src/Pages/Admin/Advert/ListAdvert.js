@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../../Api/baseUrl";
 import OptionBoxAdmin from "../../../components/OptionBoxAdmin";
+import { UserContext } from "../../../Auth";
 
 function AdminAdvertPage() {
 
     const [anuncios, setAnuncios] = useState([]);
     const [box, setBox] = useState(false);
+
+    /* Contexto do Usuário */
+    const { currentUser } = useContext(UserContext);
+    /* Guardando Token */
+    const token = currentUser?.token;
+    /* Passando Token no header para API */
+    BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
 
     useEffect(() => {
         /* Chamada da API de todas as anúncios */
@@ -18,6 +26,16 @@ function AdminAdvertPage() {
                 console.error("ops! ocorreu um erro" + err);
             });
     }, []);
+
+    const handleDelete = (id) => {
+        /* Chamada da API para excluir anúncio */
+        BaseUrl
+            .delete(`/api/advert/${id}`)
+            .then((res) => window.location.reload())
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+    }
 
     /* Mapeando todos os anuncios e adicionando na página */
     const MapAnuncios = anuncios.map((anuncio) => {
@@ -30,22 +48,37 @@ function AdminAdvertPage() {
                 </td>
                 <td>{user.name}</td>
                 <td>
-                    <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
-
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/advert/edit/${id}`} />
+                    <div className={`admin-box_container is--active`}>
+                        <Link to={`/admin/advert/edit/${id}`} className="admin-box_button"><i className="fa-solid fa-pencil"></i> Editar</Link>
+                        <button className="admin-box_button" onClick={() => handleDelete(id)}><i className="fa-solid fa-trash"></i> Excluir</button>
                     </div>
                 </td>
             </tr>
         );
     });
 
-    const handleBox = () => {
-        if (box === false)
-            setBox(true);
-        else
-            setBox(false);
-    }
+    /* Filtrando os pedidos por id do produtor logado */
+    const filterAnuncios = anuncios.filter((anuncios) => anuncios?.user_id === currentUser?.user.id);
+
+    /* Mapeando todos os anuncios e adicionando na página */
+    const MapAnunciosAnunciante = filterAnuncios.map((anuncio) => {
+        const { id, image, user } = anuncio;
+        return (
+            <tr key={id}>
+                <th scope="row">{id}</th>
+                <td>
+                    <img src={image} />
+                </td>
+                <td>{user.name}</td>
+                <td>
+                    <div className={`admin-box_container is--active`}>
+                        <Link to={`/admin/advert/edit/${id}`} className="admin-box_button"><i className="fa-solid fa-pencil"></i> Editar</Link>
+                        <button className="admin-box_button" onClick={() => handleDelete(id)}><i className="fa-solid fa-trash"></i> Excluir</button>
+                    </div>
+                </td>
+            </tr>
+        );
+    });
 
     return (
         <div className="admin-container">
@@ -65,7 +98,11 @@ function AdminAdvertPage() {
                         </tr>
                     </thead>
                     <tbody >
-                        {MapAnuncios}
+                        {currentUser?.user.is_Admin ?
+                            MapAnuncios
+                            :
+                            MapAnunciosAnunciante
+                        }
                     </tbody>
                 </table>
             </div>
