@@ -77,10 +77,6 @@ function CheckoutPage() {
                 {MapItens}
             </div>
             <div className="div-total-button-finish">
-                <div className="div-total">
-                    <span><p className="span-total">Total</p></span>
-                    <span><p className="span-total-price">R$ 0,00</p></span>
-                </div>
                 <div className="div-btn-order-finish">
                     <button className="btn-order-finish" onClick={() => { handleOrder() }}><Link to="/order-completed" className="bnt-link">Fechar Pedido</Link></button>
                     <Link className="bnt-link_back" to="/">Continuar comprando</Link>

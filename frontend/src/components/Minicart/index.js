@@ -80,10 +80,6 @@ function Minicart({ active }) {
                 </div>
 
                 <div className="minicart-footer">
-                    <div className="minicart-footer-total_container">
-                        <span>Total</span> <span>R$ 0</span>
-                    </div>
-
                     <Link to="/checkout" className="minicart-footer_button">Finalizar compra</Link>
                 </div>
             </div>
