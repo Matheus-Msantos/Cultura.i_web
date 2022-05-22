@@ -1,6 +1,32 @@
-import React, { createContext } from "react";
+import React, { useState, createContext } from "react";
+import { useEffect } from "react";
+import { BaseUrl } from "./Api/baseUrl";
 
-export const AuthContext = createContext(localStorage.getItem('Token'));
+/* Criar o contexto */
+export const UserContext = createContext();
 
-const userDb = localStorage.getItem('User')
-export const UserArray = createContext(JSON.parse(userDb))
+export function AuthContext({ children }) {
+
+    /* Pega dados do local storage */
+    const userAuth = JSON.parse(localStorage.getItem('User'))
+
+    useEffect(() => {
+        /* Verifica se há dados no local storage, se não houver retorna undefined */
+        if (!!userAuth)
+            var user = userAuth[0];
+        else
+            user = ''
+
+        /* Adiciona o usuário no contexto */
+        setCurrentUser(user);
+    }, [])
+
+    const [currentUser, setCurrentUser] = useState();
+    const [itemCount, setItemCount] = useState();
+
+    return (
+        <UserContext.Provider value={{ currentUser, setCurrentUser, itemCount, setItemCount }}>
+            {children}
+        </UserContext.Provider>
+    );
+}

@@ -26,16 +26,20 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::get('/order/all', [OrderItemController::class, 'order']);
     Route::get('/order/item/{orderItem}', [OrderItemController::class, 'orderItem']);
 
+    Route::get('/user', [UserController::class, 'index']);
     Route::get('/user/show', [UserController::class, 'show']);
+    Route::get('/user/{user}', [UserController::class, 'showSingle']);
     Route::put('/user/{user}', [UserController::class, 'updateApi']);
     Route::delete('/user', [UserController::class, 'destroyApi']);
 
-    Route::post('/advert', [AdvertController::class, 'storeApi']);
     Route::post('/product', [ProductController::class, 'storeApi']);
-
-
     Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
+
+
+    Route::post('/advert', [AdvertController::class, 'storeApi']);
     Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
+    Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);
+    Route::delete('/advert/{advert}', [AdvertController::class, 'destroyApi']);
 });
 
 
@@ -69,6 +73,3 @@ Route::delete('/address/{address}', [AddressController::class, 'destroyApi']);
 
 /*-- Route Advert --*/
 Route::get('/advert', [AdvertController::class, 'indexApi']);
-
-Route::get('/advert/{advert}', [AdvertController::class, 'showApi']);
-Route::put('/advertiser/{advertiser}', [AdvertiserController::class, 'updateApi']);

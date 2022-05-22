@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+.div-profile-page {
+    .h1-title-my-profile {
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-family: "Poppins";
+        color: #000000;
+        border-bottom: rgba(3, 62, 140, 0.56) solid;
+        width: 302px;
+        margin: 0 auto;
+        margin-top: 132px;
+        padding-bottom: 5px;
+    }
+
+    .div-profile-order {
+        display: flex;
+        margin-left: 27px;
+
+        .div-profile {
+            margin-left: 27px;
+            width: 180px;
+            height: 55px;
+            background: #f5f5f6;
+            text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
+
+            .span-profile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+
+                .link-profile {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #fff;
+                    font-weight: bold;
+                    line-height: 55px;
+                    background: #01318b;
+                    border-radius: 20px 20px 0px 0px;
+                }
+            }
+        }
+
+        .div-order {
+            margin-left: 11px;
+            width: 180px;
+            height: 55px;
+            background: #f5f5f6;
+            text-align: center;
+            border-radius: 20px 20px 0px 0px;
+            margin-top: 10px;
+
+            .span-order {
+                display: flex;
+
+                .link-order {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    font-size: 18px;
+                    color: #c2c2c2;
+                    font-weight: bold;
+                    line-height: 55px;
+                    border-radius: 20px 20px 0px 0px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        transition: 0.2s;
+                        color: #fff;
+                        background: rgba(241, 118, 4, 0.7);
+                    }
+                }
+            }
+        }
+    }
+
+    //dados
+    .div-personal-data-account {
+        display: flex;
+        background: #f5f5f6;
+        justify-content: center;
+
+        .div-personal-data {
+            margin-bottom: 75px;
+            margin-right: 24px;
+
+            .h1-title-personal-data {
+                font-size: 30px;
+                text-align: center;
+                margin-top: 64px;
+            }
+
+            .div-img-button {
+                .div-img {
+                    text-align: center;
+                    margin-top: 58.45px;
+
+                    .img-Photograph {
+                        background-color: #858585;
+                        border-radius: 100%;
+                    }
+                }
+
+                .div-button {
+                    text-align: center;
+                    margin-top: 10.63px;
+
+                    .btn-trocar-Photograph {
+                        background-color: #f17604;
+                        border-style: none;
+                        border-radius: 10px;
+                        color: #fffdfd;
+                        cursor: pointer;
+                        width: 140px;
+                        height: 18px;
+                    }
+                }
+            }
+
+            .div-name-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-name {
+                    .label-name {
+                        font-size: 18px;
+                        width: 400px;
+                        font-weight: bold;
+                        font-family: "Poppins";
+                    }
+                }
+
+                .div-input-name {
+                    .input-name {
+                        width: 408.72px;
+                        height: 45.77px;
+                        border: 1px solid #c4c4c4;
+                        border-radius: 8px;
+                    }
+                }
+            }
+
+            .div-cpf-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-cpf {
+                    .label-cpf {
+                        font-size: 18px;
+                        width: 400px;
+                        font-weight: bold;
+                        font-family: "Poppins";
+                    }
+                }
+            }
+
+            .div-birth-input {
+                margin-top: 45.68px;
+                margin-left: 117px;
+
+                .div-label-birth {
+                    .label-title-birth {
+                        font-size: 18px;
+                        width: 400px;
+                        font-weight: bold;
+                        font-family: "Poppins";
+                    }
+                }
+            }
+
+            .profile-button-edit {
+                display: block;
+                width: 173px;
+                height: 30px;
+                font-size: 14px;
+                text-align: center;
+                color: #fff;
+                background: #01318b;
+                font-weight: 700;
+                text-transform: uppercase;
+                border: 0;
+                border-radius: 32px;
+                cursor: pointer;
+                line-height: 30px;
+                margin-bottom: 10px;
+                margin-left: auto;
+                transition: 0.2s;
+
+                &:hover {
+                    transition: 0.2s;
+                    background: #f17604;
+                }
+            }
+        }
+        .div-account {
+            margin-bottom: 98.74px;
+
+            .h1-title-account {
+                text-align: center;
+                margin-top: 64px;
+            }
+
+            .div-lable-email {
+                margin-top: 86px;
+                margin-left: 93px;
+                font-weight: bold;
+                font-family: "Poppins";
+
+                .label-email {
+                    font-size: 18px;
+                }
+            }
+
+            .div-input-email {
+                margin-left: 93px;
+
+                .input-email {
+                    width: 408.72px;
+                    height: 45.77px;
+                    border: 1px solid #c4c4c4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-email-confirm {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-email-confirm {
+                    width: 408.72px;
+                    height: 45.77px;
+                    font-weight: bold;
+                    font-family: "Poppins";
+                }
+            }
+
+            .div-input-email-confirm {
+                margin-left: 93px;
+
+                .input-email-confirm {
+                    width: 408.72px;
+                    height: 45.77px;
+                    border: 1px solid #c4c4c4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-pass {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-pass {
+                    width: 408.72px;
+                    height: 45.77px;
+                    font-weight: bold;
+                    font-family: "Poppins";
+                }
+            }
+
+            .div-input-pass {
+                margin-left: 93px;
+
+                .input-pass {
+                    width: 408.72px;
+                    height: 45.77px;
+                    border: 1px solid #c4c4c4;
+                    border-radius: 8px;
+                }
+            }
+
+            .div-label-new-pass {
+                margin-left: 93px;
+                margin-top: 45.8px;
+
+                .label-new-pass {
+                    width: 408.72px;
+                    height: 45.77px;
+                    font-weight: bold;
+                    font-family: "Poppins";
+                }
+            }
+
+            .div-input-new-pass {
+                margin-left: 93px;
+
+                .input-new-pass {
+                    width: 408.72px;
+                    height: 45.77px;
+                    border: 1px solid #c4c4c4;
+                    border-radius: 8px;
+                }
+            }
+
+            .btn-save {
+                background-color: #f17604;
+                border-style: none;
+                border-radius: 10px;
+                color: #fffdfd;
+                cursor: pointer;
+                width: 115px;
+                height: 29.26px;
+                margin-top: 39px;
+                margin-left: 395px;
+            }
+        }
+    }
+
+    .div-personal-data-account form {
+        display: flex;
+        flex-direction: column;
+
+        .div-lable-email {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .div-input-email input {
+            width: 100%;
+            height: 36px;
+            border: #9b9b9b 1px solid;
+            border-radius: 8px;
+            outline: none;
+            padding-left: 16px;
+            outline: none;
+            margin-bottom: 16px;
+        }
+
+        .btn-save {
+            display: block;
+            width: 173px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background: #f17604;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 32px;
+            cursor: pointer;
+            line-height: 30px;
+            margin-top: 16px;
+            margin-left: auto;
+            transition: 0.2s;
+
+            &:hover {
+                transition: 0.2s;
+                background: #01318b;
+            }
+        }
+    }
+}

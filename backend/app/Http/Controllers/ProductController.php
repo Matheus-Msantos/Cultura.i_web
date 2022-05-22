@@ -65,15 +65,14 @@ class ProductController extends Controller {
     }
 
     public function show( Product $product ) {
-        return response()->json( Product::with( 'category', 'address' )->where( 'id', $product->id )->get() );
+        return response()->json( Product::with( 'category', 'address', 'user' )->where( 'id', $product->id )->get() );
     }
 
     public function storeApi( Request $request ) {
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/product' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image =  $request->image;
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259950/yljvylgxh9grjh141gv8.png';
         }
 
         $product = Product::create( [
@@ -86,7 +85,7 @@ class ProductController extends Controller {
             'price' => $request->price,
             'address_id' => $request->address_id,
             'image' => $image,
-            'user_id' => $request->user_id
+            'user_id' => Auth()->user()->id
         ] );
         return response()->json( $product );
 

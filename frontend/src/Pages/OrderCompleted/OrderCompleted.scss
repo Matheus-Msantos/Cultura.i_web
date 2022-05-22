@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+.div-general-order-completed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    .div-img-message {
+        width: 50%;
+
+        .div-img-circle {
+            margin-top: 62px;
+            text-align: center;
+
+            .img-circle {
+                width: 71.11px;
+                height: 69.23px;
+            }
+        }
+
+        .div-title-product {
+            text-align: center;
+
+            .h1-title {
+                font-size: 22px;
+                font-family: "Poppins";
+                margin-top: 54.77px;
+            }
+
+            .span-title-message {
+                text-align: center;
+                margin-top: 76px;
+                font-weight: 700;
+                font-family: "Poppins";
+                font-size: 22px;
+            }
+        }
+
+        .div-message {
+            margin-top: 28px;
+            margin-left: 78px;
+            margin-right: 54px;
+
+            .message {
+                font-size: 18px;
+                font-family: "Poppins";
+            }
+        }
+    }
+
+    .div-data-info-completed {
+        width: 50%;
+        background-color: rgba(196, 196, 196, 0.2);
+
+        .div-h1-title-products {
+            text-align: center;
+            margin-left: 40%;
+            margin-right: 25%;
+            justify-content: center;
+
+            .h1-title-products {
+                margin-top: 35px;
+                text-align: center;
+                border-radius: 2px;
+                font-size: 22px;
+                width: 302px;
+                border-bottom: rgba(3, 62, 140, 0.56) solid 3px;
+            }
+        }
+
+        .div-head-info {
+            display: flex;
+            border-radius: 10px;
+            margin-top: 22px;
+            margin-left: 60px;
+            margin-right: 120px;
+            background-color: #033e8c;
+
+            .div-product-completed {
+                margin-left: 39px;
+
+                .span-product-completed {
+                    margin-bottom: 0px;
+
+                    .product-completed {
+                        color: white;
+                        font-weight: 700;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+
+            .price-quantit-total {
+                width: 100%;
+                display: flex;
+                font-weight: 700;
+                margin-right: 15px;
+                justify-content: flex-end;
+
+                .span-price {
+                    margin-bottom: 0px;
+
+                    .price-completed {
+                        color: #ffffff;
+                        margin-right: 28px;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .span-quantid {
+                    margin-bottom: 0px;
+
+                    .quantid-completed {
+                        color: #ffffff;
+                        margin-right: 53px;
+                        margin-bottom: 0px;
+                    }
+                }
+
+                .span-total {
+                    margin-bottom: 0px;
+
+                    .total-completed {
+                        color: #ffffff;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .orderCompleted-buttons_container {
+        display: flex;
+        margin-top: 16px;
+
+        .orderCompleted-button_home {
+            display: block;
+            width: 180px;
+            height: 48px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background: #f17604;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 32px;
+            cursor: pointer;
+            line-height: 48px;
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+        .orderCompleted-button_order {
+            display: block;
+            width: 180px;
+            height: 48px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            background: #033e8c;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 32px;
+            cursor: pointer;
+            line-height: 48px;
+            margin-bottom: 10px;
+        }
+    }
+}
