@@ -43,21 +43,24 @@ function AdminUserPage() {
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
-                <td>{name}</td>
-                <td>{email}</td>
-                <td>{cpf_cnpj}</td>
-                <td>{is_Admin}</td>
-                <td>{is_Producer}</td>
-                <td>{is_Advertiser}</td>
                 <td>
                     <img src={image} />
                 </td>
-                <td>
-                    <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
+                <td>{name}</td>
+                <td>{email}</td>
+                <td>{cpf_cnpj}</td>
+                <td>{is_Admin === 1 ? 'Sim' : 'Não'}</td>
+                <td>{is_Producer === 1 ? 'Sim' : 'Não'}</td>
+                <td>{is_Advertiser === 1 ? 'Sim' : 'Não'}</td>
 
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/user/edit/${id}`} />
-                    </div>
+                <td>
+                    {currentUser?.user.is_Admin ?
+                        <div className={`admin-box_container is--active`}>
+                            <Link to={`/admin/user/edit/${id}`} className="admin-box-button_edit"><i className="fa-solid fa-pencil"></i></Link>
+                            <button className="admin-box-button-delete"><i className="fa-solid fa-trash"></i></button>
+                        </div>
+                        : ''
+                    }
                 </td>
             </tr>
         );
@@ -76,13 +79,13 @@ function AdminUserPage() {
                     <thead >
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Imagem</th>
                             <th scope="col">Nome</th>
                             <th scope="col">email</th>
                             <th scope="col">CPF/CNPJ</th>
                             <th scope="col">Admin</th>
                             <th scope="col">Produtor</th>
                             <th scope="col">Anúnciante</th>
-                            <th scope="col">Imagem</th>
                         </tr>
                     </thead>
                     <tbody >

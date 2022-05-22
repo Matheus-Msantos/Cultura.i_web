@@ -47,10 +47,10 @@ function AdminProductPage() {
                     <img src={image} />
                 </td>
                 <td>
-                    <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
 
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/product/edit/${id}`} />
+                    <div className={`admin-box_container is--active`}>
+                        <Link to={`/admin/product/edit/${id}`} className="admin-box-button_edit"><i className="fa-solid fa-pencil"></i> Editar</Link>
+                        <button className="admin-box-button-delete"><i className="fa-solid fa-trash"></i> Excluir</button>
                     </div>
                 </td>
             </tr>
@@ -66,6 +66,9 @@ function AdminProductPage() {
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
+                <td>
+                    <img src={image} />
+                </td>
                 <td>{name}</td>
                 <td>{date}</td>
                 <td>{time}</td>
@@ -74,13 +77,9 @@ function AdminProductPage() {
                 <td>{address?.street}</td>
                 <td>{classification}</td>
                 <td>
-                    <img src={image} />
-                </td>
-                <td>
-                    <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
-
-                    <div className={`admin-box_container ${box && 'is--active'}`}>
-                        <OptionBoxAdmin url={`/admin/product/edit/${id}`} />
+                    <div className={`admin-box_container is--active`}>
+                        <Link to={`/admin/product/edit/${id}`} className="admin-box-button_edit"><i className="fa-solid fa-pencil"></i></Link>
+                        <button className="admin-box-button-delete"><i className="fa-solid fa-trash"></i></button>
                     </div>
 
                 </td>
@@ -101,6 +100,7 @@ function AdminProductPage() {
                     <thead >
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Imagem</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Data</th>
                             <th scope="col">Hora</th>
@@ -108,7 +108,6 @@ function AdminProductPage() {
                             <th scope="col">Categoria</th>
                             <th scope="col">Endereço</th>
                             <th scope="col">Classificação</th>
-                            <th scope="col">Imagem</th>
                         </tr>
                     </thead>
                     <tbody >

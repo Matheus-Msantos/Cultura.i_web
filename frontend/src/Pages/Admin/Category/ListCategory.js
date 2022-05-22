@@ -35,11 +35,10 @@ function AdminCategoryPage() {
                 <th scope="row">{id}</th>
                 <td>{name}</td>
                 <td>
-                    <button onClick={() => handleBox()}><i className="fa-solid fa-ellipsis"></i></button>
-
                     {currentUser?.user.is_Admin ?
-                        <div className={`admin-box_container ${box && 'is--active'}`}>
-                            <OptionBoxAdmin url={`/admin/category/edit/${id}`} />
+                        <div className={`admin-box_container is--active`}>
+                            <Link to={`/admin/category/edit/${id}`} className="admin-box-button_edit"><i className="fa-solid fa-pencil"></i></Link>
+                            <button className="admin-box-button-delete"><i className="fa-solid fa-trash"></i></button>
                         </div>
                         : ''
                     }

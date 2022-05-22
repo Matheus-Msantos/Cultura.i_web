@@ -85,14 +85,13 @@ function ProductPage() {
 
             <div className="product-body_container">
                 <div className="product-body_box">
-                    <h3>Ingressos</h3>
+                    <h3>Descrição</h3>
+                    <p>{produto?.description}</p>
 
-                    <p>Não haverá venda de ingressos meia entrada para esse evento</p>
                 </div>
                 <div className="product-body_box descricao">
                     <h3>Informações</h3>
-
-                    <p>{produto?.description}</p>
+                    <p>Não haverá venda de ingressos meia entrada para esse evento</p>
                 </div>
 
                 {
