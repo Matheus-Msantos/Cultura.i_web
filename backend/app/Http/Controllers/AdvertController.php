@@ -33,4 +33,9 @@ class AdvertController extends Controller {
         return response()->json( $advert );
     }
 
+    public function destroyApi( Advert $advert ) {
+        $advert->delete();
+        return response()->json( $advert );
+    }
+
 }

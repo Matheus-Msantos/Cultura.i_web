@@ -11,6 +11,9 @@ class UserController extends Controller {
     public function index() {
         return response()->json( User::all() );
     }
+    public function show() {
+        return response()->json(Auth()->user() );
+    }
 
     public function create() {
         return view( 'user.create' );
@@ -142,13 +145,12 @@ class UserController extends Controller {
         return response()->json( $user );
     }
 
-    public function show() {
-        return response()->json( Auth()->user() );
-    }
-
     function updateApi ( User $user, Request $request ) {
         $user->update( $request->all() );
-        return response()->json( $user );
+        return response()->json( [
+            'user' => $user,
+            'token'=> $user->createToken ( $request->name )-> plainTextToken
+        ] );
     }
 
     public function destroyApi() {
