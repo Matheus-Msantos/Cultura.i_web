@@ -18,9 +18,9 @@ function AdminRegisterAddressPage() {
 
     const handlePost = () => {
         BaseUrl
-            .post("/api/category/", { name: name })
+            .post("/api/category", { name: name })
             .then((res) => console.log(res.data))
-            .catch((err) => console.log('Ops! Ocorreu um erro ao atualizar um produto: ' + err))
+            .catch((err) => console.log('Ops! Ocorreu um erro: ' + err))
     }
     /* Envio de dados para API */
     const onSubmit = (e) => {
