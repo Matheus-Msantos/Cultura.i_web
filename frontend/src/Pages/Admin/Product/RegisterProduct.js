@@ -31,7 +31,7 @@ function AdminRegisterProductPage() {
         formData.append('upload_preset', 'cultura.i');
         formData.append('clound_name', 'matheusmelo01');
 
-        const response = await fetch('http://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
+        const response = await fetch('https://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
             method: 'POST',
             accept: 'application/json',
             body: formData
