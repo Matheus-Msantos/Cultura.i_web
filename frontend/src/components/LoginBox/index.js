@@ -21,15 +21,15 @@ function LoginBox({ box }) {
         <div className={`login-box_container ${box && 'is--active'}`}>
             <Link to="/profile">Minha conta</Link>
             <Link to="/order ">Meus pedidos</Link>
-            {currentUser?.user?.is_Admin !== 0 || currentUser?.user?.is_Producer !== 0 ?
+            {currentUser?.user?.is_Admin || currentUser?.user?.is_Producer ?
                 /* Verificação se possui credenciais administrativas */
                 <Link to="/admin ">Área administrativa</Link>
                 : ''
             }
 
-            {currentUser?.user?.is_Advertiser !== 0 ?
+            {currentUser?.user?.is_Advertiser ?
                 /* Verificação se possui credenciais administrativas */
-                <Link to="/admin/advert">Área administrativa</Link>
+                <Link to="/admin/advert">Meus anúncios</Link>
                 : ''
             }
             <button className="login-box-button_logout" onClick={handleLogout}>Sair <i className="fa-solid fa-right-from-bracket"></i></button>
