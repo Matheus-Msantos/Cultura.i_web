@@ -52,7 +52,7 @@ function AdminRegisterProductPage() {
             date: date,
             category_id: 1,
             price: price,
-            //user_id: currentUser?.user?.id,
+            user_id: currentUser?.user?.id,
             //image: url
         }
         BaseUrl
