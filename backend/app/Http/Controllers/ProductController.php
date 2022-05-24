@@ -78,14 +78,14 @@ class ProductController extends Controller {
         $product = Product::create( [
             'name' => $request->name,
             'description' => $request->description,
-            'time' => $request->time,
-            'date' => $request->date,
+            //'time' => $request->time,
+            //'date' => $request->date,
             'classification' => $request->classification,
-            'category_id' => $request->category_id,
-            'price' => $request->price,
-            'address_id' => $request->address_id,
-            'image' => $image,
-            'user_id' => Auth()->user()->id
+           // 'category_id' => $request->category_id,
+           // 'price' => $request->price,
+           // 'address_id' => $request->address_id,
+            //'image' => $image,
+            //'user_id' => Auth()->user()->id
         ] );
         return response()->json( $product );
 
