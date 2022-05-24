@@ -53,7 +53,7 @@ function AdminRegisterProductPage() {
             category_id: 1,
             price: price,
             user_id: currentUser?.user?.id,
-            //image: url
+            image: url
         }
         BaseUrl
             .post('/api/produ', body)
