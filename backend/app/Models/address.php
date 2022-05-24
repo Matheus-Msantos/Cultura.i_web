@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class address extends Model {
     use HasFactory;
 
-    protected $fillable = [ 'street', 'district', 'number', 'city', 'state', 'country' ];
+    protected $fillable = [ 'address' ];
 
     public function product() {
         return $this->hasMany( Product::class );

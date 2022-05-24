@@ -4,13 +4,10 @@ import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 import { UserContext } from "../../../Auth";
 import '../Admin.scss';
-import OptionBoxAdmin from "../../../components/OptionBoxAdmin/index";
 
 function AdminProductPage() {
 
     const [produtos, setProdutos] = useState([]);
-    const [box, setBox] = useState(false);
-
   
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -28,13 +25,6 @@ function AdminProductPage() {
                 console.error("ops! ocorreu um erro" + err);
             });
     }, []);
-
-    const handleBox = () => {
-        if (box === false)
-            setBox(true);
-        else
-            setBox(false);
-    }
 
     /* Mapeando todos os produtos e adicionando na página */
     const MapProdutos = produtos.map((produto) => {
@@ -64,7 +54,7 @@ function AdminProductPage() {
     });
 
     /* Filtrando os produtos por id do produtor logado */
-    const filterProdutos = produtos.filter((produto) => produto?.user.id === currentUser?.user.id);
+    const filterProdutos = produtos.filter((produto) => produto?.user_id === currentUser?.user.id);
 
     /* Mapeando todos os produtos filtrados */
     const MapProdutosProducer = filterProdutos.map((produto) => {
@@ -80,7 +70,7 @@ function AdminProductPage() {
                 <td>{time}</td>
                 <td>R$ {price}</td>
                 <td>{category?.name}</td>
-                <td>{address?.street}</td>
+                <td>{address}</td>
                 <td>{classification}</td>
                 <td>
                     <div className={`admin-box_container is--active`}>

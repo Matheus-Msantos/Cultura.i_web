@@ -23,7 +23,24 @@ class ProductController extends Controller {
     }
 
     public function storeApi( Request $request ) {
-        $product = Product::create( $request->all() );
+        if ( $request->image ) {
+            $image = $request->image;
+        } else {
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259950/yljvylgxh9grjh141gv8.png';
+        }
+
+        $product = Product::create( [
+            'name' => $request->name,
+            'description' => $request->description,
+            'classification' => $request->classification,
+            'time' => $request->time,
+            'date' => $request->date,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'address' => $request->address,
+            'image' => $image,
+            'user_id' => $request->user_id
+        ] );
         return response()->json( $product );
 
     }
