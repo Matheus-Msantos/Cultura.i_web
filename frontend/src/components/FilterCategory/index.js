@@ -29,9 +29,12 @@ function FilterCategory() {
     /* Components dos slider */
     const settingsCategory = {
         dots: false,
+        arrows: true,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1
     };
 
