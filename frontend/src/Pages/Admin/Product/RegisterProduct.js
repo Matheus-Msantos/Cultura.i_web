@@ -51,7 +51,7 @@ function AdminRegisterProductPage() {
             time: time,
             date: date,
             classification: classification,
-            //category_id: parseInt(category),
+            category_id: 1,
             //address_id: parseInt(address),
             price: price,
             //user_id: currentUser?.user?.id,
