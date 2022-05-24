@@ -47,7 +47,7 @@ function CheckoutPage() {
                 <div className="div-info-product">
                     <p className="info-data-title">{item?.product?.name}</p>
                     <p className="data-hour">{item?.product?.date} - {item?.product?.time}</p>
-                    <p className="local">{item?.product?.address?.street}, {item?.product?.address?.district}</p>
+                    <p className="local">{item?.product?.address}</p>
                 </div>
                 <div className="div-quanti-prices">
                     <p className="price-uni">R$ {item?.product?.price}</p>
@@ -69,9 +69,9 @@ function CheckoutPage() {
                         <span><p className="span-product">Produto</p></span>
                     </div>
                     <div className="div-price-quant">
-                        <span><p className="span-price-unit">Preço Uni.</p></span>
+                        <span><p className="span-price-unit">Preço uni.</p></span>
                         <span><p className="span-quantid">Quantid.</p></span>
-                        <span><p className="span-price">Preço</p></span>
+                        <span><p className="span-price">Valor</p></span>
                     </div>
                 </div>
                 {MapItens}
