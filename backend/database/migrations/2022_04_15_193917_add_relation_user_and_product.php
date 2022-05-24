@@ -13,7 +13,7 @@ class AddRelationUserAndProduct extends Migration
      */
     public function up()
     {
-        Schema::table('Products', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->integer('user_id');
         });
     }
@@ -25,7 +25,7 @@ class AddRelationUserAndProduct extends Migration
      */
     public function down()
     {
-        Schema::table('Products', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('user_id');
         });
     }
