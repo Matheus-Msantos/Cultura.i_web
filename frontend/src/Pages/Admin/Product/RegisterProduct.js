@@ -51,7 +51,6 @@ function AdminRegisterProductPage() {
             time: time,
             date: date,
             category_id: 1,
-            address_id: 1,
             price: price,
             //user_id: currentUser?.user?.id,
             //image: url
