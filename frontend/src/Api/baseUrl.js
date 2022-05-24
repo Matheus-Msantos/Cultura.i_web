@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const BaseUrl = axios.create({
-    baseURL: "https://clownfish-app-ntk6p.ondigitalocean.app",
+    baseURL: "https://sea-turtle-app-k9xb5.ondigitalocean.app",
 });
 
 
