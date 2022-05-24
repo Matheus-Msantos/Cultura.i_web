@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const BaseUrl = axios.create({
-    baseURL: "https://clownfish-app-jrome.ondigitalocean.app",
+    baseURL: "http://127.0.0.1:8000",
 });
 
 
