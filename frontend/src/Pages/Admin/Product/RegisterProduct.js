@@ -48,9 +48,11 @@ function AdminRegisterProductPage() {
         const body = {
             name: name,
             description: description,
+            classification: classification,
             time: time,
             date: date,
             category_id: 1,
+            address: 'rua x',
             price: price,
             user_id: currentUser?.user?.id,
             image: url
