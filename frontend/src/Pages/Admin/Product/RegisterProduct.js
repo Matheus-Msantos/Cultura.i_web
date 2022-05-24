@@ -48,17 +48,17 @@ function AdminRegisterProductPage() {
         const body = {
             name: name,
             description: description,
-            time: time,
-            date: date,
-            classification: classification,
-            category_id: parseInt(category),
-            address_id: parseInt(address),
-            price: price,
-            user_id: currentUser?.user?.id,
-            image: url
+            //time: time,
+            //date: date,
+            classification: classification
+            //category_id: parseInt(category),
+            //address_id: parseInt(address),
+            //price: price,
+            //user_id: currentUser?.user?.id,
+            //image: url
         }
         BaseUrl
-            .post('/api/product', body)
+            .post('/api/produ', body)
             .then((res) => {
                 console.log(res.data);
             })

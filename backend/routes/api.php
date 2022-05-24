@@ -32,7 +32,6 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
     Route::put('/user/{user}', [UserController::class, 'updateApi']);
     Route::delete('/user', [UserController::class, 'destroyApi']);
 
-    Route::post('/product', [ProductController::class, 'storeApi']);
     Route::get('/producer/{producer}', [ProducerController::class, 'showApi']);
 
 
@@ -43,6 +42,8 @@ Route::group([ 'middleware' =>'auth:sanctum'], function(){
 });
 
 
+
+Route::post('/produ', [ProductController::class, 'storeApi']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/user', [UserController::class, 'storeApi']);
 Route::get('/user/logout', [UserController::class, 'logout']);
