@@ -11,7 +11,13 @@ function AdminProductPage() {
     const [produtos, setProdutos] = useState([]);
     const [box, setBox] = useState(false);
 
+  
+    /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
+    /* Guardando Token */
+    const token = currentUser?.token;
+    /* Passando Token no header para API */
+    BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
 
     useEffect(() => {
         /* Chamada da API de todos os produtos */

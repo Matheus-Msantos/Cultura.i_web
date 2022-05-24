@@ -15,7 +15,7 @@ class ProductController extends Controller {
     }
 
     public function indexApi() {
-        return response()->json( Product::with( 'category', 'address', 'user' )->get() );
+        return response()->json( Product::all() );
     }
 
     public function show( Product $product ) {
