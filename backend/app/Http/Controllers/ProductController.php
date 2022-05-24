@@ -78,9 +78,9 @@ class ProductController extends Controller {
         $product = Product::create( [
             'name' => $request->name,
             'description' => $request->description,
+            'classification' => $request->classification
             //'time' => $request->time,
             //'date' => $request->date,
-            'classification' => $request->classification,
            // 'category_id' => $request->category_id,
            // 'price' => $request->price,
            // 'address_id' => $request->address_id,
