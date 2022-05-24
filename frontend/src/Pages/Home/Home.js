@@ -77,7 +77,7 @@ function HomePage() {
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
                         <span className="eventos-box-details_date">{date} - {time}</span>
-                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <address>{address}</address>
                         <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
@@ -96,7 +96,7 @@ function HomePage() {
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
                         <span className="eventos-box-details_date">{date} - {time}</span>
-                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <address>{address}</address>
                         <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
@@ -124,7 +124,7 @@ function HomePage() {
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
                         <span className="eventos-box-details_date">{date} - {time}</span>
-                        <address>{address?.street}, {address?.city} - {address?.state}</address>
+                        <address>{address}</address>
                         <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>

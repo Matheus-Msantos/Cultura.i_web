@@ -35,7 +35,7 @@ function AdminEditProductPage() {
         formData.append('upload_preset', 'cultura.i');
         formData.append('clound_name', 'matheusmelo01');
 
-        const response = await fetch('http://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
+        const response = await fetch('https://api.cloudinary.com/v1_1/matheusmelo01/image/upload', {
             method: 'POST',
             accept: 'application/json',
             body: formData
@@ -88,7 +88,7 @@ function AdminEditProductPage() {
             date: date,
             classification: classification,
             category_id: category,
-            address_id: address,
+            address: address,
             price: price,
             user_id: currentUser?.user?.id,
             image: url ? url : image
@@ -119,7 +119,7 @@ function AdminEditProductPage() {
     const addressMap = addressAll.map((address) => {
         return (
             <>
-                <option key={address.id} value={address.id}>{address.street}</option>
+                <option key={address.id} value={address.address}>{address.address}</option>
             </>
         );
     });

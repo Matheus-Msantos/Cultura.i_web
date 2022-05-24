@@ -23,12 +23,7 @@ function AdminRegisterAddressPage() {
     BaseUrl.defaults.headers.authorization = `Bearer ${token}`;
     /* Body da API */
     const body = {
-        street: street,
-        district: district,
-        number: number,
-        city: city,
-        state: state,
-        country: country,
+        address: `${street}, ${district}, ${number} - ${city} / ${state} - ${country}`,
     }
     /* Conexão com API */
     const handlePost = () => {

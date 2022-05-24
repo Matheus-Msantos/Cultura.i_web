@@ -68,7 +68,7 @@ function ProductPage() {
                     </p>
 
                     <p className="product-header-text_info">
-                        <i className="fa-solid fa-location-dot"></i> {produto?.address?.street}, {produto?.address?.district} - {produto?.address?.city}/ {produto?.address?.state}
+                        <i className="fa-solid fa-location-dot"></i> {produto?.address}
                     </p>
 
                     <p className="product-header-text_info">

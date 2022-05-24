@@ -50,7 +50,7 @@ function Minicart({ active }) {
                     <span className="minicart-produto-box_nome">{item?.product?.name}</span>
                     <span className="minicart-produto-box_text">{item?.product?.date} - {item?.product?.time}</span>
                     <span className="minicart-produto-box_text price"> R$ {price}</span>
-                    <span className="minicart-produto-box_text">{item?.product?.address?.street}, {item?.product?.address?.district}</span>
+                    <span className="minicart-produto-box_text">{item?.product?.address}</span>
 
                     <div className="minicart-quantity">
                         <button className="minicart-quantity-menos" onClick={() => handleCartRemove(item.product.id)}>-</button>
