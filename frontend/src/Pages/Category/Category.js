@@ -6,7 +6,7 @@ import Layout from "../../components/layout/Layout";
 import Moment from "moment";
 
 import FilterCategory from "../../components/FilterCategory";
-import { UserContext } from "../../Auth";
+
 
 
 function CategoryPage() {
@@ -94,14 +94,21 @@ function CategoryPage() {
 
                 <FilterCategory />
 
-                <div className="eventos_container bg-grey">
-                    <h2>{categoriaNome}</h2>
+                {MapProdutos.length > 0 ?
+                    <div className="eventos_container bg-grey">
+                        <h2>{categoriaNome}</h2>
 
-                    <div className="eventos-box_container">
-                        {MapProdutos}
+                        <div className="eventos-box_container">
+                            {MapProdutos}
+                        </div>
+
                     </div>
-
-                </div>
+                    :
+                    <div className="eventos-notFound_container">
+                        <h2 className="eventos-notFound_title">Poxa, não encontramos nenhum resultado.</h2>
+                        <Link className="eventos-notFound_button" to="/">Voltar para home</Link>
+                    </div>
+                }
             </Layout>
         </>
     );
