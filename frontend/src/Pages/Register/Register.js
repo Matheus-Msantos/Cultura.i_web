@@ -37,6 +37,9 @@ function RegisterPage() {
 
                 /* Pega o usuário e do localStorage e manda para o contexto de Auth */
                 setCurrentUser(JSON.parse(localStorage.getItem('User'))[0]);
+
+                /* Redireciona usário para home */
+                navigate('/');
             })
             .catch((err) => {
                 console.log('Ops! Ocorreu um erro ao cadastrar um usuário: ' + err);
@@ -49,8 +52,6 @@ function RegisterPage() {
         e.preventDefault();
         /* Chama a API */
         handleSingUp();
-        /* Redireciona usário para home */
-        navigate('/');
     }
 
     return (
@@ -69,23 +70,19 @@ function RegisterPage() {
                     <div className="div-input-name-email-pass">
                         <div className="div-name">
                             <span className="span-name">Nome</span>
-                            <input className="input-nome" type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                            <input className="input-nome" type="text" onChange={(e) => setName(e.target.value)} value={name} required />
                         </div>
                         <div className="div-email">
                             <span className="span-email">Email</span>
-                            <input className="input-email" type="email" onChange={(e) => setEmail(e.target.value)} />
+                            <input className="input-email" type="email" onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="div-email">
                             <span className="span-email">CPF/CNPJ</span>
-                            <input className="input-email" type="text" onChange={(e) => setCpfCnpj(e.target.value)} />
+                            <input className="input-email" type="number" onChange={(e) => setCpfCnpj(e.target.value)} required />
                         </div>
                         <div className="div-pass">
                             <span className="span-pass">Senha</span>
-                            <input className="input-pass" type="password" onChange={(e) => setPassword(e.target.value)} />
-                        </div>
-                        <div className="div-pass">
-                            <span className="span-pass">Confirmar Senha</span>
-                            <input className="input-pass" type="password" />
+                            <input className="input-pass" type="password" onChange={(e) => setPassword(e.target.value)} minLength="8" required />
                         </div>
                     </div>
                     <div className="div-register-button">
