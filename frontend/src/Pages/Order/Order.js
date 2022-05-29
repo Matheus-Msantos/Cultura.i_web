@@ -31,6 +31,10 @@ function OrderPage() {
     const MapPedidos = pedidos.map((pedido) => {
         const { id, product, value, quantity, created_at } = pedido
         const date = Moment(created_at).format("DD/MM/YYYY");
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
@@ -38,7 +42,7 @@ function OrderPage() {
                 <td>{product.name}</td>
                 <td>{date}</td>
                 <td>{quantity}</td>
-                <td>R$ {value}</td>
+                <td>{formatter.format(value)}</td>
             </tr>
         );
     });
