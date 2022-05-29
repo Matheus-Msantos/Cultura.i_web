@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { Link, useParams } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
 import Layout from "../../components/layout/Layout";
+import Moment from "moment";
 
 import FilterCategory from "../../components/FilterCategory";
 import { UserContext } from "../../Auth";
@@ -44,6 +45,7 @@ function CategoryPage() {
     /* Mapeando todos os produtos e adicionando na página */
     const MapProdutos = produtos.map((produto) => {
         const { id, image, name, date, time, address } = produto;
+        const dateFormater = Moment(date).format("DD/MM/YYYY");
         return (
             <div className="eventos_box" key={id}>
                 <Link to={`/product/${id}`}>
@@ -51,9 +53,8 @@ function CategoryPage() {
 
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
-                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <span className="eventos-box-details_date">{dateFormater} - {time}</span>
                         <address>{address}</address>
-                        <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
             </div >

@@ -1,6 +1,11 @@
 .layout-header_container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     background: #01318b;
     padding: 0 20px;
+    z-index: 3;
 
     .layout-header_flex {
         display: flex;
@@ -363,6 +368,10 @@
             }
         }
     }
+}
+
+.layout-section-main {
+    margin-top: 86px;
 }
 
 .layout-footer_container {

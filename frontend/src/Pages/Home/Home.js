@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
 import Layout from "../../components/layout/Layout";
+import Moment from 'moment'
 
 import './Home.scss';
 import FilterCategory from "../../components/FilterCategory";
@@ -69,6 +70,7 @@ function HomePage() {
     /* Mapeando todos os produtos e adicionando na página */
     const MapProdutos = produtos.map((produto) => {
         const { id, image, name, date, time, address } = produto;
+        const dateFormater = Moment(date).format("DD/MM/YYYY");
         return (
             <div className="eventos_box" key={id}>
                 <Link to={`/product/${id}`}>
@@ -76,9 +78,8 @@ function HomePage() {
 
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
-                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <span className="eventos-box-details_date">{dateFormater} - {time}</span>
                         <address>{address}</address>
-                        <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
             </div >
@@ -88,6 +89,7 @@ function HomePage() {
     /* Mapeando produtos da categoria próximos eventos */
     const MapProximosEventos = proximosEventos.map((produto) => {
         const { id, image, name, date, time, address } = produto;
+        const dateFormater = Moment(date).format("DD/MM/YYYY");
         return (
             <div className="eventos_box" key={id}>
                 <Link to={`/product/${id}`}>
@@ -95,9 +97,8 @@ function HomePage() {
 
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
-                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <span className="eventos-box-details_date">{dateFormater} - {time}</span>
                         <address>{address}</address>
-                        <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
             </div>
@@ -116,6 +117,7 @@ function HomePage() {
     /* Mapeando produtos da categoria próximos eventos */
     const MapNovidades = novidades.map((novidade) => {
         const { id, image, name, date, time, address } = novidade;
+        const dateFormater = Moment(date).format("DD/MM/YYYY");
         return (
             <div className="eventos_box" key={id}>
                 <Link to={`/product/${id}`}>
@@ -123,9 +125,8 @@ function HomePage() {
 
                     <div className="eventos-box_details">
                         <span className="eventos-box-details_name">{name}</span>
-                        <span className="eventos-box-details_date">{date} - {time}</span>
+                        <span className="eventos-box-details_date">{dateFormater} - {time}</span>
                         <address>{address}</address>
-                        <span className="eventos-box-details_icon">Icon</span>
                     </div>
                 </Link>
             </div>
@@ -167,7 +168,7 @@ function HomePage() {
 
                 <div className="eventos_container">
                     <h2>Novidades</h2>
-                    <span className="eventos_subTitle">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem </span>
+                    <span className="eventos_subTitle">Aproveite nossas novidades da semana!</span>
 
                     <div className="eventos-box_container">
                         {MapNovidades}
@@ -189,7 +190,7 @@ function HomePage() {
                         <p>
                             {produtoDestaque[0]?.description}
                         </p>
-                        <Link to="/">Confira</Link>
+                        <Link to={`/product/${produtoDestaque[0]?.id}`}>Confira</Link>
                     </div>
 
                     <div className="home-eventos-destaque_img">
@@ -198,23 +199,23 @@ function HomePage() {
                 </div>
 
                 <div className="home-slider-anunciantes_container slider">
+                    <h2>Nossos parceiros</h2>
                     <Slider {...settingsAdvert}>
                         <div className="home-slider-anunciantes_box">
-                            <img src="image/img-anunciante.png" />
+                            <img src="image/parceiro_01.png" />
                         </div>
 
                         <div className="home-slider-anunciantes_box">
-                            <img src="image/img-anunciante.png" />
+                            <img src="image/parceiro_02.png" />
                         </div>
 
                         <div className="home-slider-anunciantes_box">
-                            <img src="image/img-anunciante.png" />
+                            <img src="image/parceiro_03.png" />
                         </div>
 
                         <div className="home-slider-anunciantes_box">
-                            <img src="image/img-anunciante.png" />
+                            <img src="image/parceiro_04.png" />
                         </div>
-
                     </Slider>
                 </div>
 

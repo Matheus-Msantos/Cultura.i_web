@@ -69,7 +69,7 @@ function Layout({ children }) {
                 <Minicart active={minicart} />
             </header>
 
-            <section>
+            <section className="layout-section-main">
                 {children}
             </section>
 
