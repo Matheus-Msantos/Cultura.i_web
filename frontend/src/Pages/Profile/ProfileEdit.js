@@ -105,8 +105,9 @@ function ProfileEditPage() {
                         <div className="div-lable-email">
                             <label className="label-new-pass">Imagem</label>
                         </div>
-                        <div>
-                            <input type="file" ref={imageAPI} />
+                        <div className="input-file">
+                            <label for="arquivo">Escolher uma foto</label>
+                            <input type="file" ref={imageAPI} id="arquivo" />
                         </div>
 
                         <button type="submit" className="btn-save">SALVAR</button>

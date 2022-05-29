@@ -196,7 +196,7 @@ body {
         flex-direction: column;
         align-items: center;
         margin: 70px 0;
-        
+
         .eventos-notFound_title {
             font-size: 30px;
             color: #000;
@@ -224,6 +224,27 @@ body {
                 background: #01318b;
                 transition: 0.2s;
             }
+        }
+    }
+
+    .input-file {
+        label {
+            padding: 9px 10px;
+            width: 200px;
+            background-color: #01318b;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        input {
+            display: none;
         }
     }
 }
