@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../../Auth";
 import Layout from "../../components/layout/Layout";
 import { BaseUrl } from "../../Api/baseUrl";
+import Moment from 'moment'
 
 import './Product.scss';
 
@@ -32,14 +33,19 @@ function ProductPage() {
     useEffect(() => {
         /* Chamada da API de produto */
         BaseUrl
-            .get(`/api/product/${id}`)
-            .then((res) => {
-                const { name, price, description, date, time, user, classification, address, category, image } = res.data[0];
+        .get(`/api/product/${id}`)
+        .then((res) => {
+            const { name, price, description, date, time, user, classification, address, category, image } = res.data[0];
+            const dateFormater = Moment(date).format("DD/MM/YYYY");
+            var formatter = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            });
                 const produtoObj = {
                     name: name,
-                    price: price,
+                    price: formatter.format(price),
                     description: description,
-                    date: date,
+                    date: dateFormater,
                     time: time,
                     user: user?.user,
                     classification: classification,
