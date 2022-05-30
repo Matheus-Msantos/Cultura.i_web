@@ -384,3 +384,43 @@
         text-align: center;
     }
 }
+
+.checkoutLayout-header_container {
+    width: 100%;
+    background: #01318b;
+    height: 63px;
+    padding: 0 20px;
+
+    .checkoutLayout-header_flex {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        a,
+        span {
+            display: flex;
+            align-items: center;
+            color: #ffff;
+            font-size: 12px;
+            font-weight: 600;
+
+            i {
+                color: #fff;
+                font-size: 16px;
+                margin-right: 8px;
+            }
+        }
+
+        h2 {
+            color: #f17604;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}
+
+.checkoutLayout-section-main {
+    height: 80vh;
+    margin-bottom: 80px;
+}

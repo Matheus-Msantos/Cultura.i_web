@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
 import { UserContext } from "../../Auth";
+import CheckoutLayout from "../../components/layout/CheckoutLayout";
 import "./Checkout.scss";
 
 function CheckoutPage() {
@@ -42,47 +43,61 @@ function CheckoutPage() {
         const price = [item.quantity * item.product.price];
         return (
 
-            <div className="info-data" key={item.id}>
-                <img src={item?.product?.image} className="img-data" />
-                <div className="div-info-product">
-                    <p className="info-data-title">{item?.product?.name}</p>
-                    <p className="data-hour">{item?.product?.date} - {item?.product?.time}</p>
-                    <p className="local">{item?.product?.address}</p>
-                </div>
-                <div className="div-quanti-prices">
-                    <p className="price-uni">R$ {item?.product?.price}</p>
-                    <p className="quanti">{item.quantity}</p>
-                    <p className="price">R$ {price}</p>
-                </div>
-            </div>
+            <tr key={item?.product?.id} className="info-data">
+                <td className="div-info-product">
+                    <img src={item?.product?.image} className="img-data" />
+                    <div className="div-info-product">
+                        <p className="info-data-title">{item?.product?.name}</p>
+                        <p className="data-hour">{item?.product?.date} - {item?.product?.time}</p>
+                        <p className="local">{item?.product?.address}</p>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><p className="price-uni">R$ {item?.product?.price}</p></td>
+                <td><p className="quanti">{item.quantity}</p></td>
+                <td><p className="price">R$ {price}</p></td>
+            </tr>
 
 
         );
     });
 
     return (
-        <div className="div-checkout-page">
-            <h1 className="title-my-cart">Meu Carrinho</h1>
-            <div className="div-order-checkout">
-                <div className="div-info-data-checkout">
-                    <div className="div-product">
-                        <span><p className="span-product">Produto</p></span>
-                    </div>
-                    <div className="div-price-quant">
-                        <span><p className="span-price-unit">Preço uni.</p></span>
-                        <span><p className="span-quantid">Quantid.</p></span>
-                        <span><p className="span-price">Valor</p></span>
+        <CheckoutLayout>
+            <div className="div-checkout-page">
+                <h1 className="title-my-cart">Meu Carrinho</h1>
+                <div className="div-order-checkout">
+                    <table className="table align-middle">
+                        <thead >
+                            <tr>
+                                <th scope="col">Produto</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Preço uni.</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            {MapItens}
+                        </tbody>
+                    </table>
+
+                    <div className="div-total-button-finish">
+                        <div className="div-btn-order-finish">
+                            <button className="btn-order-finish" onClick={() => { handleOrder() }}><Link to="/order-completed" className="bnt-link">Fechar Pedido</Link></button>
+                            <Link className="bnt-link_back" to="/">Continuar comprando</Link>
+                        </div>
                     </div>
                 </div>
-                {MapItens}
+
             </div>
-            <div className="div-total-button-finish">
-                <div className="div-btn-order-finish">
-                    <button className="btn-order-finish" onClick={() => { handleOrder() }}><Link to="/order-completed" className="bnt-link">Fechar Pedido</Link></button>
-                    <Link className="bnt-link_back" to="/">Continuar comprando</Link>
-                </div>
-            </div>
-        </div>
+        </CheckoutLayout>
     );
 }
 
