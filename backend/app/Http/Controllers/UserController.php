@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller {
 
     public function index() {
-        return view( 'user.index' )->with( 'users', User::all() );
+        return response()->json( User::all() );
+    }
+    public function show() {
+        return response()->json(Auth()->user() );
     }
 
     public function create() {
@@ -28,7 +31,7 @@ class UserController extends Controller {
             $image = $request->file( 'image' )->store( '/public/user' );
             $image = str_replace( 'public/', 'storage/', $image );
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         if ( $request->is_Admin ) {
@@ -67,7 +70,7 @@ class UserController extends Controller {
             $image = $request->file( 'image' )->store( '/public/product' );
             $image = str_replace( 'public/', 'storage/', $image );
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         $user->update( [
@@ -97,10 +100,9 @@ class UserController extends Controller {
         ] );
 
         if ( $request->image ) {
-            $image = $request->file( 'image' )->store( '/public/user' );
-            $image = str_replace( 'public/', 'storage/', $image );
+            $image = $request->image;
         } else {
-            $image  = 'storage/imageDefault.jpg';
+            $image  = 'https://res.cloudinary.com/matheusmelo01/image/upload/v1653259899/ezir445ev0urliisumaw.png';
         }
 
         if ( $request->is_Admin ) {
@@ -139,14 +141,16 @@ class UserController extends Controller {
         ] );
     }
 
-    public function show() {
-        return response()->json( Auth()->user() );
+    public function showSingle( User $user ) {
+        return response()->json( $user );
     }
 
     function updateApi ( User $user, Request $request ) {
         $user->update( $request->all() );
-
-        return response()->json( $user );
+        return response()->json( [
+            'user' => $user,
+            'token'=> $user->createToken ( $request->name )-> plainTextToken
+        ] );
     }
 
     public function destroyApi() {

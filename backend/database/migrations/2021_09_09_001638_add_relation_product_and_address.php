@@ -14,7 +14,7 @@ class AddRelationProductAndAddress extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('address_id');
+            $table->string('address');
         });
     }
 
@@ -26,7 +26,7 @@ class AddRelationProductAndAddress extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('address_id');
+            $table->dropColumn('address');
         });
     }
 }
