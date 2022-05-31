@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 import { UserContext } from "../../../Auth";
@@ -16,7 +16,8 @@ function AdminRegisterProductPage() {
     const [description, setDescription] = useState('');
     const [categoryAll, setCategoryAll] = useState([]);
     const [addressAll, setAddressAll] = useState([]);
-    const imageAPI = useRef()
+    const imageAPI = useRef();
+    const navigate = useNavigate();
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -61,6 +62,7 @@ function AdminRegisterProductPage() {
             .post('/api/produ', body)
             .then((res) => {
                 console.log(res.data);
+                navigate('/admin');
             })
             .catch((err) => {
                 console.error('Ops! ocorreu um erro' + err);
@@ -138,7 +140,10 @@ function AdminRegisterProductPage() {
 
                     <textarea className="admin-input admin-input-big " placeholder="Descrição do evento" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
 
-                    <input type="file" className="admin-input admin-input-medium input-file" ref={imageAPI} />
+                    <div className="input-file">
+                        <label for="arquivo">Escolher uma foto</label>
+                        <input type="file" id="arquivo" ref={imageAPI} />
+                    </div>
 
                     <div className="admin-form-button_conatiner">
                         <Link to="/admin">Cancelar</Link>
