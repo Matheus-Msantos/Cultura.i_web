@@ -49,9 +49,9 @@ function AdminUserPage() {
                 <td>{name}</td>
                 <td>{email}</td>
                 <td>{cpf_cnpj}</td>
-                <td>{is_Admin === 1 ? 'Sim' : 'Não'}</td>
-                <td>{is_Producer === 1 ? 'Sim' : 'Não'}</td>
-                <td>{is_Advertiser === 1 ? 'Sim' : 'Não'}</td>
+                <td>{is_Admin ? 'Sim' : 'Não'}</td>
+                <td>{is_Producer ? 'Sim' : 'Não'}</td>
+                <td>{is_Advertiser ? 'Sim' : 'Não'}</td>
 
                 <td>
                     {currentUser?.user.is_Admin ?

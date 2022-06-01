@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 import { UserContext } from "../../../Auth";
@@ -14,6 +14,7 @@ function AdminRegisterAddressPage() {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
+    const navigate = useNavigate();
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -29,7 +30,10 @@ function AdminRegisterAddressPage() {
     const handlePost = () => {
         BaseUrl
             .post('/api/address', body)
-            .then((res) => console.log(res.data))
+            .then((res) => {
+                console.log(res.data);
+                navigate('/admin/address');
+            })
             .catch((err) => {
                 console.error('Ops! ocorreu um erro' + err);
             })
@@ -42,7 +46,7 @@ function AdminRegisterAddressPage() {
 
     return (
         <div className="admin-container">
-            <MenuAdmin active_01={"is--active"} />
+            <MenuAdmin active_04={"is--active"} />
 
             <div className="admin-content_container">
                 <Link to="/admin/address" className="admin-content-button_add"><i className="fa-solid fa-left"></i> Voltar</Link>

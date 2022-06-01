@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
-
-import OptionBoxAdmin from "../../../components/OptionBoxAdmin/index";
 import { UserContext } from "../../../Auth";
 import { useContext } from "react";
 
@@ -36,17 +34,12 @@ function AdminAddressPage() {
             setBox(false);
     }
     /* Mapeando todos os endereços e adicionando na página */
-    const MapAddress = address.map((address) => {
-        const { id, street, district, number, city, state, country } = address;
+    const MapAddress = address.map((addresses) => {
+        const { id, address } = addresses;
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
-                <td>{street}</td>
-                <td>{district}</td>
-                <td>{number}</td>
-                <td>{city}</td>
-                <td>{state}</td>
-                <td>{country}</td>
+                <td>{address}</td>
                 <td>
                     {currentUser?.user.is_Admin ?
                         <div className={`admin-box_container is--active`}>
@@ -75,12 +68,6 @@ function AdminAddressPage() {
                     <thead >
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Rua</th>
-                            <th scope="col">Bairro</th>
-                            <th scope="col">Número</th>
-                            <th scope="col">Cidade</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">País</th>
                         </tr>
                     </thead>
                     <tbody >

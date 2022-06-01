@@ -141,7 +141,7 @@ function AdminRegisterProductPage() {
                     <textarea className="admin-input admin-input-big " placeholder="Descrição do evento" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
 
                     <div className="input-file">
-                        <label for="arquivo">Escolher uma foto</label>
+                        <label for="arquivo">Escolher uma imagem</label>
                         <input type="file" id="arquivo" ref={imageAPI} />
                     </div>
 

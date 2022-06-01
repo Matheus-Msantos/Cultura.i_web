@@ -1,10 +1,19 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Auth";
 
 function MenuAdmin({ active_01, active_02, active_03, active_04, active_05, active_06 }) {
 
     const { currentUser } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    /* Função de sair da conta */
+    const handleLogout = () => {
+        /* Remover dados do localStorage */
+        localStorage.removeItem("User");
+        /* Atualiza a página */
+        window.location.reload();
+    }
 
     return (
         <div className="admin-menu_container">
@@ -73,7 +82,7 @@ function MenuAdmin({ active_01, active_02, active_03, active_04, active_05, acti
 
             <div className="admin-menu_footer">
                 <Link to="/">Voltar para home</Link>
-                <button >Sair da conta</button>
+                <button onClick={handleLogout}>Sair da conta</button>
             </div>
         </div>
     );

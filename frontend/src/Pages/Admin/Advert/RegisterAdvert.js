@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { UserContext } from '../../../Auth';
 import { BaseUrl } from "../../../Api/baseUrl";
 
 
 function AdminRegisterAdvertPage() {
-    const imageAPI = useRef()
+    const imageAPI = useRef();
+    const navigate = useNavigate();
 
     /* Contexto do Usuário */
     const { currentUser } = useContext(UserContext);
@@ -41,7 +42,10 @@ function AdminRegisterAdvertPage() {
         }
         BaseUrl
             .post("/api/advert", body)
-            .then((res) => console.log(res.data))
+            .then((res) => {
+                console.log(res.data);
+                navigate('/admin/advert');
+            })
             .catch((err) => console.log('Ops! Ocorreu um erro ao atualizar um produto: ' + err))
     }
     /* Envio de dados para API */
@@ -55,13 +59,16 @@ function AdminRegisterAdvertPage() {
             <MenuAdmin active_02={"is--active"} />
 
             <div className="admin-content_container">
-                <Link to="/admin/advert" className="admin-content-button_add"><i className="fa-solid fa-left"></i> Voltar</Link>
+                <Link to="/admin/advert" className="admin-content-button_add"><i className="fa-solid fa-left"></i>Voltar</Link>
 
-                <h2>Cadastrar Evento</h2>
+                <h2>Cadastrar anúncio</h2>
 
                 <form onSubmit={(e) => { onSubmit(e) }}>
 
-                    <input type="file" className="admin-input admin-input-medium input-file" ref={imageAPI} />
+                    <div className="input-file">
+                        <label for="arquivo">Escolher uma imagem</label>
+                        <input type="file" id="arquivo" ref={imageAPI} />
+                    </div>
 
                     <div className="admin-form-button_conatiner">
                         <Link to="/admin/advert">Cancelar</Link>

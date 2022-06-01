@@ -53,12 +53,12 @@ function AdminEditUserPage() {
 
     return (
         <div className="admin-container">
-            <MenuAdmin active_01={"is--active"} />
+            <MenuAdmin active_05={"is--active"} />
 
             <div className="admin-content_container">
                 <Link to="/admin/user" className="admin-content-button_add"><i className="fa-solid fa-left"></i> Voltar</Link>
 
-                <h2>Atualizar Evento</h2>
+                <h2>Gerenciar permissões</h2>
 
                 <form onSubmit={(e) => onSubmit(e)}>
 

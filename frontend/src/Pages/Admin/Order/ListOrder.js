@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { UserContext } from '../../../Auth';
 import { BaseUrl } from "../../../Api/baseUrl";
+import Moment from 'moment';
 
 
 function AdminOrderPage() {
@@ -29,14 +30,19 @@ function AdminOrderPage() {
     /* Mapeando todos os produtos e adicionando na página */
     const MapPedidos = pedidos.map((pedido) => {
         const { id, user, quantity, value, product, created_at } = pedido;
+        const dateFormater = Moment(created_at).format("DD/MM/YYYY");
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
                 <td>{user?.name}</td>
                 <td>{quantity}</td>
-                <td>R$ {value}</td>
+                <td>{formatter.format(value)}</td>
                 <td>{product.name}</td>
-                <td>{created_at}</td>
+                <td>{dateFormater}</td>
             </tr>
         );
     });
