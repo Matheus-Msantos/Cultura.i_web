@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { UserContext } from "./Auth";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './Base.scss';
 
 import CheckoutPage from './Pages/Checkout/Checkout';
@@ -15,7 +16,7 @@ import AdminProductPage from './Pages/Admin/Product/ListProduct';
 import AdminRegisterProductPage from './Pages/Admin/Product/RegisterProduct';
 import AdminEditProductPage from './Pages/Admin/Product/EditProduct';
 import AdminCategoryPage from './Pages/Admin/Category/ListCategory';
-import AdminRegisterAddress from './Pages/Admin/Category/RegisterAddress';
+import AdminRegisterCategory from './Pages/Admin/Category/RegisterCategory';
 import AdminEditCategoryPage from './Pages/Admin/Category/EditCategory';
 import AdminAddressPage from './Pages/Admin/Address/ListAddress';
 import AdminRegisterAddressPage from './Pages/Admin/Address/RegisterAddress';
@@ -32,6 +33,7 @@ import RegisterProducerPage from './Pages/Register/RegisterProducer';
 import RegisterAdvertPage from './Pages/Register/RegisterAdvert';
 
 function App() {
+  const { currentUser } = useContext(UserContext);
 
   return (
     <>
@@ -50,21 +52,43 @@ function App() {
           <Route path="/order" element={<OrderPage />} />
           <Route path="/category/:id" element={<CategoryPage />} />
 
-          <Route path="/admin" element={<AdminProductPage />} />
-          <Route path="/admin/product/register" element={<AdminRegisterProductPage />} />
-          <Route path="/admin/product/edit/:id" element={<AdminEditProductPage />} />
-          <Route path="/admin/category" element={<AdminCategoryPage />} />
-          <Route path="/admin/category/register" element={<AdminRegisterAddress />} />
-          <Route path="/admin/category/edit/:id" element={<AdminEditCategoryPage />} />
-          <Route path="/admin/address" element={<AdminAddressPage />} />
-          <Route path="/admin/address/register" element={<AdminRegisterAddressPage />} />
-          <Route path="/admin/address/edit/:id" element={<AdminEditAddressPage />} />
-          <Route path="/admin/advert" element={<AdminAdvertPage />} />
-          <Route path="/admin/advert/register" element={<AdminRegisterAdvertPage />} />
-          <Route path="/admin/advert/edit/:id" element={<AdminEditAdvertPage />} />
-          <Route path="/admin/user" element={<AdminUserPage />} />
-          <Route path="/admin/user/edit/:id" element={<AdminEditUserPage />} />
-          <Route path="/admin/order" element={<AdminOrderPage />} />
+          {!!currentUser ?
+            <>
+              <Route path="/admin" element={<AdminProductPage />} />
+              <Route path="/admin/product/register" element={<AdminRegisterProductPage />} />
+              <Route path="/admin/product/edit/:id" element={<AdminEditProductPage />} />
+              <Route path="/admin/category" element={<AdminCategoryPage />} />
+              <Route path="/admin/category/register" element={<AdminRegisterCategory />} />
+              <Route path="/admin/category/edit/:id" element={<AdminEditCategoryPage />} />
+              <Route path="/admin/address" element={<AdminAddressPage />} />
+              <Route path="/admin/address/register" element={<AdminRegisterAddressPage />} />
+              <Route path="/admin/address/edit/:id" element={<AdminEditAddressPage />} />
+              <Route path="/admin/advert" element={<AdminAdvertPage />} />
+              <Route path="/admin/advert/register" element={<AdminRegisterAdvertPage />} />
+              <Route path="/admin/advert/edit/:id" element={<AdminEditAdvertPage />} />
+              <Route path="/admin/user" element={<AdminUserPage />} />
+              <Route path="/admin/user/edit/:id" element={<AdminEditUserPage />} />
+              <Route path="/admin/order" element={<AdminOrderPage />} />
+            </>
+            :
+            <>
+              <Route path="/admin" element={<Navigate to='/login' />} />
+              <Route path="/admin/product/register" element={<Navigate to='/login' />} />
+              <Route path="/admin/product/edit/:id" element={<Navigate to='/login' />} />
+              <Route path="/admin/category" element={<Navigate to='/login' />} />
+              <Route path="/admin/category/register" element={<Navigate to='/login' />} />
+              <Route path="/admin/category/edit/:id" element={<Navigate to='/login' />} />
+              <Route path="/admin/address" element={<Navigate to='/login' />} />
+              <Route path="/admin/address/register" element={<Navigate to='/login' />} />
+              <Route path="/admin/address/edit/:id" element={<Navigate to='/login' />} />
+              <Route path="/admin/advert" element={<Navigate to='/login' />} />
+              <Route path="/admin/advert/register" element={<Navigate to='/login' />} />
+              <Route path="/admin/advert/edit/:id" element={<Navigate to='/login' />} />
+              <Route path="/admin/user" element={<Navigate to='/login' />} />
+              <Route path="/admin/user/edit/:id" element={<Navigate to='/login' />} />
+              <Route path="/admin/order" element={<Navigate to='/login' />} />
+            </>
+          }
         </Routes>
       </BrowserRouter>
     </>

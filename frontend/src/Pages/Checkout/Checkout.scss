@@ -14,115 +14,71 @@
     }
 
     .div-order-checkout {
+        width: 93%;
+        margin: 0 auto;
         margin-top: 49px;
-        margin-left: 62px;
-        margin-right: 256px;
 
-        .div-info-data-checkout {
-            display: flex;
-            border-radius: 10px;
-            background-color: #033e8c;
-
-            .div-product {
-                margin-left: 39px;
-
-                .span-product {
-                    color: white;
-                    font-weight: bold;
-                    margin-bottom: 0px;
-                }
-            }
-
-            .div-price-quant {
-                width: 100%;
-                display: flex;
-                font-weight: bold;
-                margin-right: 15px;
-                justify-content: flex-end;
-
-                .span-price-unit {
-                    color: #ffffff;
-                    margin-right: 28px;
-                    margin-bottom: 0px;
-                }
-
-                .span-quantid {
-                    color: #ffffff;
-                    margin-right: 53px;
-                    margin-bottom: 0px;
-                }
-
-                .span-price {
-                    color: #ffffff;
-                    margin-bottom: 0px;
+        table {
+            thead {
+                background: #033e8c;
+                tr {
+                    th {
+                        color: #fff;
+                    }
                 }
             }
         }
 
-        .info-data {
+        .div-info-product {
             display: flex;
-            width: 100%;
-            margin-top: 22px;
 
             .img-data {
                 width: 136px;
                 height: 98px;
-                margin-left: 25px;
                 background-color: #c4c4c4;
             }
 
             .div-info-product {
-                margin-left: 84.63px;
-                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 14px;
                 font-family: "Poppins";
+                margin-left: 25px;
+               
 
                 .info-data-title {
                     color: #4d4d4d;
-                    width: 199.36px;
+                    margin-bottom: 0;
+                    font-weight: bold;
                 }
 
                 .data-hour {
                     margin-top: 2px;
                     color: #5a5a5b;
-                    font-weight: bold;
+                    margin-bottom: 0;
                 }
 
                 .local {
                     margin-top: 2px;
                     color: #999999;
-                }
-
-                .state {
-                    margin-top: 2px;
-                    color: #999999;
-                }
-            }
-
-            .div-quanti-prices {
-                display: flex;
-                width: 100%;
-                font-size: 18px;
-                font-weight: bold;
-                margin-right: 12px;
-                justify-content: flex-end;
-
-                .price-uni {
-                    margin-right: 68px;
-                    font-family: "Poppins";
-                }
-
-                .quanti {
-                    margin-right: 68px;
-                    font-family: "Poppins";
+                    margin-bottom: 0;
                 }
             }
         }
+            .price-uni,
+            .quanti,
+            .price {
+                font-size: 16px;
+                color: #4d4d4d;
+                margin-bottom: 0;
+                font-weight: bold;
+            }
     }
 
     .div-total-button-finish {
         margin-top: 35px;
-        width: 90%;
-        margin-right: 256px;
+        width: 100%;
 
         .div-total {
             display: flex;
@@ -153,17 +109,24 @@
             margin-left: auto;
 
             .btn-order-finish {
-                width: 400px;
-                height: 53px;
-                border-radius: 10px;
+                width: 85%;
+                height: 43px;
+                border-radius: 8px;
                 background-color: #033e8c;
+                border: 0;
+
 
                 .bnt-link {
-                    font-size: 20px;
+                    display: block;
+                    font-size: 17px;
                     color: #ffffff;
                     font-family: "Poppins";
                     font-weight: 700;
                     text-transform: uppercase;
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
 

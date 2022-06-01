@@ -2,8 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BaseUrl } from "../../Api/baseUrl";
 import { UserContext } from "../../Auth";
-
-
+import Moment from 'moment';
 
 function Minicart({ active }) {
 
@@ -43,14 +42,18 @@ function Minicart({ active }) {
 
     const MapItem = minicart[0]?.map((item) => {
         const price = [item.quantity * item.product.price];
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
+        const dateFormater = Moment(item?.product?.date).format("DD/MM/YYYY");
         return (
             <div className="minicart-produto_box" key={item.id}>
                 <img src={item?.product?.image} />
                 <div className="minicart-produto-box_info">
                     <span className="minicart-produto-box_nome">{item?.product?.name}</span>
-                    <span className="minicart-produto-box_text">{item?.product?.date} - {item?.product?.time}</span>
-                    <span className="minicart-produto-box_text price"> R$ {price}</span>
-                    <span className="minicart-produto-box_text">{item?.product?.address}</span>
+                    <span className="minicart-produto-box_text">{dateFormater} - {item?.product?.time}</span>
+                    <span className="minicart-produto-box_text price">{formatter.format(price)}</span>
 
                     <div className="minicart-quantity">
                         <button className="minicart-quantity-menos" onClick={() => handleCartRemove(item.product.id)}>-</button>

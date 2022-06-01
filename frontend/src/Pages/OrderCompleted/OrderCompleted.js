@@ -16,7 +16,9 @@ function OrderCompletedPage() {
                         <span><p className="span-title-message">Não se preocupe</p></span>
                     </div>
                     <div className="div-message">
-                        <p className="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Nibh tellus molestie nunc non blandit massa enim. Pellentesque</p>
+                        <p className="message">
+                            Você receberá um e-mail de confirmação do pedido e todos os detalhes da sua compra. Caso não tenha recebido, verifique sua caixa de spam.
+                        </p>
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { UserContext } from '../../../Auth';
 import { BaseUrl } from "../../../Api/baseUrl";
@@ -18,6 +18,7 @@ function AdminEditProductPage() {
     const [addressAll, setAddressAll] = useState([]);
     const [image, setImage] = useState();
     const imageAPI = useRef()
+    const navigate = useNavigate()
 
     /* Pegando ID do parâmetro passado pela url  */
     let { id } = useParams();
@@ -97,7 +98,8 @@ function AdminEditProductPage() {
         BaseUrl
             .put(`/api/product/${id}`, body)
             .then((res) => {
-                console.log(res.data)
+                console.log(res.data);
+                navigate('/admin');
             })
             .catch((err) => console.log('Ops! Ocorreu um erro ao atualizar um produto: ' + err))
     }
@@ -156,7 +158,10 @@ function AdminEditProductPage() {
 
                     <textarea className="admin-input admin-input-big " placeholder="Descrição do evento" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
 
-                    <input type="file" className="admin-input admin-input-medium input-file" ref={imageAPI} />
+                    <div className="input-file">
+                        <label for="arquivo">Escolher uma imagem</label>
+                        <input type="file" id="arquivo" ref={imageAPI} />
+                    </div>
 
                     <div className="admin-form-button_conatiner">
                         <Link to="/admin">Cancelar</Link>

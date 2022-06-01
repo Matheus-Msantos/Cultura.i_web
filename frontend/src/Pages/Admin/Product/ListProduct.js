@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MenuAdmin from "../../../components/MenuAdmin";
 import { BaseUrl } from "../../../Api/baseUrl";
 import { UserContext } from "../../../Auth";
+import Moment from 'moment';
 import '../Admin.scss';
 
 function AdminProductPage() {
@@ -59,6 +60,11 @@ function AdminProductPage() {
     /* Mapeando todos os produtos filtrados */
     const MapProdutosProducer = filterProdutos.map((produto) => {
         const { id, image, name, date, time, address, category, price, classification } = produto;
+        const dateFormater = Moment(date).format("DD/MM/YYYY");
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
@@ -66,9 +72,9 @@ function AdminProductPage() {
                     <img src={image} />
                 </td>
                 <td>{name}</td>
-                <td>{date}</td>
+                <td>{dateFormater}</td>
                 <td>{time}</td>
-                <td>R$ {price}</td>
+                <td>{formatter.format(price)}</td>
                 <td>{category?.name}</td>
                 <td>{address}</td>
                 <td>{classification}</td>
