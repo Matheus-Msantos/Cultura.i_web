@@ -41,6 +41,10 @@ function CheckoutPage() {
 
     const MapItens = itens[0]?.map((item) => {
         const price = [item.quantity * item.product.price];
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
         return (
 
             <tr key={item?.product?.id} className="info-data">
@@ -56,9 +60,9 @@ function CheckoutPage() {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><p className="price-uni">R$ {item?.product?.price}</p></td>
+                <td><p className="price-uni">{formatter.format(item?.product?.price)}</p></td>
                 <td><p className="quanti">{item.quantity}</p></td>
-                <td><p className="price">R$ {price}</p></td>
+                <td><p className="price">{formatter.format(price)}</p></td>
             </tr>
 
 
