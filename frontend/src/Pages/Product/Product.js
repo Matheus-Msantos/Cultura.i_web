@@ -33,14 +33,14 @@ function ProductPage() {
     useEffect(() => {
         /* Chamada da API de produto */
         BaseUrl
-        .get(`/api/product/${id}`)
-        .then((res) => {
-            const { name, price, description, date, time, user, classification, address, category, image } = res.data[0];
-            const dateFormater = Moment(date).format("DD/MM/YYYY");
-            var formatter = new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-            });
+            .get(`/api/product/${id}`)
+            .then((res) => {
+                const { name, price, description, date, time, user, classification, address, category, image } = res.data[0];
+                const dateFormater = Moment(date).format("DD/MM/YYYY");
+                var formatter = new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                });
                 const produtoObj = {
                     name: name,
                     price: formatter.format(price),
@@ -70,7 +70,7 @@ function ProductPage() {
                     <h2>{produto?.name}</h2>
 
                     <p className="product-header-text_info">
-                        <i className="fa-solid fa-calendar"></i> {produto?.date} ás {produto?.time}
+                        <i className="fa-solid fa-calendar"></i> {produto?.date} às {produto?.time}
                     </p>
 
                     <p className="product-header-text_info">
@@ -82,7 +82,7 @@ function ProductPage() {
                     </p>
 
                     <p className="product-header-text_info price">
-                        R$ {produto?.price}
+                        {produto?.price}
                     </p>
 
                     <Link to={`/category/${produto?.category?.id}`}>{produto?.category?.name}</Link>
