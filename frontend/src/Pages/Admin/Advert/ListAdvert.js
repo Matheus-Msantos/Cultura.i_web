@@ -72,8 +72,8 @@ function AdminAdvertPage() {
                 <td>{user.name}</td>
                 <td>
                     <div className={`admin-box_container is--active`}>
-                        <Link to={`/admin/advert/edit/${id}`} className="admin-box_button"><i className="fa-solid fa-pencil"></i> Editar</Link>
-                        <button className="admin-box_button" onClick={() => handleDelete(id)}><i className="fa-solid fa-trash"></i> Excluir</button>
+                        <Link to={`/admin/advert/edit/${id}`} className="admin-box-button_edit"><i className="fa-solid fa-pencil"></i></Link>
+                        <button className="admin-box-button-delete" onClick={() => handleDelete(id)}><i className="fa-solid fa-trash"></i></button>
                     </div>
                 </td>
             </tr>
