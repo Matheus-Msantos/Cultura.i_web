@@ -58,8 +58,8 @@ function AdminEditProductPage() {
                 setPrice(price);
                 setClassification(classification);
                 setDescription(description);
-                setAddress(address.id);
-                setCategory(category.id);
+                setAddress(address);
+                setCategory(category.name);
             })
             .catch((err) => console)
         /* Chamada da API de todas as categorias */

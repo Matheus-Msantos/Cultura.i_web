@@ -53,14 +53,19 @@ function AdminOrderPage() {
     /* Mapeando todos os produtos e adicionando na página */
     const MapPedidosProducer = filterPedidos.map((pedido) => {
         const { id, user, quantity, value, product, created_at } = pedido;
+        const dateFormater = Moment(created_at).format("DD/MM/YYYY");
+        var formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
         return (
             <tr key={id}>
                 <th scope="row">{id}</th>
                 <td>{user?.name}</td>
                 <td>{quantity}</td>
-                <td>R$ {value}</td>
+                <td>{formatter.format(value)}</td>
                 <td>{product.name}</td>
-                <td>{created_at}</td>
+                <td>{dateFormater}</td>
             </tr>
         );
     });

@@ -52,8 +52,8 @@ function AdminRegisterProductPage() {
             classification: classification,
             time: time,
             date: date,
-            category_id: 1,
-            address: 'rua x',
+            category_id: category,
+            address: address,
             price: price,
             user_id: currentUser?.user?.id,
             image: url
@@ -103,7 +103,7 @@ function AdminRegisterProductPage() {
     const addressMap = addressAll.map((address) => {
         return (
             <>
-                <option key={address.id} value={address.id}>{address.street}</option>
+                <option key={address.id} value={address.address}>{address.address}</option>
             </>
         );
     });
